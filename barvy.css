@@ -1,0 +1,21 @@
+:root {
+
+    --logoColor: rgb(0, 150, 0);
+
+    --buttonBackground: limegreen;
+    --buttonText: white;
+    --buttonHoverBack: lime;
+
+    --headerBackground: rgb(00, 110, 00);
+    --headerText: black;
+
+    --sideMenuBack: rgba(0, 117, 0, 0.1);
+    --sideMenuButtonBack: white;
+    --sideMenuButtonBorder: green;
+    --sideMenuButtonHoverBack: green;
+    --sideMenuButtonHoverText: white;
+
+    --footerBackground: rgb(00, 170, 00);
+    --footerText: black;
+    --footerHoverText: white;
+}
