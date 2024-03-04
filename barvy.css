@@ -4,18 +4,18 @@
 
     --buttonBackground: rgb(74, 160, 241);
     --buttonText: white;
-    --buttonHoverBack: rgb(0, 132, 255);;
+    --buttonHoverBack: rgb(0, 149, 255);;
 
     --headerBackground: rgb(245, 245, 220);
     --headerText: black;
 
-    --sideMenuBack: rgba(0, 117, 0, 0.1);
+    --sideMenuBack: rgba(0, 149, 255, 0.2);
     --sideMenuButtonBack: white;
-    --sideMenuButtonBorder: green;
-    --sideMenuButtonHoverBack: green;
+    --sideMenuButtonBorder: blue;
+    --sideMenuButtonHoverBack: rgb(0, 149, 255);
     --sideMenuButtonHoverText: white;
 
-    --footerBackground: rgb(00, 170, 00);
+    --footerBackground: rgb(0, 149, 255);
     --footerText: black;
     --footerHoverText: white;
 }
