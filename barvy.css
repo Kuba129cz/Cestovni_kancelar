@@ -2,11 +2,11 @@
 
     --logoColor: rgb(0, 150, 0);
 
-    --buttonBackground: limegreen;
+    --buttonBackground: rgb(74, 160, 241);
     --buttonText: white;
-    --buttonHoverBack: lime;
+    --buttonHoverBack: rgb(0, 132, 255);;
 
-    --headerBackground: rgb(00, 110, 00);
+    --headerBackground: rgb(245, 245, 220);
     --headerText: black;
 
     --sideMenuBack: rgba(0, 117, 0, 0.1);

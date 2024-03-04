@@ -30,13 +30,14 @@ h1 {
     font-weight: 500;
     font-size: 20px;
     border: none;
-    padding: 1em 2em 1em 1em;
+    border-radius: 10em;
+    padding: 0.5em 2em 0.5em 2em;
     margin: 0.1em 0.1em;
     cursor: pointer;
-    position: relative;
-    /*nutné pro seseknutí rohu*/
-    text-align: center;
-    z-index: 2;
 
     transition: all .2s linear;
+}
+.menuButton:hover
+{
+  background-color: var(--buttonHoverBack);
 }
