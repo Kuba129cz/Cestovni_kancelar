@@ -1,0 +1,15 @@
+html{
+    box-sizing: border-box;
+}
+
+/*vsechny elementy zdedi vlastnost*/
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body
+{
+    margin: 0;
+}
