@@ -1,13 +1,11 @@
-.btn
-{
+.btn {
     display: inline-block;
     padding: 1.2rem 2.6rem;
     background-color: #000;
-    color:#fff;
+    color: #fff;
     text-decoration: none;
-}
 
-&--primary
-{
-    background-color: $color-primary;
+    &--primary {
+        background-color: $color-primary;
+    }
 }
