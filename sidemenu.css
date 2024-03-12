@@ -17,23 +17,6 @@
     background-color:var(--sideMenuBack) ;
   
   }
-  .sideMenu button
-  {
-    background-color: var(--sideMenuButtonBack);    
-    margin:  0.1em;
-    align-self: center;
-    border-radius: 5px;
-    border: 1px solid var(--sideMenuButtonBorder);
-    text-align: center;
-    width: 90%;
-    cursor: pointer;
-    font-size: 1em;    
-  }
-  .sideMenu button:hover
-  {
-    background-color: var(--sideMenuButtonHoverBack);    
-    color:  var(--sideMenuButtonHoverText);  
-  }
 
   .side
   {
