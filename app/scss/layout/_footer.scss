@@ -1,8 +1,8 @@
 footer {
-    background:var(--footerBackground);
+    background:$footerBackground;
     padding: 32px 0;
     text-align: center;
-    color: var(--footerText);
+    color: $footerText;
     font-size: 12px;
 }
 footer ul {
@@ -17,8 +17,8 @@ footer li a {
     padding: 6px;
     font-size: 14px;
     text-decoration: none;
-    color: var(--footerText);
+    color: $footerText;
 }
 footer li a:hover {
-    color: var(--footerHoverText);
+    color: $footerHoverText;
 }   

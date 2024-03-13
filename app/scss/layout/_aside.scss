@@ -1,5 +1,23 @@
 aside
 {
-    border-right: 1px solid $color-light;
-    height: 100vh;
-}
+    /*border-right: 1px solid $color-light;
+    height: 100vh;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*flex-basis: 200px;
+    max-width: 25%;*/
+    min-width: max-content;
+    height: fit-content;
+    padding: 1em;
+    left: 0px;
+    margin-right: 1%;
+
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    
+    background-color:$sideMenuBack ;
+  
+  }

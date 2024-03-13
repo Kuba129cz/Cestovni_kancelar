@@ -4,13 +4,15 @@
 
 @import 'base/reset';
 @import 'base/typography';
+
 @import 'layout/grid';
 @import 'layout/aside';
+@import 'layout/footer';
 
 @import 'components/button';
 @import 'components/menuButton.scss';
 @import 'components/sideMenuButton.scss';
 
-body {
+/*body {
   background: red;
-}
+}*/
