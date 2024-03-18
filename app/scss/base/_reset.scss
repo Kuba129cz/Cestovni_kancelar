@@ -1,15 +1,13 @@
-html{
-    box-sizing: border-box;
+html {
+  box-sizing: border-box;
 }
 
-/*vsechny elementy zdedi vlastnost*/
+body {
+	margin: 0;
+}
+
 *,
-*::before,
-*::after{
-    box-sizing: inherit;
-}
-
-body
-{
-    margin: 0;
+*:before,
+*:after {
+  box-sizing: inherit;
 }
