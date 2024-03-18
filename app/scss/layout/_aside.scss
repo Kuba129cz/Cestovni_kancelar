@@ -1,5 +1,9 @@
-aside
-{
-    border-right: 1px solid $color-light;
-    height: 100vh;
+.aside {
+	border-right: 1px solid $color-light;
+	background-color: $color-light;
+	height: 100vh;
+
+	&--close {
+		flex-basis: 0;
+	}
 }
