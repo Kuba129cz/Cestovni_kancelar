@@ -7,9 +7,19 @@
       <div class="row">
       <?php include __DIR__.'/../includes/layout/aside.inc.php'; ?>
 
-      <?php include __DIR__.'/../components/ticketBox.inc.php'; ?>
       
-        <main class="col-9">main (col9)</main>
+      
+        <main class="col-9">
+            main (col9)
+            <div class="row">
+                <?php include __DIR__.'/../components/ticketBox.inc.php'; ?>
+                <?php include __DIR__.'/../components/ticketBox.inc.php'; ?>
+            </div>
+            <div class="row">
+                <?php include __DIR__.'/../components/item.inc.php'; ?>
+                <?php include __DIR__.'/../components/item.inc.php'; ?>
+            </div>
+        </main>
       </div>
     </div>
   </body>
