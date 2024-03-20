@@ -1,5 +1,11 @@
-aside
-{
-    border-right: 1px solid $color-light;
-    height: 100vh;
+.aside {
+	border-right: 1px solid $color-light;
+	background-color: $color-light;
+	// TODO: Remove this
+	height: 100vh;
+	// / TODO: Remove this
+
+	&--close {
+		flex-basis: 0;
+	}
 }

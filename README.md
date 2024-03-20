@@ -1,6 +1,6 @@
 # cestovka
 
-xnovm288
+
 
 ## Getting started
 
