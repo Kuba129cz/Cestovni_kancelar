@@ -1,0 +1,31 @@
+header {
+    color: $headerText;
+    padding: 0px 0px 10px 0px;
+    text-align: left;
+}
+
+.no-decor{
+    text-decoration: none;
+}
+
+.obr-bg {
+    background-image: url("https://picsum.photos/1920/600");
+    background-size: cover;
+    background-position: 50%;
+    height: 200px;
+    margin: 0px;
+    text-align: center;
+}
+
+.menu {
+    background-color: $headerBackground;
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: stretch;
+}
+
+h1 {
+    font-size: 100px;
+    color: $logoColor;
+    margin: 0px;
+}
