@@ -7,10 +7,10 @@ const cssnano = require('cssnano');
 const terser = require('gulp-terser');
 const browsersync = require('browser-sync').create();
 
-// HTML Move Task
-function htmlTask() {
-  return src('*.html').pipe(dest('dist'));
-}
+// // HTML Move Task
+// function htmlTask() {
+//   return src('*.html').pipe(dest('dist'));
+// }
 
 // Image Task
 function imageTask() {
@@ -49,11 +49,12 @@ function browsersyncReload(cb) {
 
 // Watch Task
 function watchTask() {
-  watch('dist/*.html', browsersyncReload);
+  // watch('dist/*.html', browsersyncReload);
+  watch('app/**/*.php', browsersyncReload);
   watch(
-    ['app/scss/**/*.scss', 'app/js/**/*.js', '*.html'],
+    ['app/scss/**/*.scss', 'app/js/**/*.js'/*, '*.html'*/],
     series(
-      htmlTask,
+      // htmlTask,
       imageTask,
       scssTask,
       jsTask,
@@ -64,7 +65,7 @@ function watchTask() {
 
 // Default Gulp Task
 exports.default = series(
-  htmlTask,
+  // htmlTask,
   imageTask,
   scssTask,
   jsTask,

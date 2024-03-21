@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+# Pokud požadovaný název souboru není adresář
+RewriteCond %{REQUEST_FILENAME} !-d
+# a pokud požadovaný název souboru není běžný soubor, který existuje.
+RewriteCond %{REQUEST_FILENAME} !-f
+# Vezměte celý název souboru požadavku a zadejte jej jako hodnotu parametru dotazu „url“ do index.php. Připojte jakýkoli řetězec dotazu z původní adresy URL jako další parametry dotazu (QSA) a zastavte zpracování tohoto souboru .htaccess (L).
+RewriteRule ^(.+)$ index.php [QSA,L]
