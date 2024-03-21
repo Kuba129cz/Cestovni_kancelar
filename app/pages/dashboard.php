@@ -2,7 +2,7 @@
     $title="dashboard";
     include __DIR__.'/../includes/parts/head.inc.php';
 ?>
-    <body>
+    <body x-data="{ open: false }">
     <div class="container">
       <div class="row">
       <?php include __DIR__.'/../includes/layout/aside.inc.php'; ?>
@@ -25,6 +25,6 @@
       </div>
     </div>
   </body>
-  <!--<?php include __DIR__.'/../includes/parts/footer.inc.php'; ?>-->
+  <?php include __DIR__.'/../components/footer.inc.php'; ?>
   <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
 </html>

@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
-  <head>
-    <meta charset="utf-8" />
-
-    <title>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
       <?php
       echo $title
     ?>
     </title>
 
-    <link rel="stylesheet" href="dist/style.css" />
-  </head>
+	<link rel="stylesheet" href="dist/style.css">
+</head>
