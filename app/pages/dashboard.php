@@ -3,9 +3,10 @@
     include __DIR__.'/../includes/parts/head.inc.php';
 ?>
     <body x-data="{ open: false }">
+    <?php include __DIR__.'/../components/header.inc.php'; ?>
     <div class="container">
       <div class="row">
-      <?php include __DIR__.'/../includes/layout/aside.inc.php'; ?>
+      <?php include __DIR__.'/../components/aside.inc.php'; ?>
 
       
       

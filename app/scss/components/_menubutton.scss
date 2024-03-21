@@ -1,0 +1,20 @@
+.menuButton {
+    text-align: center;
+    cursor: pointer;
+    margin: 0.1em 0.1em;
+  
+    display: inline-block;
+    background: $buttonBackground;
+    color: $buttonText;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    border-radius: 10em;
+    padding: 0.5em 2em 0.5em 2em;
+    flex-grow: 1;
+    transition: all .2s linear;
+  }
+  
+  .menuButton:hover {
+    background-color: $buttonHoverBack;
+  }
