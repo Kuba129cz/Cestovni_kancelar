@@ -5,6 +5,5 @@
         <li><a href="#" class="btn btn--primary">click</a></li>
         <li><a href="#" class="btn btn--primary">click</a></li>
         <li><a href="#" class="btn btn--primary">click</a></li>
-    </ul>            
-    aside (col3)
+    </ul>
 </aside>

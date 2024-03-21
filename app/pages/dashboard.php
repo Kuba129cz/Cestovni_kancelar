@@ -11,7 +11,6 @@
       
       
         <main class="col-9">
-            main (col9)
             <div class="row">
                 <!--
                 <?php include __DIR__.'/../components/ticketBox.inc.php'; ?>
