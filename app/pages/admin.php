@@ -10,8 +10,10 @@
       
         <main class="col-9">
             <div class="row">
-              <div x-date="adminApp()">
-              
+              <div x-data="adminApp()">
+                  <template x-if="items.length>0"><div>acb</div></template>
+                    
+                  <template x-if="items.length===0"><div>null</div></template>
               </div>
             </div>
         </main>
