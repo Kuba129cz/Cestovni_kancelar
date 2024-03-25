@@ -1,7 +1,20 @@
-.filter-green{
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+.filter-green {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
 }
 
-.fill-red{
+.fill-red {
     fill: red;
-  }
+}
+
+@font-face {
+    font-family: 'DX';
+    src: URL('dxicons.ttf') format('truetype');
+}
+
+.dx-font {
+    font-family: 'DX';
+}
+
+.dx-font:before {
+    content: "\f00c";
+}
