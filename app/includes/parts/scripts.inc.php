@@ -5,7 +5,7 @@
         return {
             items: [], // output
             fetchItems() {//zavolej API
-                fetch('/app/api/items/index.php')
+                fetch('/app/api/endpoints/items/index.php')
                     .then(Response => Response.json())
                     .then(data => {
                         this.items = data;
