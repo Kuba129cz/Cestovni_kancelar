@@ -20,7 +20,7 @@ class ItemController
     }
     public function getItems_join()
     {
-        $SQL="SELECT zajezd.*,destination.* FROM zajezd INNER JOIN destination ON zajezd.destination_id=destination.id ORDER BY time_stamp DESC";
+        $SQL="SELECT zajezd.*,destination.* FROM zajezd INNER JOIN destination ON zajezd.destination_id=destination.dest_id ORDER BY time_stamp DESC";
         $stmt=$this->conn->prepare($SQL);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

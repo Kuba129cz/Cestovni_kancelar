@@ -41,10 +41,10 @@
 
             <div>-------------------------</div>
             <template x-if="destinations.length>0">
-              <template x-for="dest in destinations" :key="dest.id">
+              <template x-for="dest in destinations" :key="dest.dest_id">
                 <div><!--alpine je virtual tak musim pouzit realni DOM-->
-                  <span x-text="dest.id"></span>
-                  <span x-text="dest.name"></span>
+                  <span x-text="dest.dest_id"></span>
+                  <span x-text="dest.dest_name"></span>
                 </div>                
               </template>
             </template>

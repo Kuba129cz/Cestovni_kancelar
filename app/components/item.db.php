@@ -5,7 +5,7 @@
                 <span x-text="item.id"></span>
                 <span x-text="item.time_stamp"></span>
                 <span x-text="item.description"></span>
-                <span x-text="item.destination_id"></span>
+                <span x-text="item.dest_name"></span>
                 <span x-text="item.author_id"></span>
             </div>                
         </template>

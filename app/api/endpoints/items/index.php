@@ -13,7 +13,7 @@ $controller=new ItemController();
 
 if($method=='GET')
 {
-    $items=$controller->getItems();
+    $items=$controller->getItems_join();
     echo json_encode($items);
 }
 else if ($method == 'POST') 
