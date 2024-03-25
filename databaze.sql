@@ -27,6 +27,7 @@ CREATE TABLE `destination` (
 DROP TABLE IF EXISTS `zajezd`;
 CREATE TABLE `zajezd` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `time_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `description` text COLLATE utf8mb4_bin NOT NULL,
   `destination_id` int NOT NULL,
   `author_id` int NOT NULL,
@@ -38,4 +39,4 @@ CREATE TABLE `zajezd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 
--- 2024-03-25 10:37:56
+-- 2024-03-25 10:44:21

@@ -13,7 +13,10 @@ class ItemController
 
     public function getItems()
     {
-       $SQL="SELECT * FROM zajezd ORDER BY id DESC";
+       $SQL="SELECT * FROM zajezd ORDER BY time_stamp DESC";
+       $stmt=$this->conn->prepare($SQL);
+       $stmt->execute();
+       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>
