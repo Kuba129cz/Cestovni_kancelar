@@ -10,5 +10,10 @@ class ItemController
         $database=new Database();
         $this->conn=$database->getConnection();
     }
+
+    public function getItems()
+    {
+       $SQL="SELECT * FROM zajezd ORDER BY id DESC";
+    }
 }
 ?>
