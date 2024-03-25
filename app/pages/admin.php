@@ -10,8 +10,18 @@
       
         <main class="col-9">
             <div class="row">
-              <div x-date="adminApp()">
-              
+              <div x-data="adminApp()">
+              <templat x-if="items.lenght>0">
+              <template x-for="items in item" :key="item.id">
+                <div>
+                  <span x-text="item.id"></span>
+                  <span x-text="time_stamp"></span>
+                  <span x-text="description"></span>
+                  <span x-text="destination_id"></span>
+                  <span x-text="author_id"></span>
+                </template>
+              </template>
+              <templat x-if="items.lenght==0"><div>null</div></template>
               </div>
             </div>
         </main>
