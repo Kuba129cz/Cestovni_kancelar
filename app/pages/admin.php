@@ -11,6 +11,10 @@
 
       <main class="col-9">
         <div class="row">
+
+        <?php include __DIR__.'/../components/item.db.php'; ?>
+
+
           <div x-data="adminApp()">
             <template x-if="items.length>0">
               <template x-for="item in items" :key="item.id">
