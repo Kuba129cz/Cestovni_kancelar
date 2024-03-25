@@ -15,9 +15,11 @@
           <?php include __DIR__.'/../components/adminForm.inc.php'; ?>
         </div>
         <div class="row">
+          <div style="width: 100%;"><!--wayaround nez nekdo fixne styly-->
           <?php include __DIR__.'/../components/item.db.php'; ?>
+          </div>
         </div>
-        
+
       <div class="row">
 
         

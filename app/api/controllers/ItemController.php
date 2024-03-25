@@ -13,10 +13,17 @@ class ItemController
 
     public function getItems()
     {
-       $SQL="SELECT * FROM zajezd ORDER BY time_stamp DESC";
-       $stmt=$this->conn->prepare($SQL);
-       $stmt->execute();
-       return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $SQL="SELECT * FROM zajezd ORDER BY time_stamp DESC";
+        $stmt=$this->conn->prepare($SQL);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getItems_join()
+    {
+        $SQL="SELECT zajezd.*,destination.* FROM zajezd INNER JOIN destination ON zajezd.destination_id=destination.id ORDER BY time_stamp DESC";
+        $stmt=$this->conn->prepare($SQL);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>
