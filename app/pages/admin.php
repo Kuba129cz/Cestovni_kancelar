@@ -10,9 +10,17 @@
       <?php include __DIR__.'/../components/aside.inc.php'; ?>
 
       <main class="col-9">
+        
+      <div class="row">
+          <?php include __DIR__.'/../components/adminForm.inc.php'; ?>
+        </div>
         <div class="row">
+          <?php include __DIR__.'/../components/item.db.php'; ?>
+        </div>
+        
+      <div class="row">
 
-        <?php include __DIR__.'/../components/item.db.php'; ?>
+        
 
 
           <div x-data="adminApp()">
