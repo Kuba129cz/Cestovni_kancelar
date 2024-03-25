@@ -27,6 +27,17 @@ else if ($method == 'POST')
         echo json_encode(['message' => 'Unable to create ticket.']);
     }
 }
+else if ($method == 'DELETE') { // Added DELETE condition
+    $data = json_decode(file_get_contents("php://input"), true);
+    var_dump($data);
+    if ($controller->removeTicket($data)) {
+        http_response_code(200); // OK
+        echo json_encode(['message' => 'Ticket removed successfully.']);
+    } else {
+        http_response_code(404); // Not found
+        echo json_encode(['message' => 'Ticket not found.']);
+    }
+}
 else 
 {
     http_response_code(405); // Method not allowed
