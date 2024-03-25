@@ -18,3 +18,8 @@
 .dx-font:before {
     content: "\f00c";
 }
+
+.blue-text
+{
+    color: blue;
+}
