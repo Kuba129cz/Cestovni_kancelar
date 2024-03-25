@@ -24,6 +24,28 @@
               </template>
             </template>
 
+
+            <div>-------------------------</div>
+            <template x-if="destinations.length>0">
+              <template x-for="dest in destinations" :key="dest.id">
+                <div><!--alpine je virtual tak musim pouzit realni DOM-->
+                  <span x-text="dest.id"></span>
+                  <span x-text="dest.name"></span>
+                </div>                
+              </template>
+            </template>
+
+            <div>-------------------------</div>
+            <template x-if="authors.length>0">
+              <template x-for="author in authors" :key="author.id">
+                <div><!--alpine je virtual tak musim pouzit realni DOM-->
+                  <span x-text="author.id"></span>
+                  <span x-text="author.firstname"></span>
+                  <span x-text="author.lastname"></span>
+                </div>                
+              </template>
+            </template>
+
             <template x-if="items.length===0">
               <div>null</div>
             </template>
