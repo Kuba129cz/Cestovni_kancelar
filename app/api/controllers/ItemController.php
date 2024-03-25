@@ -36,7 +36,7 @@ class ItemController
 
         // sanitize
         $author_id=htmlspecialchars(strip_tags($author_id));
-        $priority_id=htmlspecialchars(strip_tags($destination_id));
+        $destination_id=htmlspecialchars(strip_tags($destination_id));
         $description=htmlspecialchars(strip_tags($description));
 
         $stmt->bindParam(":author_id", $author_id);
