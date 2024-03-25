@@ -8,8 +8,8 @@
         </select>
         <select x-model="newTicket.priority_id">
             <option>Vybrat</option>
-            <template x-for="priority in priorities" :key="priority.id">
-                <option x-bind:value="priority.id" x-text="priority.name"></option>
+            <template x-for="destination in destinations" :key="destination.id">
+                <option x-bind:value="destination.id" x-text="destination.name"></option>
             </template>
         </select>
         <textarea x-model="newTicket.description" placeholder="Popis"></textarea>
