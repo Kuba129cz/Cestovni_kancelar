@@ -16,7 +16,19 @@ if($method=='GET')
     $items=$controller->getItems();
     echo json_encode($items);
 }
-else {
+else if ($method == 'POST') 
+{
+    $data = json_decode(file_get_contents("php://input"), true);
+    if ($controller->createTicket($data['author_id'], $data['destination_id'], $data['description'])) {
+        http_response_code(201); // Created
+        echo json_encode(['message' => 'Ticket created successfully.']);
+    } else {
+        http_response_code(503); // Service unavailable
+        echo json_encode(['message' => 'Unable to create ticket.']);
+    }
+}
+else 
+{
     http_response_code(405); // Method not allowed
     echo json_encode(['message' => 'Method not allowed.']);
 }

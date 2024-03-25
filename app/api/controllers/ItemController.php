@@ -25,5 +25,39 @@ class ItemController
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function createTicket($author_id, $destination_id, $description) {
+
+        if (empty($author_id) || empty($destination_id) || empty($description)) {
+            return false;
+        }
+
+        $query = "INSERT INTO zajezd (author_id, destination_id, description) VALUES (:author_id, :destination_id, :description)";
+        $stmt = $this->conn->prepare($query);
+
+        // sanitize
+        $author_id=htmlspecialchars(strip_tags($author_id));
+        $priority_id=htmlspecialchars(strip_tags($destination_id));
+        $description=htmlspecialchars(strip_tags($description));
+
+        $stmt->bindParam(":author_id", $author_id);
+        $stmt->bindParam(":destination_id", $destination_id);
+        $stmt->bindParam(":description", $description);
+
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function removeTicket($itemId) {
+        $query = "DELETE FROM zajezd WHERE id = :itemId";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":itemId", $itemId);
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
 }
 ?>
