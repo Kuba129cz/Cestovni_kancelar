@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'DxIcons';
+    src: URL('../app/resources/dxicons.ttf') format('truetype');
+}
+
+.DX-menu{
+    &::before{
+        font-family: 'DxIcons';
+        content: "\f00c";
+    }   
+}
