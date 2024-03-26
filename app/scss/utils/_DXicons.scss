@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'DxIcons';
+    src: URL('../app/resources/dxicons.ttf') format('truetype');
+}
+
+//https://js.devexpress.com/Angular/Documentation/Guide/Themes_and_Styles/Icons/
+
+.DX {
+
+    &::before {
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "-";
+    }
+}
+
+.DX-menu {
+    @extend .DX;
+    padding: 0.5rem 0.6rem !important;
+    &::before {
+        content: "\f00c";
+    }
+}
+
+.DX-plane {
+    @extend .DX;
+    &::before {
+        content: "\f000";
+    }
+}
+
+.DX-car {
+    @extend .DX;
+    &::before {
+        content: "\f01b";
+    }
+}
+
+.DX-cart {
+    @extend .DX;
+    &::before {
+        content: "\f01a";
+    }
+}
+
+.DX-clock {
+    @extend .DX;
+    &::before {
+        content: "\f01d";
+    }
+}
+
+.DX-download {
+    @extend .DX;
+    &::before {
+        content: "\f022";
+    }
+}
+
+.DX-calend {
+    @extend .DX;
+    &::before {
+        content: "\f026";
+    }
+}
+
+.DX-mail {
+    @extend .DX;
+    &::before {
+        content: "\f024";
+    }
+}
+
+.DX-edit {
+    @extend .DX;
+    &::before {
+        content: "\f023";
+    }
+}
+
+.DX-favorite {
+    @extend .DX;
+    &::before {
+        content: "\f025";
+    }
+}
+
+.DX-find {
+    @extend .DX;
+    &::before {
+        content: "\f027";
+    }
+}
+
+.DX-filtr {
+    @extend .DX;
+    &::before {
+        content: "\f050";
+    }
+}
+
+.DX-like {
+    @extend .DX;
+    &::before {
+        content: "\f034";
+    }
+}
+
+.DX-map {
+    @extend .DX;
+    &::before {
+        content: "\f035";
+    }
+}
+
+.DX-set {
+    @extend .DX;
+    &::before {
+        content: "\f03b";
+    }
+}
