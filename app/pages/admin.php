@@ -10,7 +10,21 @@
       <?php include __DIR__.'/../components/aside.inc.php'; ?>
 
       <main class="col-9">
+      <div x-data="adminApp()">
+      <div class="row">
+          <?php include __DIR__.'/../components/adminForm.inc.php'; ?>
+        </div>
         <div class="row">
+          <div style="width: 100%;"><!--wayaround nez nekdo fixne styly-->
+          <?php include __DIR__.'/../components/item.db.php'; ?>
+          </div>
+        </div>
+</div>
+      <div class="row">
+
+        
+
+
           <div x-data="adminApp()">
             <template x-if="items.length>0">
               <template x-for="item in items" :key="item.id">
@@ -27,10 +41,10 @@
 
             <div>-------------------------</div>
             <template x-if="destinations.length>0">
-              <template x-for="dest in destinations" :key="dest.id">
+              <template x-for="dest in destinations" :key="dest.dest_id">
                 <div><!--alpine je virtual tak musim pouzit realni DOM-->
-                  <span x-text="dest.id"></span>
-                  <span x-text="dest.name"></span>
+                  <span x-text="dest.dest_id"></span>
+                  <span x-text="dest.dest_name"></span>
                 </div>                
               </template>
             </template>
