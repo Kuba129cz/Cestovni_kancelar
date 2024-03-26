@@ -3,11 +3,139 @@
     src: URL('../app/resources/dxicons.ttf') format('truetype');
 }
 
+//https://js.devexpress.com/Angular/Documentation/Guide/Themes_and_Styles/Icons/
+
 .DX-menu{  
     padding: 0.5rem 0.6rem !important;
     &::before{
         font-family: 'DxIcons';
         font-size: 2em;
         content: "\f00c";
+    }   
+}
+
+.DX-plane{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f000";
+    }   
+}
+
+.DX-car{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f01b";
+    }   
+}
+
+.DX-cart{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f01a";
+    }   
+}
+
+.DX-clock{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f01d";
+    }   
+}
+
+.DX-download{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f022";
+    }   
+}
+
+.DX-calend{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f026";
+    }   
+}
+
+.DX-mail{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f024";
+    }   
+}
+
+.DX-edit{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f023";
+    }   
+}
+
+.DX-favorite{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f025";
+    }   
+}
+
+.DX-find{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f027";
+    }   
+}
+
+.DX-filtr{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f050";
+    }   
+}
+
+.DX-like{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f034";
+    }   
+}
+
+.DX-map{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f035";
+    }   
+}
+
+.DX-set{  
+    padding: 0.5rem 0.6rem !important;
+    &::before{
+        font-family: 'DxIcons';
+        font-size: 2em;
+        content: "\f03b";
     }   
 }
