@@ -12,5 +12,3 @@
 <template x-if="items.length===0">
   <div>null</div>
 </template>
-
-<?php include __DIR__.'/../api/endpoints/items/itemScript.inc.php'; ?>
