@@ -3,9 +3,11 @@
     src: URL('../app/resources/dxicons.ttf') format('truetype');
 }
 
-.DX-menu{
+.DX-menu{  
+    padding: 0.5rem 0.6rem !important;
     &::before{
         font-family: 'DxIcons';
+        font-size: 2em;
         content: "\f00c";
     }   
 }
