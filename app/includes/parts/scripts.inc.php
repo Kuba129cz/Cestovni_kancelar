@@ -3,10 +3,18 @@
 <script>
     function adminApp() {
         return {
+            items:[],
             destinations: [], // output
             authors: [], // output
             newItem: { author_id: '', destination_id: '', description: '' },//input submit
 			delItem: { id: '', author_id: '', destination_id: '', description: ''},//input?
+            fetchItems() {//zavolej API
+                fetch('/app/api/endpoints/items/index.php')
+                    .then(Response => Response.json())
+                    .then(data => {
+                        this.items = data;
+                    });
+            },
             fetchDest() {//zavolej API
                 fetch('/app/api/endpoints/destinations/index.php')
                     .then(Response => Response.json())
@@ -31,10 +39,11 @@
 						this.newItem.author_id = '';
 						this.newItem.description = '';
 						this.newItem.destination_id = '';
-						//this.fetchTickets();
+						this.fetchItems();
 					});
 				},
             init() {//zavola metody
+                this.fetchItems();
                 this.fetchDest();
                 this.fetchAuthors();
             }
