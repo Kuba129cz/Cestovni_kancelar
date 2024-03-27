@@ -11,22 +11,12 @@ require_once __DIR__ . '/../../controllers/ItemController.php';
 $method=$_SERVER['REQUEST_METHOD'];
 $controller=new ItemController();
 
-if($method=='GET')
-{
-    $where="id<5";
-    $items=$controller->getItems_where($where);
-    echo json_encode($items);
-}
-else if ($method == 'POST') 
+//u GET hrozí SQL injection
+if ($method == 'POST') 
 {
     $data = json_decode(file_get_contents("php://input"), true);
-    if ($controller->createTicket($data['author_id'], $data['destination_id'], $data['description'])) {
-        http_response_code(201); // Created
-        echo json_encode(['message' => 'Ticket created successfully.']);
-    } else {
-        http_response_code(503); // Service unavailable
-        echo json_encode(['message' => 'Unable to create ticket.']);
-    }
+    $ret=$controller->getItems_where($data['where']);
+    echo json_encode($ret);
 }
 else 
 {
