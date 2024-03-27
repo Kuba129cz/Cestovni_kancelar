@@ -119,3 +119,73 @@
         content: "\f03b";
     }
 }
+
+.DX-cancel {
+    @extend .DX;
+    &::before {
+        content: "\f00a";
+    }
+}
+
+.DX-refresh {
+    @extend .DX;
+    &::before {
+        content: "\f03d";
+    }
+}
+
+.DX-revert {
+    @extend .DX;
+    &::before {
+        content: "\f04c";
+    }
+}
+
+.DX-save {
+    @extend .DX;
+    &::before {
+        content: "\f041";
+    }
+}
+
+.DX-tel {
+    @extend .DX;
+    &::before {
+        content: "\f003";
+    }
+}
+
+.DX-tip {
+    @extend .DX;
+    &::before {
+        content: "\f004";
+    }
+}
+
+.DX-bin {
+    @extend .DX;
+    &::before {
+        content: "\f03e";
+    }
+}
+
+.DX-down {
+    @extend .DX;
+    &::before {
+        content: "\f015";
+    }
+}
+
+.DX-up {
+    @extend .DX;
+    &::before {
+        content: "\f013";
+    }
+}
+
+.DX-warn {
+    @extend .DX;
+    &::before {
+        content: "\f06b";
+    }
+}
