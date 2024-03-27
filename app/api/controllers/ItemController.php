@@ -25,6 +25,16 @@ class ItemController
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getItems_where($where)
+    {
+        $SQL="SELECT zajezd.*,destination.dest_name FROM zajezd INNER JOIN destination ON zajezd.destination_id=destination.dest_id";
+        $SQL=$SQL." WHERE ".$where." ORDER BY time_stamp DESC";
+        $stmt=$this->conn->prepare($SQL);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function createTicket($author_id, $destination_id, $description) {
 
         if (empty($author_id) || empty($destination_id) || empty($description)) {
