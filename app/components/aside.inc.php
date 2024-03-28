@@ -40,19 +40,21 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>cena</span>
-                <input type="range" id="cena_slider" name="cena_slider" min="1" max="100" value="50" oninput="changeNumericValue(this.value)" class="slider">
-                <input type="number" id="cena_numer" name="cena_numer" min="1" max="100" onkeyup="changeRangeValue(this.value)">       
-                
-                <script>
-                    function changeRangeValue(val){
-                        document.getElementById("cena_slider").value = val;
-                    }
-
-                    function changeNumericValue(val){
-                        document.getElementById("cena_numer").value = val;
-                    }
-                </script>
+                <input type="range" id="cena_slider" name="cena_slider" min="1" max="100" value="50" oninput="changeNumericValue(this.value)" class="slider">                
             </div>
+            <div class="sidePair">
+                <span>0 - </span>
+                <input type="number" id="cena_numer" name="cena_numer" min="1" max="100" value="50" onkeyup="changeRangeValue(this.value)" class="numeric">                       
+            </div>
+            <script>
+                function changeRangeValue(val){
+                    document.getElementById("cena_slider").value = val;
+                }
+
+                function changeNumericValue(val){
+                    document.getElementById("cena_numer").value = val;
+                }
+            </script>
         </div>
     </div>
 </aside>
