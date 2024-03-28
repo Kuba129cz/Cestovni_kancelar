@@ -1,12 +1,12 @@
 <aside class="aside col-3" x-bind:class="{ 'aside--close': open }">
     <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
     <div>
-        <div>
+        <div class="sidePair">
             od
             <input type="date" id="dateFrom" name="trip-start"/>
         </div>
-        <div>
-            do
+        <div class="sidePair">
+            <span>do</span>
             <input type="date" id="dateTo" name="trip-end"/>
         </div>
         <script>

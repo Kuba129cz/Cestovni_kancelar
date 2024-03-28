@@ -9,3 +9,13 @@
 		flex-basis: 0;
 	}
 }
+
+.sidePair{
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 5px;
+	&>span{
+		color: red;
+		justify-self: end;
+	}
+}
