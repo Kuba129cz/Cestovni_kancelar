@@ -1,8 +1,10 @@
 <aside class="aside col-3" x-bind:class="{ 'aside--close': open }">
-    <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
+    <div>    
+        <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
+    </div>
     <div>
         <div class="sidePair">
-            od
+            <span>od</span>
             <input type="date" id="dateFrom" name="trip-start"/>
         </div>
         <div class="sidePair">
@@ -15,8 +17,8 @@
         </script>
     </div>
     <div>
-        <div>
-            destinace
+        <div class="sidePair">
+            <span>destinace</span>
             <select x-model="newItem.destination_id">
                 <option>Vybrat</option>
                 <!--<template x-for="destination in destinations" :key="destination.dest_id">
@@ -24,8 +26,8 @@
                 </template>-->
             </select>
         </div>
-        <div>
-            typ stravy
+        <div class="sidePair">
+            <span>typ stravy</span>
             <select x-model="newItem.destination_id">
                 <option>Vybrat</option>
                 <!--<template x-for="destination in destinations" :key="destination.dest_id">
@@ -33,8 +35,8 @@
                 </template>-->
             </select>
         </div>
-        <div>
-            cena
+        <div class="sidePair">
+            <span>cena</span>
             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
         </div>
     </div>
