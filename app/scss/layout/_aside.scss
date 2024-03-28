@@ -2,13 +2,20 @@
 	border-right: 1px solid $color-light;
 	background-color: $color-light;
 
-	height: 100vh;
+	height: fit-content;
+	padding-top: 0.5rem;
+	padding-bottom: 2rem;
+
 	display: flex;
 	flex-flow: column;
 
 	&--close {
-		flex-basis: 0;
+		padding-bottom: 0.5rem;
 	}
+}
+
+.sidemenu--close{
+	display: none;
 }
 
 .sidePair{
@@ -17,6 +24,7 @@
 	gap: 5px;
 
 	padding: 5px;
+
 	&>span{
 		justify-self: end;
 	}
