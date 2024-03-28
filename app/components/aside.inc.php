@@ -3,7 +3,7 @@
         <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
     </div>
     <div x-bind:class="{ 'sidemenu--close': open }">
-        <div>
+        <div class="sideGroup">
             <div class="sidePair">
                 <span>od</span>
                 <input type="date" id="dateFrom" name="trip-start"/>
@@ -17,7 +17,7 @@
               document.getElementById('dateTo').valueAsDate = new Date();
             </script>
         </div>
-        <div>
+        <div class="sideGroup">
             <div class="sidePair">
                 <span>destinace</span>
                 <select x-model="newItem.destination_id">
@@ -36,6 +36,8 @@
                     </template>-->
                 </select>
             </div>
+        </div>
+        <div class="sideGroup">
             <div class="sidePair">
                 <span>cena</span>
                 <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
