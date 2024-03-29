@@ -29,7 +29,7 @@
             },
             submitItem() {
 					// console.log(this.newTicket);
-					fetch('/app/api/endpoints/zajezd', {
+					fetch('/app/api/endpoints/zajezd/', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
 						body: JSON.stringify(this.newItem)
