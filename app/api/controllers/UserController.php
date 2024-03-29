@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/../config/database.php';
 
-class StravaController
+class UserController
 {
     private $conn;
 
@@ -13,7 +13,7 @@ class StravaController
 
     public function getData()
     {
-       $SQL="SELECT * FROM Strava";
+       $SQL="SELECT * FROM User";
        $stmt=$this->conn->prepare($SQL);
        $stmt->execute();
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
