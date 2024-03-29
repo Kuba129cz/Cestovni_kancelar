@@ -5,7 +5,7 @@ class Database
     private $host="cestovka.chgu4kiwyyfo.eu-north-1.rds.amazonaws.com:3306";
     private $db_name="cestovka";
     private $username="admin";
-    private $password="123456789";
+    private $password="12345678";
     private $conn;
 
     public function getConnection() {

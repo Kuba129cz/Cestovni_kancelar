@@ -13,7 +13,7 @@ class StravaController
 
     public function getStrava()
     {
-       $SQL="SELECT * FROM strava";
+       $SQL="SELECT * FROM Strava";
        $stmt=$this->conn->prepare($SQL);
        $stmt->execute();
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
