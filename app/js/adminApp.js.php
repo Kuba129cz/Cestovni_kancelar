@@ -4,7 +4,7 @@
             zajezdy:[],
             adresy: [], // output
             stravy: [], // output
-            newItem: { author_id: '', destination_id: '', description: '' },//input submit
+            newItem: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, popis: '',fk_strava:'',fk_Adresa:''},//input submit
 			delItem: { id: '', author_id: '', destination_id: '', description: ''},//input?
             fetchZajezdy() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd')
@@ -29,14 +29,17 @@
             },
             submitItem() {
 					// console.log(this.newTicket);
-					fetch('/app/api/endpoints/items/index.php', {
+					fetch('/app/api/endpoints/zajezd', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
 						body: JSON.stringify(this.newItem)
 					}).then(() => {
-						this.newItem.author_id = '';
-						this.newItem.description = '';
-						this.newItem.destination_id = '';
+						this.newItem.datum_prijezdu = '';
+                        this.newItem.datum_odjezdu = '';
+                        this.newItem.cena_osoba = '';
+                        this.newItem.popis = '';
+						this.newItem.fk_strava = '';
+						this.newItem.fk_Adresa = '';
 						this.fetchZajezdy();
 					});
 				},
