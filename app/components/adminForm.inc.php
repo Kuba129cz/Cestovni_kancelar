@@ -15,14 +15,14 @@
 
     <textarea x-model="newItem.popis" placeholder="Popis"></textarea>
 
-    <input type="date" id="dateFrom" x-model="datum_odjezdu"/>
-    <input type="date" id="dateTo" x-model="datum_prijezdu"/>
+    <input type="date" id="dateFrom" x-model="newItem.datum_odjezdu"/>
+    <input type="date" id="dateTo" x-model="newItem.datum_prijezdu"/>
     <script>
         document.getElementById('dateFrom').valueAsDate = new Date();
         document.getElementById('dateTo').valueAsDate = new Date();
     </script>
 
-    <input type="number" id="cena_numer" x-model="cena_osoba" min="1">
+    <input type="number" id="cena_numer" x-model="newItem.cena_osoba" min="1">
 
     <button type="submit" class="btn btn--primary">Vložit</button>
 </form>
