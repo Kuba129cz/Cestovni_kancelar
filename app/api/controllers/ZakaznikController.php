@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__.'/../config/database.local.php';
+require_once __DIR__.'/../config/database.php';
 
-class AuthorController
+class ZakaznikController
 {
     private $conn;
 
@@ -11,9 +11,9 @@ class AuthorController
         $this->conn=$database->getConnection();
     }
 
-    public function getAuthors()
+    public function getData()
     {
-       $SQL="SELECT * FROM author ORDER BY id DESC";
+       $SQL="SELECT * FROM Zakaznik";
        $stmt=$this->conn->prepare($SQL);
        $stmt->execute();
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
