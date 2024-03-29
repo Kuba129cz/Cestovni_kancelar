@@ -10,12 +10,10 @@
       <?php include __DIR__.'/../components/aside.inc.php'; ?>
 
       <main class="col-9">
-        <div x-data="adminApp()">
+        <div x-data="adminApp_new()">
           <div class="row">
             <?php include __DIR__.'/../components/adminForm.inc.php'; ?>
           </div>
-        </div><!--temp-->
-        <div x-data="adminApp_new()"><!--temp-->
           <div class="row">
             <div style="width: 100%;"><!--wayaround nez nekdo fixne styly-->
               <?php include __DIR__.'/../components/zajezd.php'; ?>

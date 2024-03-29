@@ -3,7 +3,7 @@
         return {
             zajezdy:[],
             adresy: [], // output
-            staravy: [], // output
+            stravy: [], // output
             newItem: { author_id: '', destination_id: '', description: '' },//input submit
 			delItem: { id: '', author_id: '', destination_id: '', description: ''},//input?
             fetchZajezdy() {//zavolej API
