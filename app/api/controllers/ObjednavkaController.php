@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/../config/database.php';
 
-class ZajezdController
+class ObjednavkaController
 {
     private $conn;
 
@@ -13,7 +13,7 @@ class ZajezdController
 
     public function getData()
     {
-       $SQL="SELECT * FROM Zajezd";
+       $SQL="SELECT * FROM Objednavka";
        $stmt=$this->conn->prepare($SQL);
        $stmt->execute();
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
