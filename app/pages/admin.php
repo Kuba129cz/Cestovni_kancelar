@@ -18,7 +18,6 @@
         <div x-data="adminApp_new()"><!--temp-->
           <div class="row">
             <div style="width: 100%;"><!--wayaround nez nekdo fixne styly-->
-              <?php include __DIR__.'/../components/item.db.php'; ?>
               <?php include __DIR__.'/../components/zajezd.php'; ?>
             </div>
           </div>

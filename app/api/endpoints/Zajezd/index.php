@@ -13,7 +13,7 @@ $controller=new ZajezdController();
 
 if($method=='GET')
 {
-    $items=$controller->getData();
+    $items=$controller->getData_join();
     echo json_encode($items);
 }
 else {
