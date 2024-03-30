@@ -25,7 +25,7 @@
                 </div>
                 <h2>Popis</h2>
                 <p x-text="zajezd.popis"></p>
-                <h2>Adresa m�sta</h2>
+                <h2>Adresa místa</h2>
                 <p>
                     <span x-text="zajezd.stat"></span>,<br>
                     <span x-text="zajezd.mesto"></span>,<br>
