@@ -1,6 +1,7 @@
 <?php
     $title="tour";
     include __DIR__.'/../includes/parts/head.inc.php';
+    $id = isset($_GET['id']) ? $_GET['id'] : null;
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
@@ -9,7 +10,7 @@
         <?php include __DIR__.'/../components/aside.inc.php'; ?>
     
         <main class="col-9">
-            <div x-data="detailApp('id_zajezd=1')">
+            <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <span x-text="zajezd.stat + ' - ' + zajezd.mesto"></span>
                 <span x-text="zajezd.cena_osoba"></span>
             </div>
