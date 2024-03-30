@@ -20,11 +20,11 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>destinace</span>
-                <select x-model="newItem.destination_id">
+                <select x-model="newItem.fk_Adresa">
                     <option>Vybrat</option>
-                    <!--<template x-for="destination in destinations" :key="destination.dest_id">
-                        <option x-bind:value="destination.dest_id" x-text="destination.dest_name"></option>
-                    </template>-->
+                    <template x-for="adresa in adresy" :key="adresa.id_Adresa">
+                        <option x-bind:value="adresa.id_Adresa" x-text="adresa.stat + ' - ' + adresa.mesto"></option>
+                    </template>
                 </select>
             </div>
             <div class="sidePair">
