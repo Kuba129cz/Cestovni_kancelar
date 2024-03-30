@@ -1,7 +1,7 @@
 <?php
     $request=$_SERVER['REQUEST_URI'];//ulozim URL
-    //echo $request;
-
+    echo $request;
+    echo "<html> <br></html>";
     //redirect
     switch ($request) {
         case '' :
@@ -18,6 +18,9 @@
             break;
         case '/tuzemske' :
             require __DIR__ . '/app/pages/tuzemske.php';
+            break;
+        case '/tour' :
+            require __DIR__ . '/app/pages/tour.php';
             break;
         default:
             http_response_code(404);//aby mě vyhledávače neindexovali neexistujici

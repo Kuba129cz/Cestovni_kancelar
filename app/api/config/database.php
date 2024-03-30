@@ -4,8 +4,8 @@ class Database
 {
     private $host="localhost";
     private $db_name="cestovka-db";
-    private $username="root";
-    private $password="root";
+    private $username="admin";
+    private $password="12345678";
     private $conn;
 
     public function getConnection() {

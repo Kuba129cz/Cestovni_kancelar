@@ -1,0 +1,22 @@
+.tour-info {
+   display: flex; 
+   gap: 1.4em;
+}
+img {
+    flex: 2;
+}
+.destination-info {
+    flex: 1;
+    flex-direction: column;
+}
+.heading-destination {
+    display: inline-block;
+}
+.btn-tour-order{
+  background-color: #FA1212;
+  height: 67;
+  width: 200;
+  border-radius: 12px;
+  color: white;
+  font-weight: bolder;
+}

@@ -1,4 +1,3 @@
-const path = require('path');
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
@@ -7,14 +6,10 @@ const cssnano = require('cssnano');
 const terser = require('gulp-terser');
 const browsersync = require('browser-sync').create();
 
-// // HTML Move Task
-// function htmlTask() {
-//   return src('*.html').pipe(dest('dist'));
-// }
-
 // Image Task
 function imageTask() {
-  return src('app/image/**/*').pipe(dest('dist/image'));
+  return src('app/image/**/*')
+    .pipe(dest('dist/image'));
 }
 
 // Sass Task
@@ -35,8 +30,9 @@ function jsTask() {
 // Browsersync Tasks
 function browsersyncServe(cb) {
   browsersync.init({
-    proxy: 'cestovka.test',
-    sourceMaps: true,
+    proxy: 'localhost/tour', // Upraveno na použití portu 80
+    port: 80, // Nastavení portu 80
+    sourcemaps: true,
   });
   cb();
 }
@@ -49,12 +45,9 @@ function browsersyncReload(cb) {
 
 // Watch Task
 function watchTask() {
-  // watch('dist/*.html', browsersyncReload);
-  watch('app/**/*.php', browsersyncReload);
   watch(
-    ['app/scss/**/*.scss', 'app/js/**/*.js'/*, '*.html'*/],
+    ['app/scss/**/*.scss', 'app/js/**/*.js'],
     series(
-      // htmlTask,
       imageTask,
       scssTask,
       jsTask,
@@ -65,7 +58,6 @@ function watchTask() {
 
 // Default Gulp Task
 exports.default = series(
-  // htmlTask,
   imageTask,
   scssTask,
   jsTask,
