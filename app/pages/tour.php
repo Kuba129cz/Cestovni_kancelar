@@ -5,7 +5,7 @@
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
     <div class="container">
-      <div class="row">
+      <!--<div class="row"> -->
         <?php include __DIR__.'/../components/aside.inc.php'; ?>
         <main class="col-9">
             <div class="heading-destination">
@@ -28,7 +28,7 @@
             <p>Turecká republika,<br> Kemer,<br>Limak Limra Resort,<br>07980</p>
 
         </main>
-      </div>
+      <!-- </div> -->
     </div>
   </body>
   <?php include __DIR__.'/../components/footer.inc.php'; ?>
