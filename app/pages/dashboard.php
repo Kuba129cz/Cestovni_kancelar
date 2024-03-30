@@ -15,8 +15,8 @@
                 <?php include __DIR__.'/../components/item.inc.php'; ?>
                 <?php include __DIR__.'/../components/item.inc.php'; ?>
             </div>
-            <div x-data="loadItems()">
-              <?php include __DIR__.'/../components/item.db.php'; ?>
+            <div x-data="prehledApp()">
+              <?php include __DIR__.'/../components/zajezd.php'; ?>
             </div>
         </main>
       </div>
@@ -24,5 +24,5 @@
   </body>
   <?php include __DIR__.'/../components/footer.inc.php'; ?>
   <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
-  <?php include __DIR__.'/../api/endpoints/items/itemScript.inc.php'; ?>
+  <?php include __DIR__.'/../js/prehledApp.js.php'; ?>
 </html>

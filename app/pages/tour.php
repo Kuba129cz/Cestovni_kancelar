@@ -1,6 +1,7 @@
 <?php
-    $title="tuzemske";
+    $title="tour";
     include __DIR__.'/../includes/parts/head.inc.php';
+    $id = isset($_GET['id']) ? $_GET['id'] : null;
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
@@ -9,8 +10,9 @@
         <?php include __DIR__.'/../components/aside.inc.php'; ?>
     
         <main class="col-9">
-        <div x-data="prehledApp('stat=\'Česká republika\'')">
-              <?php include __DIR__.'/../components/zajezd.php'; ?>
+            <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
+                <span x-text="zajezd.stat + ' - ' + zajezd.mesto"></span>
+                <span x-text="zajezd.cena_osoba"></span>
             </div>
         </main>
       </div>
@@ -18,5 +20,5 @@
   </body>
   <?php include __DIR__.'/../components/footer.inc.php'; ?>
   <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
-  <?php include __DIR__.'/../js/prehledApp.js.php'; ?>
+  <?php include __DIR__.'/../js/detailApp.js.php'; ?>
 </html>

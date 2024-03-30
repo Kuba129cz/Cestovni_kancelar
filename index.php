@@ -1,9 +1,9 @@
 <?php
-    $request=$_SERVER['REQUEST_URI'];//ulozim URL
-    //echo $request;
+    $whole_request=$_SERVER['REQUEST_URI'];//ulozim URL
+    $request=explode("?",$whole_request);
 
     //redirect
-    switch ($request) {
+    switch ($request[0]) {
         case '' :
             require __DIR__ . '/app/pages/dashboard.php';
             break;
@@ -18,6 +18,12 @@
             break;
         case '/tuzemske' :
             require __DIR__ . '/app/pages/tuzemske.php';
+            break;
+        case '/tour' :
+            require __DIR__ . '/app/pages/tour.php';
+            break;
+        case '/objednavky' :
+            require __DIR__ . '/app/pages/objednavky.php';
             break;
         default:
             http_response_code(404);//aby mě vyhledávače neindexovali neexistujici
