@@ -17,16 +17,21 @@
                 <div class="tour-info">
                     <img src="https://dcontent.inviacdn.net/shared/img/web-1200x1024/2019/3/8/d6/18413530-long-beach.jpg" alt="Popisek obrázku">
                     <div class="destination-info">
-                        <p><b>Termín:</b> (07.04.2024 - 14.04.2024)</p>
-                        <p><b>Strava:</b> (All Inclusive)</p>
-                        <p><b>Cena na osobu:</b> (23000 Kč)</p>
+                        <p><b>Termín:</b> <span x-text="zajezd.datum_prijezdu"></span> - <span x-text="zajezd.datum_odjezdu"></span></p>
+                        <p><b>Strava:</b> <span x-text="zajezd.typ"></span></p>
+                        <p><b>Cena na osobu:</b> <span x-text="zajezd.cena_osoba"></span> Kč</p>
                         <button class="btn-tour-order">Mám zájem</button>
                     </div>
                 </div>
                 <h2>Popis</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magni debitis illum. Eaque pariatur quaerat est. Quo voluptate doloribus amet culpa qui expedita nulla aliquam ipsam voluptatibus, molestias laudantium hic!</p>
+                <p x-text="zajezd.popis"></p>
                 <h2>Adresa m�sta</h2>
-                <p>Tureck� republika,<br> Kemer,<br>Limak Limra Resort,<br>07980</p>
+                <p>
+                    <span x-text="zajezd.stat"></span>,<br>
+                    <span x-text="zajezd.mesto"></span>,<br>
+                    <span x-text="zajezd.ulice"></span>,<br>
+                    <span x-text="zajezd.psc"></span>
+                </p>
             </div>
         </main>
 
