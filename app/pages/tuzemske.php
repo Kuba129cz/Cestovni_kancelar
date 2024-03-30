@@ -9,8 +9,8 @@
         <?php include __DIR__.'/../components/aside.inc.php'; ?>
     
         <main class="col-9">
-            <div x-data="loadItemsFilter('destination_id=2')">
-              <?php include __DIR__.'/../components/item.db.php'; ?>
+        <div x-data="prehledApp('fk_adresa=1')">
+              <?php include __DIR__.'/../components/zajezd.php'; ?>
             </div>
         </main>
       </div>
@@ -18,5 +18,5 @@
   </body>
   <?php include __DIR__.'/../components/footer.inc.php'; ?>
   <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
-  <?php include __DIR__.'/../api/endpoints/items/itemScript.inc.php'; ?>
+  <?php include __DIR__.'/../js/prehledApp.js.php'; ?>
 </html>

@@ -1,11 +1,22 @@
 <script>
-    function prehledApp() {
+    function prehledApp(filtr) {
         return {
             zajezdy:[],
             adresy: [], // output
             stravy: [], // output
             fetchZajezdy() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd')
+                    .then(Response => Response.json())
+                    .then(data => {
+                        this.zajezdy = data;
+                    });
+            },
+            fetchZajezdy_filtr() {//zavolej API
+                fetch('/app/api/endpoints/Zajezd/filter.php', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({where:filtr})
+					})
                     .then(Response => Response.json())
                     .then(data => {
                         this.zajezdy = data;
@@ -26,6 +37,15 @@
                     });
             },            
             init() {//zavola metody
+                if(!filtr)
+                {
+                    console.log("nefiltrovano");
+                    this.fetchZajezdy();
+                }
+                else
+                {
+                    this.fetchZajezdy_filtr(filtr);
+                }
                 this.fetchZajezdy();
                 this.fetchAdrs();
                 this.fetchStrava();
