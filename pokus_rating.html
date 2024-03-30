@@ -11,6 +11,16 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: inset calc(880px* 55 / 100) 0 0 0 red;
+  mask: url("/app/resources/favorites.svg");
+}
+
+.scroll-line {
+    background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    top: 0;
+    left: 0;
+    height: 10px;
+    position: fixed;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .star {
@@ -22,29 +32,13 @@
 .star:before {
   content: '☆';
 }
-
-.star-masked {
-  position: relative;
-}
-
-.star-masked:before {
-  content: '★';
-  position: absolute;
-  color: linear-gradient(to right, red, yellow);
-  /* Adjust the width here to represent the progress */
-  width: 50%;
-  overflow: hidden;
-}
 </style>
 </head>
 <body style="background-color: black;">
 
 <div class="progress-bar">
-  <div class="star"><div class="star-masked"></div></div>
-  <div class="star"><div class="star-masked"></div></div>
-  <div class="star"><div class="star-masked"></div></div>
-  <div class="star"><div class="star-masked"></div></div>
-  <div class="star"><div class="star-masked"></div></div>
+</div>
+<div class="scroll-line" style=" width: 50%;">
 </div>
 
 </body>

@@ -22,6 +22,9 @@
         case '/tour' :
             require __DIR__ . '/app/pages/tour.php';
             break;
+        case '/pokus-rate' :
+            require __DIR__ . '../pokus_rating.html';
+            break;
         default:
             http_response_code(404);//aby mě vyhledávače neindexovali neexistujici
             require __DIR__ . '/app/pages/404.php';
