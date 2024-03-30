@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: inset calc(50em* 50 / 100) 0 0 0 yellow;
+  box-shadow: inset calc(50em* var(--rating) / 100) 0 0 0 yellow;
   mask: url("/app/resources/favorites.svg");
   mask-size: 10em;
 }
@@ -25,7 +25,7 @@
 </head>
 <body style="background-color: black;">
 
-<div class="progress-bar">
+<div class="progress-bar" style="--rating: 60">
 </div>
 
 </body>
