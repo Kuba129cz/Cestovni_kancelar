@@ -11,7 +11,12 @@
 					})
                     .then(Response => Response.json())
                     .then(data => {
-                        this.zajezd = data[0];
+                        if(data.length==0)
+                        {                           
+                           //window.location.replace("./404");
+                           alert("404");
+                        }
+                        this.zajezd = data[0];                       
                     });
             },
             submitItem() {
@@ -33,7 +38,14 @@
                     */
 				},
             init() {//zavola metody
-                this.fetchZajezdy();
+                if(filtr.charAt(filtr.length - 1)=='=')               
+                {
+                    window.location.replace("./404");
+                }
+                else
+                {
+                    this.fetchZajezdy();
+                }
             }
         };
     }

@@ -1,9 +1,9 @@
 <?php
-    $request=$_SERVER['REQUEST_URI'];//ulozim URL
-    //echo $request;
+    $whole_request=$_SERVER['REQUEST_URI'];//ulozim URL
+    $request=explode("?",$whole_request);
 
     //redirect
-    switch ($request) {
+    switch ($request[0]) {
         case '' :
             require __DIR__ . '/app/pages/dashboard.php';
             break;
