@@ -10,7 +10,8 @@
     
         <main class="col-9">
             <div x-data="detailApp('id_zajezd=1')">
-              <?php include __DIR__.'/../components/zajezd.php'; ?>
+                <span x-text="zajezd.stat + ' - ' + zajezd.mesto"></span>
+                <span x-text="zajezd.cena_osoba"></span>
             </div>
         </main>
       </div>

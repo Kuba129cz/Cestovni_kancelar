@@ -1,7 +1,7 @@
 <script>
     function detailApp(filtr) {
         return {
-            zajezdy:[],
+            zajezd:'',
             newItem: { fk_zajezd: '', fk_zakaznik: '',pocet_osob: 0},//input submit
             fetchZajezdy() {//zavolej API
                 fetch('/app/api/endpoints/zajezd/filter.php', {
@@ -11,7 +11,7 @@
 					})
                     .then(Response => Response.json())
                     .then(data => {
-                        this.zajezdy = data;
+                        this.zajezd = data[0];
                     });
             },
             submitItem() {
