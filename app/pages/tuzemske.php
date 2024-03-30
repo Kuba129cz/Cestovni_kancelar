@@ -9,7 +9,7 @@
         <?php include __DIR__.'/../components/aside.inc.php'; ?>
     
         <main class="col-9">
-        <div x-data="prehledApp('fk_adresa=1')">
+        <div x-data="prehledApp('stat=\'Česká republika\'')">
               <?php include __DIR__.'/../components/zajezd.php'; ?>
             </div>
         </main>

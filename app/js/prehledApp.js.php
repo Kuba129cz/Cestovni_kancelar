@@ -46,7 +46,6 @@
                 {
                     this.fetchZajezdy_filtr(filtr);
                 }
-                this.fetchZajezdy();
                 this.fetchAdrs();
                 this.fetchStrava();
             }
