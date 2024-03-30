@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+
+.progress-bar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star {
+  font-family: 'Material Icons';
+  font-size: 50px;
+  color: #f3f3f3;
+}
+
+.star:before {
+  content: '☆';
+}
+
+.star-masked {
+  position: relative;
+}
+
+.star-masked:before {
+  content: '★';
+  position: absolute;
+  color: linear-gradient(to right, red, yellow);
+  /* Adjust the width here to represent the progress */
+  width: 50%;
+  overflow: hidden;
+}
+</style>
+</head>
+<body style="background-color: black;">
+
+<div class="progress-bar">
+  <div class="star"><div class="star-masked"></div></div>
+  <div class="star"><div class="star-masked"></div></div>
+  <div class="star"><div class="star-masked"></div></div>
+  <div class="star"><div class="star-masked"></div></div>
+  <div class="star"><div class="star-masked"></div></div>
+</div>
+
+</body>
+</html>
