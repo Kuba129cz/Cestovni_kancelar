@@ -1,5 +1,8 @@
 .container {
-	max-width: 96rem;/*960px*/
+	display:grid;	
+	grid-template-columns: minmax(200px, 20%) 1fr;
+	grid-template-areas: "aside main";
+	//max-width: 96rem;/*960px*/
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 1.5rem;/*15px*/
