@@ -40,7 +40,8 @@
             init() {//zavola metody
                 if(filtr.charAt(filtr.length - 1)=='=')               
                 {
-                    window.location.replace("./404");
+                   //window.location.replace("./404");
+                   alert("chybí ?id");
                 }
                 else
                 {
