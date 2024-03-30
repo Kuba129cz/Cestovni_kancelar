@@ -1,10 +1,14 @@
 <script>
-    function detailApp() {
+    function detailApp(filtr) {
         return {
             zajezdy:[],
             newItem: { fk_zajezd: '', fk_zakaznik: '',pocet_osob: 0},//input submit
             fetchZajezdy() {//zavolej API
-                fetch('/app/api/endpoints/Zajezd')
+                fetch('/app/api/endpoints/zajezd/filter.php', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({where:filtr})
+					})
                     .then(Response => Response.json())
                     .then(data => {
                         this.zajezdy = data;

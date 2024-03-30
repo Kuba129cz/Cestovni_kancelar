@@ -9,7 +9,7 @@
         <?php include __DIR__.'/../components/aside.inc.php'; ?>
     
         <main class="col-9">
-            <div x-data="detailApp()">
+            <div x-data="detailApp('id_zajezd=1')">
               <?php include __DIR__.'/../components/zajezd.php'; ?>
             </div>
         </main>
