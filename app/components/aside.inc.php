@@ -20,7 +20,7 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>destinace</span>
-                <select x-model="newItem.fk_Adresa">
+                <select x-model="sideFiltr.fk_Adresa">
                     <option>Vybrat</option>
                     <template x-for="adresa in adresy" :key="adresa.id_Adresa">
                         <option x-bind:value="adresa.id_Adresa" x-text="adresa.stat + ' - ' + adresa.mesto"></option>
@@ -29,11 +29,11 @@
             </div>
             <div class="sidePair">
                 <span>typ stravy</span>
-                <select x-model="newItem.destination_id">
+                <select x-model="sideFiltr.fk_strava">
                     <option>Vybrat</option>
-                    <!--<template x-for="destination in destinations" :key="destination.dest_id">
-                        <option x-bind:value="destination.dest_id" x-text="destination.dest_name"></option>
-                    </template>-->
+                    <template x-for="strava in stravy" :key="strava.id_strava">
+                        <option x-bind:value="strava.id_strava" x-text="strava.typ"></option>
+                    </template>
                 </select>
             </div>
         </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="sidePair">
                 <span>0 - </span>
-                <input type="number" id="cena_numer" name="cena_numer" min="1" max="100" value="50" onkeyup="changeRangeValue(this.value)" class="numeric">                       
+                <input x-model="sideFiltr.cena_osoba" type="number" id="cena_numer" name="cena_numer" min="1" max="100" value="50" onkeyup="changeRangeValue(this.value)" class="numeric">                       
             </div>
             <script>
                 function changeRangeValue(val){
