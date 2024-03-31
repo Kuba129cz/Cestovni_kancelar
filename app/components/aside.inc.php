@@ -50,7 +50,7 @@
             <div class="sidePair">
                 <span x-text="filtrLimit.cena_min"></span>
                 <input  type="number" id="cena_numer" x-model="sideFiltr.cena_osoba" 
-                    x-bind:min="filtrLimit.cena_min" x-bind:max="filtrLimit.cena_max" 
+                    x-bind:min="filtrLimit.cena_min" x-bind:max="filtrLimit.cena_max" step="0.01"
                     x-bind:value="filtrLimit.cena_max" onkeyup="changeRangeValue(this.value)" class="numeric">                       
             </div>
             <script>
