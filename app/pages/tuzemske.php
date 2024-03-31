@@ -4,13 +4,11 @@
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
-    <div class="container">
+    <div class="container" x-data="prehledApp('stat=\'Česká republika\'')">
       <?php include __DIR__.'/../components/aside.inc.php'; ?>
   
       <main class="col-9">
-      <div x-data="prehledApp('stat=\'Česká republika\'')">
-            <?php include __DIR__.'/../components/zajezd.php'; ?>
-          </div>
+        <?php include __DIR__.'/../components/zajezd.php'; ?>
       </main>
     </div>
   </body>

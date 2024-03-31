@@ -2,10 +2,46 @@
 	grid-area: aside;
 	border-right: 1px solid $color-light;
 	background-color: $color-light;
-	// TODO: Remove this
-	height: 100vh;
-	// / TODO: Remove this
+
+	height: fit-content;
+	padding-top: 0.5rem;
+	padding-bottom: 2rem;
+
+	display: flex;
+	flex-flow: column;
+
 	&--close {
-		flex-basis: 0;
+		padding-bottom: 0.5rem;
 	}
+}
+
+.sidemenu--close{
+	display: none;
+}
+
+.sidePair{
+	display: grid;
+	grid-template-columns: auto 60%;
+	gap: 5px;
+
+	padding: 5px;
+
+	&>span{
+		justify-self: end;
+	}
+}
+
+.sideGroup{
+	padding-top:0.5rem;
+}
+
+.slider{
+	color: red;
+}
+
+.numeric{
+	//grid-column: span 2;
+	//justify-self: end;
+	margin-right: 1em;
+	margin-left: 1em;
 }
