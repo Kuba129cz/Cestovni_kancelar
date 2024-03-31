@@ -50,15 +50,15 @@
                 if(this.sideFiltr.fk_strava){where+=" AND fk_strava="+this.sideFiltr.fk_strava;}
                 if(this.sideFiltr.fk_Adresa){where+=" AND fk_Adresa="+this.sideFiltr.fk_Adresa;}
                 console.log(where);
-                /*fetch('/app/api/endpoints/Zajezd/filter.php', {
+                fetch('/app/api/endpoints/Zajezd/filter.php', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({where:filtr})
+						body: JSON.stringify({where:where})
 					})
                     .then(Response => Response.json())
                     .then(data => {
                         this.zajezdy = data;
-                    });*/
+                    });
             },            
             init() {//zavola metody
                 if(!filtr)
