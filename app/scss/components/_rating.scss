@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: inset calc(5*$star* var(--rating) / 100) 0 0 0 yellow;//--rating je proměnná vytvořená v HTML
+    box-shadow: inset calc(5*$star* var(--rating) / 5) 0 0 0 yellow;//--rating je proměnná vytvořená v HTML
     mask: url("/app/resources/DX/favorites.svg");
     mask-size: 1*$star;
   }

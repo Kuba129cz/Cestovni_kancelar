@@ -12,7 +12,7 @@
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <div class="heading-destination">
                     <h1 class="destinace" x-text="zajezd.stat + ' - ' + zajezd.mesto"></h1>
-                    <div class="progress-bar" style="--rating: 60">
+                    <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`">
                 </div>    
                 <div class="tour-info">
                     <img src="https://dcontent.inviacdn.net/shared/img/web-1200x1024/2019/3/8/d6/18413530-long-beach.jpg" alt="Popisek obrázku">
