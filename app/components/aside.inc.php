@@ -3,7 +3,7 @@
         <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
     </div>
     <div x-bind:class="{ 'sidemenu--close': open }">
-        
+
         <div class="sideGroup">
             <div class="sidePair">
                 <span>od</span>
@@ -43,11 +43,15 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>cena</span>
-                <input type="range" id="cena_slider" name="cena_slider" min="1" x-bind:max="filtrLimit.cena_max" value="50" oninput="changeNumericValue(this.value)" class="slider">                
+                <input type="range" id="cena_slider" name="cena_slider" 
+                    x-bind:min="filtrLimit.cena_min" x-bind:max="filtrLimit.cena_max" 
+                    x-bind:value="filtrLimit.cena_max" oninput="changeNumericValue(this.value)" class="slider">                
             </div>
             <div class="sidePair">
-                <span>0 - </span>
-                <input x-model="sideFiltr.cena_osoba" type="number" id="cena_numer" name="cena_numer" min="1" x-bind:max="filtrLimit.cena_max" value="50" onkeyup="changeRangeValue(this.value)" class="numeric">                       
+                <span x-text="filtrLimit.cena_min"></span>
+                <input x-model="sideFiltr.cena_osoba" type="number" id="cena_numer" name="cena_numer" 
+                    x-bind:min="filtrLimit.cena_min" x-bind:max="filtrLimit.cena_max" 
+                    x-bind:value="filtrLimit.cena_max" onkeyup="changeRangeValue(this.value)" class="numeric">                       
             </div>
             <script>
                 function changeRangeValue(val){

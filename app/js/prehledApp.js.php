@@ -23,6 +23,7 @@
                     .then(data => {
                         this.zajezdy = data;
                         this.filtrLimit.cena_max = data.reduce((max, obj) => Math.max(max, obj.cena_osoba), 0);
+                        this.filtrLimit.cena_min = data.reduce((min, obj) => Math.min(min, obj.cena_osoba), Infinity);
                     });
             },
             fetchAdrs() {//zavolej API
