@@ -2,7 +2,7 @@
     <div>    
         <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
     </div>
-    <div x-bind:class="{ 'sidemenu--close': open }">
+    <form @submit.prevent="applyFiltr" x-bind:class="{ 'sidemenu--close': open }">
 
         <div class="sideGroup">
             <div class="sidePair">
@@ -63,5 +63,7 @@
                 }
             </script>
         </div>
-    </div>
+
+        <button>filtruj</button>
+    </form>
 </aside>

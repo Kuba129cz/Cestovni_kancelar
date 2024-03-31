@@ -11,6 +11,8 @@
                     .then(Response => Response.json())
                     .then(data => {
                         this.zajezdy = data;
+                        this.filtrLimit.cena_max = data.reduce((max, obj) => Math.max(max, obj.cena_osoba), 0);
+                        this.filtrLimit.cena_min = data.reduce((min, obj) => Math.min(min, obj.cena_osoba), Infinity);
                     });
             },
             fetchZajezdy_filtr() {//zavolej API
@@ -39,6 +41,21 @@
                     .then(data => {
                         this.stravy = data;
                     });
+            },
+            applyFiltr() {//zavolej API
+                let where=filtr;
+                if(this.sideFiltr.datum_prijezdu){where+=" AND datum_prijezdu="+this.sideFiltr.datum_prijezdu;}
+                if(this.sideFiltr.fk_strava){where+=" AND fk_strava="+this.sideFiltr.fk_strava;}
+                console.log(where);
+                /*fetch('/app/api/endpoints/Zajezd/filter.php', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({where:filtr})
+					})
+                    .then(Response => Response.json())
+                    .then(data => {
+                        this.zajezdy = data;
+                    });*/
             },            
             init() {//zavola metody
                 if(!filtr)
