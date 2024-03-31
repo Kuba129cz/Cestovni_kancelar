@@ -43,7 +43,7 @@
                     });
             },
             applyFiltr() {//zavolej API
-                let where=filtr;
+                let where=filtr?fitr:"id_zajezd>0";//tautologie aby se to nesesypalo kvůli AND
                 if(this.sideFiltr.datum_prijezdu){where+=" AND datum_prijezdu="+this.sideFiltr.datum_prijezdu;}
                 if(this.sideFiltr.datum_odjezdu){where+=" AND datum_odjezdu="+this.sideFiltr.datum_odjezdu;}
                 if(this.sideFiltr.cena_osoba){where+=" AND cena_osoba<"+this.sideFiltr.cena_osoba;}

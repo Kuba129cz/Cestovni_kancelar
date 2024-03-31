@@ -4,17 +4,17 @@
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
-    <div class="container">
+    <div class="container" x-data="prehledApp()">
       <?php include __DIR__.'/../components/aside.inc.php'; ?>
    
       <main class="col-9">
           <div class="row">
+            <!--ponecháno pouze jako vzor po nastylování smazat-->
               <?php include __DIR__.'/../components/item.inc.php'; ?>
               <?php include __DIR__.'/../components/item.inc.php'; ?>
           </div>
-          <div x-data="prehledApp()">
-            <?php include __DIR__.'/../components/zajezd.php'; ?>
-          </div>
+        <?php include __DIR__.'/../components/zajezd.php'; ?>
+
       </main>
     </div>
   </body>
