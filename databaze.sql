@@ -18,7 +18,7 @@ USE `cestovka` ;
 -- Table `cestovka`.`User`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cestovka`.`User` (
-  `id_user` INT NOT NULL,
+  `id_user` INT NOT NULL AUTO_INCREMENT,
   `nick` VARCHAR(45) NOT NULL,
   `password` VARCHAR(64) NOT NULL,
   `role` TINYINT NULL DEFAULT 0,
@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 -- Table `cestovka`.`Strava`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cestovka`.`Strava` (
-  `id_strava` TINYINT NOT NULL,
+  `id_strava` TINYINT NOT NULL AUTO_INCREMENT,
   `typ` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_strava`))
 ENGINE = InnoDB;
@@ -40,21 +40,22 @@ ENGINE = InnoDB;
 -- Table `cestovka`.`Adresa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cestovka`.`Adresa` (
-  `id_Adresa` INT NOT NULL,
+  `id_Adresa` INT NOT NULL AUTO_INCREMENT,
   `stat` VARCHAR(45) NOT NULL,
   `mesto` VARCHAR(45) NOT NULL,
   `ulice` VARCHAR(45) NOT NULL,
   `psc` INT NOT NULL,
   `hodnoceni` DECIMAL(2,1) NULL,
+  `image_path` VARCHAR(110) NULL,
   PRIMARY KEY (`id_Adresa`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cestovka`.`zajezd`
+-- Table `cestovka`.`Zajezd`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cestovka`.`zajezd` (
-  `id_zajezd` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `cestovka`.`Zajezd` (
+  `id_zajezd` INT NOT NULL AUTO_INCREMENT,
   `datum_prijezdu` DATE NOT NULL,
   `datum_odjezdu` DATE NOT NULL,
   `cena_osoba` DECIMAL(5,2) NOT NULL,
@@ -81,7 +82,7 @@ ENGINE = InnoDB;
 -- Table `cestovka`.`Zakaznik`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cestovka`.`Zakaznik` (
-  `id_zakaznik` INT NOT NULL,
+  `id_zakaznik` INT NOT NULL AUTO_INCREMENT,
   `jmeno` VARCHAR(45) NOT NULL,
   `prijmeni` VARCHAR(45) NOT NULL,
   `datum_narozeni` DATE NOT NULL,
@@ -109,7 +110,7 @@ ENGINE = InnoDB;
 -- Table `cestovka`.`Objednavka`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cestovka`.`Objednavka` (
-  `id_objednavka` INT NOT NULL,
+  `id_objednavka` INT NOT NULL AUTO_INCREMENT,
   `pocet_osob` INT NOT NULL,
   `datum_vytvoreni` DATETIME NOT NULL,
   `fk_zajezd` INT NOT NULL,
@@ -119,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `cestovka`.`Objednavka` (
   INDEX `fk_Objednavka_Zakaznik1_idx` (`fk_zakaznik` ASC) VISIBLE,
   CONSTRAINT `fk_Objednavka_zajezd1`
     FOREIGN KEY (`fk_zajezd`)
-    REFERENCES `cestovka`.`zajezd` (`id_zajezd`)
+    REFERENCES `cestovka`.`Zajezd` (`id_zajezd`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Objednavka_Zakaznik1`
@@ -162,21 +163,21 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `cestovka`;
-INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`) VALUES (1, 'Česká republika', 'Praha', 'Hlavní', 14100, NULL);
-INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`) VALUES (2, 'Česká republika', 'Praha', 'Evropská', 16100, NULL);
-INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`) VALUES (3, 'Turecká republika', 'Kemer', 'Limak Limra Resort', 07980, 4.1);
-INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`) VALUES (4, 'Řecká republika', 'Kréta', 'Analipsi', 70014, 3.7);
+INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`, `image_path`) VALUES (1, 'Česká republika', 'Praha', 'Hlavní', 14100, NULL, NULL);
+INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`, `image_path`) VALUES (2, 'Česká republika', 'Praha', 'Evropská', 16100, NULL, NULL);
+INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`, `image_path`) VALUES (3, 'Turecká republika', 'Kemer', 'Limak Limra Resort', 07980, 4.1, NULL);
+INSERT INTO `cestovka`.`Adresa` (`id_Adresa`, `stat`, `mesto`, `ulice`, `psc`, `hodnoceni`, `image_path`) VALUES (4, 'Řecká republika', 'Kréta', 'Analipsi', 70014, 3.7, NULL);
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `cestovka`.`zajezd`
+-- Data for table `cestovka`.`Zajezd`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `cestovka`;
-INSERT INTO `cestovka`.`zajezd` (`id_zajezd`, `datum_prijezdu`, `datum_odjezdu`, `cena_osoba`, `popis`, `fk_strava`, `fk_Adresa`) VALUES (1, '14.04.2024', '07.04.2024', 23000, 'Rozsáhlý hotelový komplex, který se skládá z hlavní budovy a několika vedlejších budov, se nachází přímo na vlastní pláži s barovým servisem. Nejbližší obchůdky, restaurace a bary jsou cca 100 m od hotelu. Do centra letoviska Kemer (5 km) se pohodlně dostanete místní dopravou. Doporučujeme především rodinám s dětmi a náročnějším klientům.', 2, 3);
-INSERT INTO `cestovka`.`zajezd` (`id_zajezd`, `datum_prijezdu`, `datum_odjezdu`, `cena_osoba`, `popis`, `fk_strava`, `fk_Adresa`) VALUES (2, '28.04.2024', '20.04.2024', 29000, 'Příjemný hotelový komplex se skládá z hlavní budovy a vilek rozmístěných v rozlehlé zahradě. Od pláže je vzdálený', 2, 4);
+INSERT INTO `cestovka`.`Zajezd` (`id_zajezd`, `datum_prijezdu`, `datum_odjezdu`, `cena_osoba`, `popis`, `fk_strava`, `fk_Adresa`) VALUES (1, '14.04.2024', '07.04.2024', 23000, 'Rozsáhlý hotelový komplex, který se skládá z hlavní budovy a několika vedlejších budov, se nachází přímo na vlastní pláži s barovým servisem. Nejbližší obchůdky, restaurace a bary jsou cca 100 m od hotelu. Do centra letoviska Kemer (5 km) se pohodlně dostanete místní dopravou. Doporučujeme především rodinám s dětmi a náročnějším klientům.', 2, 3);
+INSERT INTO `cestovka`.`Zajezd` (`id_zajezd`, `datum_prijezdu`, `datum_odjezdu`, `cena_osoba`, `popis`, `fk_strava`, `fk_Adresa`) VALUES (2, '28.04.2024', '20.04.2024', 29000, 'Příjemný hotelový komplex se skládá z hlavní budovy a vilek rozmístěných v rozlehlé zahradě. Od pláže je vzdálený', 2, 4);
 
 COMMIT;
 
@@ -201,3 +202,4 @@ INSERT INTO `cestovka`.`Objednavka` (`id_objednavka`, `pocet_osob`, `datum_vytvo
 INSERT INTO `cestovka`.`Objednavka` (`id_objednavka`, `pocet_osob`, `datum_vytvoreni`, `fk_zajezd`, `fk_zakaznik`) VALUES (2, 1, '22.03.2024', 2, 2);
 
 COMMIT;
+
