@@ -7,11 +7,11 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>od</span>
-                <input type="date" id="dateFrom" name="trip-start"/>
+                <input type="date" id="dateFrom" x-model="sideFiltr.datum_prijezdu"/>
             </div>
             <div class="sidePair">
                 <span>do</span>
-                <input type="date" id="dateTo" name="trip-end"/>
+                <input type="date" id="dateTo" x-model="sideFiltr.datum_odjezdu"/>
             </div>
             <script>
               document.getElementById('dateFrom').valueAsDate = new Date();
@@ -43,13 +43,13 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>cena</span>
-                <input type="range" id="cena_slider" name="cena_slider" 
+                <input type="range" id="cena_slider" x-model="sideFiltr.cena_osoba"
                     x-bind:min="filtrLimit.cena_min" x-bind:max="filtrLimit.cena_max" 
                     x-bind:value="filtrLimit.cena_max" oninput="changeNumericValue(this.value)" class="slider">                
             </div>
             <div class="sidePair">
                 <span x-text="filtrLimit.cena_min"></span>
-                <input x-model="sideFiltr.cena_osoba" type="number" id="cena_numer" name="cena_numer" 
+                <input  type="number" id="cena_numer" x-model="sideFiltr.cena_osoba" 
                     x-bind:min="filtrLimit.cena_min" x-bind:max="filtrLimit.cena_max" 
                     x-bind:value="filtrLimit.cena_max" onkeyup="changeRangeValue(this.value)" class="numeric">                       
             </div>
