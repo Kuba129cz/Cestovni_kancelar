@@ -30,7 +30,7 @@ class ZajezdController
 
     public function getData_where($where)
     {
-        $SQL="SELECT Zajezd.*,Adresa.*,Strava.typ FROM Zajezd
+        $SQL="SELECT Zajezd.*,Adresa.*,Strava.typ_stravy FROM Zajezd
         INNER JOIN Adresa ON Zajezd.fk_Adresa=Adresa.id_Adresa 
         INNER JOIN Strava ON Zajezd.fk_Strava=Strava.id_Strava";
         $SQL=$SQL." WHERE ".$where;
