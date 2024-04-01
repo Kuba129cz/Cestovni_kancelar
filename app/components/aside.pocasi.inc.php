@@ -7,6 +7,7 @@
             <template x-for="den in pocasi" :key="den.localDate">
                 <div class="item"><!--alpine je virtual tak musim pouzit realni DOM-->
                     <span x-text="den.localDate"></span>
+                    <img src="app/resources/pocasi/1_skoro-jasno.svg"/>
                     <span x-text="den.tempMax"></span>
                     <span x-text="den.tempMin"></span>
                 </div>                
