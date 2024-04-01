@@ -9,7 +9,7 @@
     <select x-model="newItem.fk_strava">
         <option>Vybrat</option>
         <template x-for="strava in stravy" :key="strava.id_strava">
-            <option x-bind:value="strava.id_strava" x-text="strava.typ"></option>
+            <option x-bind:value="strava.id_strava" x-text="strava.typ_stravy"></option>
         </template>
     </select>
 

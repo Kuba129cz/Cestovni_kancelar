@@ -7,7 +7,7 @@
               <span x-text="zajezd.cena_osoba"></span>
               <!--<span x-text="zajezd.popis"></span>-->
 
-              <span x-text="zajezd.typ"></span>
+              <span x-text="zajezd.typ_stravy"></span>
 
               <span x-text="zajezd.stat"></span>
               <span x-text="zajezd.mesto"></span>

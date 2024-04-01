@@ -34,7 +34,7 @@
                 <select x-model="sideFiltr.fk_strava">
                     <option>Vybrat</option>
                     <template x-for="strava in stravy" :key="strava.id_strava">
-                        <option x-bind:value="strava.id_strava" x-text="strava.typ"></option>
+                        <option x-bind:value="strava.id_strava" x-text="strava.typ_stravy"></option>
                     </template>
                 </select>
             </div>
@@ -48,7 +48,7 @@
                     x-bind:value="filtrLimit.cena_max" oninput="changeNumericValue(this.value)" class="slider">                
             </div>
             <div class="sidePair">
-                <span x-text="filtrLimit.cena_min"></span>
+                <span x-text="filtrLimit.cena_min"> - </span>
                 <input  type="number" id="cena_numer" x-model="sideFiltr.cena_osoba" 
                     x-bind:min="filtrLimit.cena_min" x-bind:max="filtrLimit.cena_max" step="0.01"
                     x-bind:value="filtrLimit.cena_max" onkeyup="changeRangeValue(this.value)" class="numeric">                       
