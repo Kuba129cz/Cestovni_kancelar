@@ -1,10 +1,11 @@
 <script>
     function prehledApp(filtr) {
         return {
-            zajezdy:[],
+            zajezdy:[], // output
             adresy: [], // output
             stravy: [], // output
-            filtrLimit: { cena_min: 0, cena_max: 0, },//input submit
+            filtr,//kopie inputu
+            filtrLimit: { cena_min: 0, cena_max: 0, },//limity pro filtr
             sideFiltr: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, fk_strava:'',fk_Adresa:''},//input submit
             fetchZajezdy() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd')
@@ -43,7 +44,10 @@
                     });
             },
             applyFiltr() {//zavolej API
-                let where=filtr?fitr:"id_zajezd>0";//tautologie aby se to nesesypalo kvůli AND
+                if(this.sideFiltr.fk_strava=='Vybrat'){this.sideFiltr.fk_strava='';}
+                if(this.sideFiltr.fk_Adresa=='Vybrat'){this.sideFiltr.fk_Adresa='';}
+
+                let where=this.filtr?this.filtr:"id_zajezd>0";//tautologie aby se to nesesypalo kvůli AND
                 if(this.sideFiltr.datum_prijezdu){where+=" AND datum_prijezdu="+this.sideFiltr.datum_prijezdu;}
                 if(this.sideFiltr.datum_odjezdu){where+=" AND datum_odjezdu="+this.sideFiltr.datum_odjezdu;}
                 if(this.sideFiltr.cena_osoba){where+=" AND cena_osoba<="+this.sideFiltr.cena_osoba;}
@@ -61,6 +65,7 @@
                     });
             },            
             init() {//zavola metody
+                this.filtr=filtr;//z nejakeho duvodu ted apply nezna filtr
                 if(!filtr)
                 {
                     console.log("nefiltrovano");
