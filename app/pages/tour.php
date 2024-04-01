@@ -18,7 +18,7 @@
                     <img src="https://dcontent.inviacdn.net/shared/img/web-1200x1024/2019/3/8/d6/18413530-long-beach.jpg" alt="Popisek obrázku">
                     <div class="destination-info">
                         <p><b>Termín:</b> <span x-text="zajezd.datum_prijezdu"></span> - <span x-text="zajezd.datum_odjezdu"></span></p>
-                        <p><b>Strava:</b> <span x-text="zajezd.typ"></span></p>
+                        <p><b>Strava:</b> <span x-text="zajezd.typ_stravy"></span></p>
                         <p><b>Cena na osobu:</b> <span x-text="zajezd.cena_osoba"></span> Kč</p>
                         <button class="btn-tour-order">Mám zájem</button>
                     </div>
