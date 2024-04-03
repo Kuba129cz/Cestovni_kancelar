@@ -15,7 +15,7 @@
                     <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`">
                 </div>    
                 <div class="tour-info">
-                    <img src="https://dcontent.inviacdn.net/shared/img/web-1200x1024/2019/3/8/d6/18413530-long-beach.jpg" alt="Popisek obrázku">
+                <img :src="zajezd.image_path" alt="Popisek obrázku">
                     <div class="destination-info">
                         <p><b>Termín:</b> <span x-text="zajezd.datum_prijezdu"></span> - <span x-text="zajezd.datum_odjezdu"></span></p>
                         <p><b>Strava:</b> <span x-text="zajezd.typ_stravy"></span></p>
