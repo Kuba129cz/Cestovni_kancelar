@@ -1,11 +1,11 @@
 .aside {
-	grid-area: aside;
+	grid-area: side;
 	border-right: 1px solid $color-light;
 	background-color: $color-light;
 
 	height: fit-content;
-	padding-top: 0.5rem;
-	padding-bottom: 2rem;
+	// padding-top: 0.5rem;
+	// padding-bottom: 2rem;
 
 	display: flex;
 	flex-flow: column;

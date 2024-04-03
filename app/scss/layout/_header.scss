@@ -1,4 +1,5 @@
 header {
+    grid-area: head;
     color: $headerText;
     padding: 0px 0px 10px 0px;
     text-align: left;
@@ -17,15 +18,32 @@ header {
     text-align: center;
 }
 
-.menu {
-    background-color: $headerBackground;
-    display: flex;
-    /*justify-content: space-between;*/
-    align-items: stretch;
-}
-
 h1 {
     font-size: 100px;
     color: $logoColor;
     margin: 0px;
 }
+
+@media screen and (max-width: 40em) {   //pro mobil
+    .header-menu {
+        @include header-menu;
+        flex-flow: column wrap;
+    }
+
+    .header-menuButton {
+        @include header-menuButton;
+        flex: none;
+    }
+} 
+
+@media screen and (min-width: 40em) {   //pro pc
+    .header-menu {
+        @include header-menu;
+        flex-flow: row wrap;
+    }   
+    
+    .header-menuButton {
+        @include header-menuButton;
+         flex: auto;
+     }
+}    

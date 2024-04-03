@@ -1,0 +1,10 @@
+@mixin header-menu {
+    display: flex;
+    padding: 0.5em;
+    background-color: $headerBackground;
+}
+
+@mixin header-menuButton {
+    padding: 1em;
+    background-color: $headerBackground;
+}
