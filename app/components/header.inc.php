@@ -5,8 +5,8 @@
 </div>
 <header>
     <div class="menu">
-        <a class="menuButton" href="index.html">page 1</a>
         <a class="menuButton" href="/tuzemske">tuzemské</a>
+        <a class="menuButton" href="index.html">page 1</a>
         <a class="menuButton" href="index.html">page 3</a>
         <a class="menuButton" href="index.html">page 4</a>
         <a class="menuButton" href="index.html">page 5</a>

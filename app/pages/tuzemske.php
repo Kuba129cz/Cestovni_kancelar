@@ -2,8 +2,13 @@
     $title="tuzemske";   
 
     $kategorie = array(
-      "tuzemske" => array("tuzemske", "'stat=\'Česká republika\''"),
-      "more" => array("more", "'kategorie=\'Moře\''")
+      "tuzemske" => array("Tuzemské", "'stat=\'Česká republika\''"),
+      "hory" => array("Hory", "'kategorie=\'Hory\''"),
+      "pamatky" => array("Památky", "'kategorie=\'Památky\''"),
+      "lyze" => array("Lyžování", "'kategorie=\'Lyžování\''"),
+      "more" => array("Moře", "'kategorie=\'Moře\''"),
+      "camp" => array("Camping", "'kategorie=\'Camping\''")
+      
   );
   $key = isset($_GET['k']) ? $_GET['k'] : null;
 
