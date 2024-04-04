@@ -8,3 +8,16 @@
     padding: 1em;
     background-color: $headerBackground;
 }
+
+@mixin aside-grid-dashboard{
+    border-right: 1px solid $color-light;
+    background-color: $color-light;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: column;
+
+    &--close {
+        padding-bottom: 0.5rem;
+    }		
+}

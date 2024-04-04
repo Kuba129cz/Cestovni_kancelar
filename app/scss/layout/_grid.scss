@@ -1,23 +1,43 @@
 @media screen and (min-width: 40em) {	
-	.container {
+	.container-grid-dashboard {
 		display:grid;	
 		grid-template:
 			"head head" auto
 			"main side" 1fr
 			"foot foot" 5em
 			/ 1fr clamp(10em, 20%, 20em);
-		// grid-template-columns: minmax(200px, 20%) 1fr;
-		// grid-template-areas: "aside main";
-		//max-width: 96rem;/*960px*/
-		// margin-left: auto;
-		// margin-right: auto;
-		// padding-left: 1.5rem;/*15px*/
-		// padding-right: 1.5rem;
+		column-gap: 1.5em; //mezera mezi bunkami
+		height: 100vh;
+	}
+	.main-grid-dashboard{
+		grid-area: main;
+	}
+	.aside-grid-dashboard{
+		@include aside-grid-dashboard;
+		grid-area: side;
+	}
+
+	.container-grid-tour {
+		display:grid;	
+		grid-template:
+			"head head" auto
+			"main main" 1fr
+			"foot foot" 5em
+			/ 1fr 1fr;
+		column-gap: 1.5em; //mezera mezi bunkami
+		height: 100vh;
+		justify-content: center;
+	}
+	.main-grid-tour {
+		grid-area: main;
+		max-width: 50%;
+		place-self: center;
 	}
 
 	.row {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
 	}
@@ -37,4 +57,12 @@
 			}
 		}
 	}
+}
+@media screen and (max-width: 40em) {	
+	.aside-grid-dashboard{
+		@include aside-grid-dashboard;
+		padding-top: 0.5em;
+		padding-bottom: 1em;
+		margin-bottom: 1em;		
+	}	
 }
