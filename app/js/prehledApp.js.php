@@ -54,6 +54,7 @@
                 if(this.sideFiltr.fk_strava){where+=" AND fk_strava="+this.sideFiltr.fk_strava;}
                 if(this.sideFiltr.fk_Adresa){where+=" AND fk_Adresa="+this.sideFiltr.fk_Adresa;}
                 console.log(where);
+
                 fetch('/app/api/endpoints/Zajezd/filter.php', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
@@ -63,7 +64,11 @@
                     .then(data => {
                         this.zajezdy = data;
                     });
-            },            
+            },
+            resetFiltr() {
+                this.sideFiltr= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: this.filtrLimit.cena_max, fk_strava:'',fk_Adresa:''};
+                this.fetchZajezdy_filtr(this.filtr);
+            },    
             init() {//zavola metody
                 this.filtr=filtr;//z nejakeho duvodu ted apply nezna filtr
                 if(!filtr)

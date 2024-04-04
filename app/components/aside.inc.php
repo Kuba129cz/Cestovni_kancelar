@@ -65,5 +65,6 @@
         </div>
 
         <button>filtruj</button>
-    </form>
+        <button type="button" @click="resetFiltr()">reset</button>
+    </form>   
 </aside>
