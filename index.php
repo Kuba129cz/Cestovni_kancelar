@@ -16,8 +16,8 @@
         case '/admin' :
             require __DIR__ . '/app/pages/admin.php';
             break;
-        case '/tuzemske' :
-            require __DIR__ . '/app/pages/tuzemske.php';
+        case '/kategorie' :
+            require __DIR__ . '/app/pages/kategorie.php';
             break;
         case '/tour' :
             require __DIR__ . '/app/pages/tour.php';
