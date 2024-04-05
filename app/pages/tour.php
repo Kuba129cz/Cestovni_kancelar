@@ -6,7 +6,6 @@
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
     <div class="container">
-        <?php include __DIR__.'/../components/aside.inc.php'; ?>
     
         <main class="col-9">
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
@@ -15,7 +14,7 @@
                     <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`">
                 </div>    
                 <div class="tour-info">
-                <img :src="zajezd.image_path" alt="Popisek obrázku">
+                <img :src="zajezd.image_path" alt="Fotografie rezortu" class="img-tour">
                     <div class="destination-info">
                         <p><b>Termín:</b> <span x-text="zajezd.datum_prijezdu"></span> - <span x-text="zajezd.datum_odjezdu"></span></p>
                         <p><b>Strava:</b> <span x-text="zajezd.typ_stravy"></span></p>
@@ -34,10 +33,10 @@
                 </p>
             </div>
         </main>
-
     </div>
-  </body>
-  <?php include __DIR__.'/../components/footer.inc.php'; ?>
-  <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
-  <?php include __DIR__.'/../js/detailApp.js.php'; ?>
+
+    <?php include __DIR__.'/../components/footer.inc.php'; ?>
+    <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
+    <?php include __DIR__.'/../js/detailApp.js.php'; ?>
+  </body> 
 </html>
