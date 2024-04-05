@@ -1,7 +1,7 @@
 .container {
 	display:grid;	
 	grid-template-columns: minmax(200px, 20%) 1fr;
-	grid-template-areas: "aside main";
+	grid-template-areas: "side main";
 	//max-width: 96rem;/*960px*/
 	margin-left: auto;
 	margin-right: auto;
@@ -12,6 +12,7 @@
 .row {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	margin-left: -1.5rem;
 	margin-right: -1.5rem;
 }
