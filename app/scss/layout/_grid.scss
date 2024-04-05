@@ -9,7 +9,7 @@
 @media screen and (max-width: 40em) {	
 	.container {
 		@include container;
-		grid-template-columns: minmax(1%, 20%) 1fr;
+		grid-template-columns: minmax(85px, 20%) 1fr;
 		column-gap: 0.5em; //mezera mezi bunkami
 	}
 }

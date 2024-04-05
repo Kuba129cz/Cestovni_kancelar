@@ -35,8 +35,17 @@
 	padding-top:0.5rem;
 }
 
+.datepicker{
+	width: auto;
+}
+
+.combobox{
+	width: 100%;
+}
+
 .slider{
 	color: red;
+	width: 100%;
 }
 
 .numeric{
@@ -44,6 +53,7 @@
 	//justify-self: end;
 	margin-right: 1em;
 	margin-left: 1em;
+	width: 100%;
 }
 
 @media screen and (min-width: 40em) {	
