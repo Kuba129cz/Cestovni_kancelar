@@ -66,6 +66,9 @@
         <div class="flex-row">
             <button>filtruj</button>
             <button type="button" @click="resetFiltr()">reset</button>
-        </div>
-    </form>   
+        </div>       
+    </form>
+    <div class="flex-row">
+            <button type="button" @click="orderBy()">sort</button>
+        </div>   
 </aside>
