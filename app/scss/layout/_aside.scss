@@ -6,9 +6,15 @@
 	height: fit-content;
 	padding-top: 0.5rem;
 	padding-bottom: 2rem;
+	padding-left: 1.5rem;
+    padding-right: 1.5rem;
 
 	display: flex;
-	flex-flow: column;
+	flex-flow: column;	
+
+	position: sticky;
+    top: 0;
+    overflow-y: auto;
 
 	&--close {
 		padding-bottom: 0.5rem;
@@ -35,8 +41,17 @@
 	padding-top:0.5rem;
 }
 
+.datepicker{
+	width: auto;
+}
+
+.combobox{
+	width: 100%;
+}
+
 .slider{
 	color: red;
+	width: 100%;
 }
 
 .numeric{
@@ -44,4 +59,31 @@
 	//justify-self: end;
 	margin-right: 1em;
 	margin-left: 1em;
+	width: 100%;
+}
+
+@media screen and (min-width: 40em) {	
+	.sidePair {
+		grid-template-columns: auto 60%;
+		grid-template-rows: auto;
+	}
+	.numeric{
+		width: auto;
+	}
+	
+}
+
+@media screen and (max-width: 40em) {	
+	.sidePair {
+		grid-template-columns: auto ;
+		grid-template-rows: auto auto;
+		padding-left: 0em;
+	}
+	.aside{
+		padding-left: 1rem;
+	}
+	.numeric{
+		margin-right: 0em;
+		margin-left: 0em;
+	}
 }
