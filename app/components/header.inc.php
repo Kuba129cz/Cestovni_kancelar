@@ -1,5 +1,4 @@
 <header>
-<<<<<<< app/components/header.inc.php
     <div class="obr-bg">
         <a class="no-decor" href="/">
             <h1>cestovka</h1>
@@ -12,6 +11,5 @@
         <a class="header-menuButton" href="/kategorie?k=lyze">page 4</a>
         <a class="header-menuButton" href="/kategorie?k=more">page 5</a>
         <a class="header-menuButton" href="/kategorie?k=camp">Camping</a>
->>>>>>> app/components/header.inc.php
     </div>
 </header>

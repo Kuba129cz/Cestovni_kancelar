@@ -1,18 +1,19 @@
-// .aside {
-// 	grid-area: side;
-// 	border-right: 1px solid $color-light;
-// 	background-color: $color-light;
-// 	height: fit-content;
-// 	// padding-top: 0.5rem;
-// 	// padding-bottom: 2rem;
+.aside {
+	grid-area: side;
+	border-right: 1px solid $color-light;
+	background-color: $color-light;
 
-// 	display: flex;
-// 	flex-flow: column;
+	height: fit-content;
+	padding-top: 0.5rem;
+	padding-bottom: 2rem;
 
-// 	&--close {
-// 		padding-bottom: 0.5rem;
-// 	}
-// }
+	display: flex;
+	flex-flow: column;
+
+	&--close {
+		padding-bottom: 0.5rem;
+	}
+}
 
 .sidemenu--close{
 	display: none;

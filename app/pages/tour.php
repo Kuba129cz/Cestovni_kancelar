@@ -4,10 +4,10 @@
     $id = isset($_GET['id']) ? $_GET['id'] : null;
 ?>
     <body x-data="{ open: false }">
-    <div class="container-grid-tour">
-        <?php include __DIR__.'/../components/header.inc.php'; ?>
+    <?php include __DIR__.'/../components/header.inc.php'; ?>
+    <div class="container">
     
-        <main class="main-grid-tour">
+        <main class="col-9">
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <div class="heading-destination">
                     <h1 class="destinace" x-text="zajezd.stat + ' - ' + zajezd.mesto"></h1>
@@ -33,9 +33,10 @@
                 </p>
             </div>
         </main>
-        <?php include __DIR__.'/../components/footer.inc.php'; ?>
     </div>
-    <?php  include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
-    <?php  include __DIR__.'/../js/detailApp.js.php'; ?>
-  </body>
+
+    <?php include __DIR__.'/../components/footer.inc.php'; ?>
+    <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
+    <?php include __DIR__.'/../js/detailApp.js.php'; ?>
+  </body> 
 </html>
