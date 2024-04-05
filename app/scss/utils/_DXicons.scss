@@ -189,3 +189,10 @@
         content: "\f06b";
     }
 }
+
+.DX-money {
+    @extend .DX;
+    &::before {
+        content: "\f036";
+    }
+}

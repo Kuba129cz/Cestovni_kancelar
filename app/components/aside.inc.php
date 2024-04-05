@@ -69,6 +69,13 @@
         </div>       
     </form>
     <div class="flex-row">
-            <button type="button" @click="orderBy('hodnoceni',true)">sort</button>
+            <button type="button" class="btn btn--filtr DX-favorite"
+            @click="orderBy('hodnoceni',true)">↓</button>
+
+            <button type="button" class="btn btn--filtr DX-money"
+            @click="orderBy('cena_osoba',false)">↑</button>
+
+            <button type="button" class="btn btn--filtr DX-calend"
+            @click="orderBy('datum_odjezdu',false)">↑</button>
         </div>   
 </aside>
