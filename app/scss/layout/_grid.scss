@@ -1,12 +1,8 @@
-.container {
-	display:grid;	
-	grid-template-columns: minmax(200px, 20%) 1fr;
-	grid-template-areas: "side main";
-	//max-width: 96rem;/*960px*/
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 1.5rem;/*15px*/
-	padding-right: 1.5rem;
+@media screen and (min-width: 40em) {	
+	.container {
+		@include container;
+		column-gap: 1.5em; //mezera mezi bunkami
+	}
 }
 
 .row {
@@ -30,5 +26,12 @@
 		@media (min-width: 768px) {
 			flex: 0 0 percentage(calc($i / 12));
 		}
+	}
+}
+
+@media screen and (max-width: 40em) {	
+	.container {
+		@include container;
+		column-gap: 0.5em; //mezera mezi bunkami
 	}
 }
