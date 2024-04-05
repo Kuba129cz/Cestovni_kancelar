@@ -13,8 +13,9 @@
           </div>
       </main>
     </div>
+
+    <?php include __DIR__.'/../components/footer.inc.php'; ?>
+    <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
+    <?php include __DIR__.'/../js/objednavkaApp.js.php'; ?>
   </body>
-  <?php include __DIR__.'/../components/footer.inc.php'; ?>
-  <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
-  <?php include __DIR__.'/../js/objednavkaApp.js.php'; ?>
 </html>

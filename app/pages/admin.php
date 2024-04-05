@@ -22,9 +22,9 @@
     </main>
 
   </div>
-</body>
-<?php include __DIR__.'/../components/footer.inc.php'; ?>
-<?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
-<?php include __DIR__.'/../js/adminApp.js.php'; ?>
 
+  <?php include __DIR__.'/../components/footer.inc.php'; ?>
+  <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
+  <?php include __DIR__.'/../js/adminApp.js.php'; ?>
+</body>
 </html>
