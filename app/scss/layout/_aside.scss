@@ -6,12 +6,15 @@
 	height: fit-content;
 	padding-top: 0.5rem;
 	padding-bottom: 2rem;
-
-	display: flex;
-	flex-flow: column;
-
 	padding-left: 1.5rem;
     padding-right: 1.5rem;
+
+	display: flex;
+	flex-flow: column;	
+
+	position: sticky;
+    top: 0;
+    overflow-y: auto;
 
 	&--close {
 		padding-bottom: 0.5rem;
@@ -63,6 +66,9 @@
 	.sidePair {
 		grid-template-columns: auto 60%;
 		grid-template-rows: auto;
+	}
+	.numeric{
+		width: auto;
 	}
 	
 }
