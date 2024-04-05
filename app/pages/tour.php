@@ -5,7 +5,7 @@
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
-    <div class="container">
+    <div class="container-wholeScreen">
     
         <main class="col-9">
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">

@@ -13,3 +13,11 @@
 		column-gap: 0.5em; //mezera mezi bunkami
 	}
 }
+
+.container-wholeScreen{
+	//kdybysme responsivne nemenily 2 sloupce tak bych dal jako class="container tour"
+	@include container;
+	grid-template-areas: "main";
+	max-width: 96rem;/*960px*/
+	align-content: center;
+}
