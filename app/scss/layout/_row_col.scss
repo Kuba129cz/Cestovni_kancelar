@@ -1,0 +1,23 @@
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+}
+
+/*pro vsechny class obsahujici col-*/
+[class*="col-"] {
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+	flex: 0 0 100%;
+}
+
+/*for cyklus generujici sloupce s grow:0 shrink:0 sirka:i/12*/
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		@media (min-width: 768px) {
+			flex: 0 0 percentage(calc($i / 12));
+		}
+	}
+}
