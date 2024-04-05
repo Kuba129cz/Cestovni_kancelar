@@ -5,11 +5,11 @@
         </a>
     </div>
     <div class="header-menu">
-        <a class="header-menuButton" href="/kategorie?k=tuzemske">page 1</a>
-        <a class="header-menuButton" href="/kategorie?k=hory">tuzemské</a>
-        <a class="header-menuButton" href="/kategorie?k=pamatky">page 3</a>
-        <a class="header-menuButton" href="/kategorie?k=lyze">page 4</a>
-        <a class="header-menuButton" href="/kategorie?k=more">page 5</a>
+        <a class="header-menuButton" href="/kategorie?k=tuzemske">Tuzemské</a>
+        <a class="header-menuButton" href="/kategorie?k=hory">Hory</a>
+        <a class="header-menuButton" href="/kategorie?k=pamatky">Památky</a>
+        <a class="header-menuButton" href="/kategorie?k=lyze">Lyžování</a>
+        <a class="header-menuButton" href="/kategorie?k=more">Moře</a>
         <a class="header-menuButton" href="/kategorie?k=camp">Camping</a>
     </div>
 </header>
