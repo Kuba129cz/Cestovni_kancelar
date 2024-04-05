@@ -1,0 +1,21 @@
+@mixin header-menu {
+    display: flex;
+    padding: 0.5em;
+    background-color: $headerBackground;
+}
+
+@mixin header-menuButton {
+    padding: 1em;
+    background-color: $headerBackground;
+}
+
+@mixin container {
+	display:grid;	
+	//grid-template-columns: minmax(200px, 20%) 1fr;
+	grid-template-areas: "side main";
+	//max-width: 96rem;/*960px*/
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1.5rem;/*15px*/
+	padding-right: 1.5rem;
+}

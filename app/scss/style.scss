@@ -8,11 +8,13 @@
 @import 'base/reset';
 @import 'base/typography';
 
+@import 'layout/mixins';
 @import 'layout/grid';
 @import 'layout/aside';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/main';
+@import 'layout/row_col';
 
 @import 'components/button';
 @import 'components/menubutton';

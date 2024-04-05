@@ -1,4 +1,4 @@
-<aside class="aside col-3" x-bind:class="{ 'aside--close': open }">
+<aside class="aside" x-bind:class="{ 'aside--close': open }">
     <div>    
         <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
     </div>
@@ -7,11 +7,11 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>od</span>
-                <input type="date" id="dateFrom" x-model="sideFiltr.datum_prijezdu"/>
+                <input type="date" id="dateFrom" x-model="sideFiltr.datum_prijezdu" class="datepicker"/>
             </div>
             <div class="sidePair">
                 <span>do</span>
-                <input type="date" id="dateTo" x-model="sideFiltr.datum_odjezdu"/>
+                <input type="date" id="dateTo" x-model="sideFiltr.datum_odjezdu" class="datepicker"/>
             </div>
             <script>
               document.getElementById('dateFrom').valueAsDate = new Date();
@@ -22,7 +22,7 @@
         <div class="sideGroup">
             <div class="sidePair">
                 <span>destinace</span>
-                <select x-model="sideFiltr.fk_Adresa">
+                <select x-model="sideFiltr.fk_Adresa" class="combobox">
                     <option>Vybrat</option>
                     <template x-for="adresa in adresy" :key="adresa.id_Adresa">
                         <option x-bind:value="adresa.id_Adresa" x-text="adresa.stat + ' - ' + adresa.mesto"></option>
@@ -31,7 +31,7 @@
             </div>
             <div class="sidePair">
                 <span>typ stravy</span>
-                <select x-model="sideFiltr.fk_strava">
+                <select x-model="sideFiltr.fk_strava" class="combobox">
                     <option>Vybrat</option>
                     <template x-for="strava in stravy" :key="strava.id_strava">
                         <option x-bind:value="strava.id_strava" x-text="strava.typ_stravy"></option>
