@@ -69,9 +69,10 @@
                 this.sideFiltr= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: this.filtrLimit.cena_max, fk_strava:'',fk_Adresa:''};
                 this.fetchZajezdy_filtr(this.filtr);
             },
-            orderBy(){
-                const sortedByNameAsc = sortByAttribute(this.zajezdy, 'stat');
-console.log('Sorted by name (ascending):', sortedByNameAsc);
+            orderBy(atribut,desc){
+                const ordered = sortByAttribute(this.zajezdy, atribut,desc);
+                this.zajezdy=ordered;
+                console.log(`Sorted by ${atribut} (${desc?'desc':'asc'}):`, ordered);
             },
             init() {//zavola metody
                 this.filtr=filtr;//z nejakeho duvodu ted apply nezna filtr
@@ -91,19 +92,20 @@ console.log('Sorted by name (ascending):', sortedByNameAsc);
     }
 
     //zkopirovano z copilota
-    function sortByAttribute(arr, attribute, descending = false) {
-    const sortOrder = descending ? -1 : 1;
+    function sortByAttribute(arr, attribute, descending = false) 
+    {
+        const sortOrder = descending ? -1 : 1;
 
-    // Use localeCompare for string comparison (case-insensitive)
-    const compareFunction = (a, b) => {
-        const aValue = a[attribute];
-        const bValue = b[attribute];
-        if (typeof aValue === 'string' && typeof bValue === 'string') {
-            return aValue.localeCompare(bValue) * sortOrder;
-        }
-        return (aValue - bValue) * sortOrder;
-    };
+        // Use localeCompare for string comparison (case-insensitive)
+        const compareFunction = (a, b) => {
+            const aValue = a[attribute];
+            const bValue = b[attribute];
+            if (typeof aValue === 'string' && typeof bValue === 'string') {
+                return aValue.localeCompare(bValue) * sortOrder;
+            }
+            return (aValue - bValue) * sortOrder;
+        };
 
-    return arr.slice().sort(compareFunction);
-}
+        return arr.slice().sort(compareFunction);
+    }
 </script>

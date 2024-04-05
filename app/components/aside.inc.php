@@ -69,6 +69,6 @@
         </div>       
     </form>
     <div class="flex-row">
-            <button type="button" @click="orderBy()">sort</button>
+            <button type="button" @click="orderBy('hodnoceni',true)">sort</button>
         </div>   
 </aside>
