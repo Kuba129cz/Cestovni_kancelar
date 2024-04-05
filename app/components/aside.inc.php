@@ -1,4 +1,4 @@
-<aside class="aside col-3" x-bind:class="{ 'aside--close': open }">
+<aside class="aside" x-bind:class="{ 'aside--close': open }">
     <div>    
         <a href="#" class="btn btn--primary DX-menu" @click="open = !open"></a>
     </div>
