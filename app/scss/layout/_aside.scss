@@ -41,6 +41,14 @@
 	padding-top:0.5rem;
 }
 
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-self: center;
+	flex-wrap: wrap;
+}
+
 .datepicker{
 	width: auto;
 }
@@ -49,16 +57,16 @@
 	width: 100%;
 }
 
-.slider{
-	color: red;
+.slider {
+	accent-color: blue;
 	width: 100%;
 }
 
 .numeric{
 	//grid-column: span 2;
 	//justify-self: end;
-	margin-right: 1em;
-	margin-left: 1em;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
 	width: 100%;
 }
 
@@ -77,10 +85,12 @@
 	.sidePair {
 		grid-template-columns: auto ;
 		grid-template-rows: auto auto;
-		padding-left: 0em;
+		padding-left: 0.2em;
+		padding-right: 0.2em;
 	}
 	.aside{
 		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 	.numeric{
 		margin-right: 0em;

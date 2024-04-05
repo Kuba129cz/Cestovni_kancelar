@@ -63,7 +63,9 @@
                 }
             </script>
         </div>
-
-        <button>filtruj</button>
-    </form>
+        <div class="flex-row">
+            <button>filtruj</button>
+            <button type="button" @click="resetFiltr()">reset</button>
+        </div>
+    </form>   
 </aside>

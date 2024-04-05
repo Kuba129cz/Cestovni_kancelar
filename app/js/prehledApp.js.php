@@ -48,12 +48,13 @@
                 if(this.sideFiltr.fk_Adresa=='Vybrat'){this.sideFiltr.fk_Adresa='';}
 
                 let where=this.filtr?this.filtr:"id_zajezd>0";//tautologie aby se to nesesypalo kvůli AND
-                if(this.sideFiltr.datum_prijezdu){where+=" AND datum_prijezdu="+this.sideFiltr.datum_prijezdu;}
-                if(this.sideFiltr.datum_odjezdu){where+=" AND datum_odjezdu="+this.sideFiltr.datum_odjezdu;}
+                if(this.sideFiltr.datum_prijezdu){where+=" AND datum_prijezdu='"+this.sideFiltr.datum_prijezdu+"'";}
+                if(this.sideFiltr.datum_odjezdu){where+=" AND datum_odjezdu='"+this.sideFiltr.datum_odjezdu+"'";}
                 if(this.sideFiltr.cena_osoba){where+=" AND cena_osoba<="+this.sideFiltr.cena_osoba;}
                 if(this.sideFiltr.fk_strava){where+=" AND fk_strava="+this.sideFiltr.fk_strava;}
                 if(this.sideFiltr.fk_Adresa){where+=" AND fk_Adresa="+this.sideFiltr.fk_Adresa;}
                 console.log(where);
+
                 fetch('/app/api/endpoints/Zajezd/filter.php', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
@@ -63,7 +64,11 @@
                     .then(data => {
                         this.zajezdy = data;
                     });
-            },            
+            },
+            resetFiltr() {
+                this.sideFiltr= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: this.filtrLimit.cena_max, fk_strava:'',fk_Adresa:''};
+                this.fetchZajezdy_filtr(this.filtr);
+            },    
             init() {//zavola metody
                 this.filtr=filtr;//z nejakeho duvodu ted apply nezna filtr
                 if(!filtr)
