@@ -64,18 +64,19 @@
             </script>
         </div>
         <div class="flex-row">
-            <button>filtruj</button>
-            <button type="button" @click="resetFiltr()">reset</button>
+            <button class="btn btn--filtr">filtruj</button>
+            <button class="btn btn--filtr" type="button" @click="resetFiltr()" >reset</button>
         </div>       
     </form>
     <div class="flex-row">
-            <button type="button" class="btn btn--filtr DX-favorite"
-            @click="orderBy('hodnoceni')" x-text="orderdir.hodnoceni == true ? '↓' : '↑'"></button>
+            <button type="button" class="btn btn--filtr DX-favorite" @click="orderBy('hodnoceni')"
+            x-text="orderdir.hodnoceni == true ? '↓' : '↑'"
+            x-bind:style="orderAct.hodnoceni == true ? 'color:red' : 'color:green'"></button>
 
-            <button type="button" class="btn btn--filtr DX-money"
-            @click="orderBy('cena_osoba')" x-text="orderdir.cena_osoba == true ? '↓' : '↑'"></button>
+            <button type="button" class="btn btn--filtr DX-money" @click="orderBy('cena_osoba')" 
+            x-text="orderdir.cena_osoba == true ? '↓' : '↑'"></button>
 
-            <button type="button" class="btn btn--filtr DX-calend"
-            @click="orderBy('datum_odjezdu')" x-text="orderdir.datum_odjezdu == true ? '↓' : '↑'"></button>
+            <button type="button" class="btn btn--filtr DX-calend" @click="orderBy('datum_odjezdu')" 
+            x-text="orderdir.datum_odjezdu == true ? '↓' : '↑'"></button>
         </div>   
 </aside>
