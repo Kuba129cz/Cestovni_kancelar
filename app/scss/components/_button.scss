@@ -11,12 +11,12 @@
 	}
 
 	&--filtr {
-		background-color: $color-primary;
+		background-color: $color-secondary;
 		padding: 0.5rem 0.5rem;
 	}
 
 	&--filtr-active {
-		background-color: $color-secondary;
+		background-color: $color-primary;
 		padding: 0.5rem 0.5rem;
 	}
 }
