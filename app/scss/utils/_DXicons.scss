@@ -10,6 +10,7 @@
     &::before {
         font-family: 'DxIcons';
         font-size: 2em;
+        vertical-align: bottom;
         content: "-";
     }
 }
@@ -187,5 +188,12 @@
     @extend .DX;
     &::before {
         content: "\f06b";
+    }
+}
+
+.DX-money {
+    @extend .DX;
+    &::before {
+        content: "\f036";
     }
 }

@@ -9,4 +9,16 @@
 	&--primary {
 		background-color: $color-primary;
 	}
+
+	&--filtr {
+		background-color: $color-secondary;
+		padding: 0.5rem 0.5rem;
+	}
+
+	&--filtr-active {
+		background-color: $color-primary;
+		padding: 0.5rem 0.5rem;
+	}
 }
+
+

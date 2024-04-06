@@ -64,8 +64,21 @@
             </script>
         </div>
         <div class="flex-row">
-            <button>filtruj</button>
-            <button type="button" @click="resetFiltr()">reset</button>
-        </div>
-    </form>   
+            <button class="btn btn--filtr-active">filtruj</button>
+            <button class="btn btn--filtr" type="button" @click="resetFiltr()" >reset</button>
+        </div>       
+    </form>
+    <div class="flex-row">
+            <button type="button" class="btn DX-favorite" @click="orderBy('hodnoceni')"
+            x-text="orderdir.hodnoceni == true ? '⮟' : '⮝'"
+            x-bind:class="orderAct.hodnoceni == true ? 'btn--filtr-active' : 'btn--filtr'"></button>
+
+            <button type="button" class="btn DX-money" @click="orderBy('cena_osoba')" 
+            x-text="orderdir.cena_osoba == true ? '⮟' : '⮝'"
+            x-bind:class="orderAct.cena_osoba == true ? 'btn--filtr-active' : 'btn--filtr'"></button>
+
+            <button type="button" class="btn DX-calend" @click="orderBy('datum_odjezdu')" 
+            x-text="orderdir.datum_odjezdu == true ? '⮟' : '⮝'"
+            x-bind:class="orderAct.datum_odjezdu == true ? 'btn--filtr-active' : 'btn--filtr'"></button>
+        </div>   
 </aside>

@@ -7,6 +7,8 @@
             filtr,//kopie inputu
             filtrLimit: { cena_min: 0, cena_max: 0, },//limity pro filtr
             sideFiltr: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, fk_strava:'',fk_Adresa:''},//input submit
+            orderdir:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
+            orderAct:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
             fetchZajezdy() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd')
                     .then(Response => Response.json())
@@ -68,7 +70,17 @@
             resetFiltr() {
                 this.sideFiltr= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: this.filtrLimit.cena_max, fk_strava:'',fk_Adresa:''};
                 this.fetchZajezdy_filtr(this.filtr);
-            },    
+            },
+            orderBy(atribut){
+                var desc=this.orderdir[atribut]
+                const ordered = sortByAttribute(this.zajezdy, atribut,desc);
+                this.zajezdy=ordered;
+                console.log(`Sorted by ${atribut} (${desc?'desc':'asc'}):`, ordered);
+
+                this.orderdir[atribut]=!this.orderdir[atribut];
+                this.orderAct={hodnoceni:false,cena_osoba:false,datum_odjezdu:false};
+                this.orderAct[atribut]=true;
+            },
             init() {//zavola metody
                 this.filtr=filtr;//z nejakeho duvodu ted apply nezna filtr
                 if(!filtr)
@@ -84,5 +96,23 @@
                 this.fetchStrava();
             }
         };
+    }
+
+    //zkopirovano z copilota
+    function sortByAttribute(arr, attribute, descending = false) 
+    {
+        const sortOrder = descending ? -1 : 1;
+
+        // Use localeCompare for string comparison (case-insensitive)
+        const compareFunction = (a, b) => {
+            const aValue = a[attribute];
+            const bValue = b[attribute];
+            if (typeof aValue === 'string' && typeof bValue === 'string') {
+                return aValue.localeCompare(bValue) * sortOrder;
+            }
+            return (aValue - bValue) * sortOrder;
+        };
+
+        return arr.slice().sort(compareFunction);
     }
 </script>
