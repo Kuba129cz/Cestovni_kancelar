@@ -5,27 +5,62 @@
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
+
     <div class="container-wholeScreen">
     
-        <main class="col-9"> 
+        <main class="col-9">
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <div class="heading-destination">
                     <h1 class="destinace" x-text="zajezd.stat + ' - ' + zajezd.mesto"></h1>
                     <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`">
-                </div>    
-                
+                </div>   
+        <?php
+        require 'app/api/controllers/AdresaController.php';
+        $controller=new AdresaController();
+        $zajezd = $controller->getAdresaZajezdByID($id);
+
+        // Zadejte cestu k adresáři, který chcete prohledat
+        $adresar = $zajezd[0]["image_path"];
+    // echo $adresar;
+        // Inicializujte pole pro ukládání názvů souborů JPG
+        $soubory_jpg = array();
+
+        // Ověřte, zda zadaný adresář existuje a je čitelný
+        if (is_dir($adresar) && is_readable($adresar)) {
+            // Otevření adresáře
+            if ($handle = opendir($adresar)) {
+                // Procházejte všechny soubory v adresáři
+                while (false !== ($file = readdir($handle))) {
+                    // Zkontrolujte, zda je to soubor a má příponu .jpg
+                    if (is_file($adresar . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) == 'jpg') {
+                        // Uložte název souboru do pole $soubory_jpg
+                        $soubory_jpg[] = $file;
+                    }
+                }
+                // Uzavření manipulace s adresářem
+                closedir($handle);
+            }
+        }
+
+        // Výpis názvů souborů JPG uložených v poli
+        $images = array(); 
+        foreach ($soubory_jpg as $jpg) {
+            $images[] = $jpg;
+        }
+        ?> 
+
                 <div class="gallery">
                     <div class="gallery-main-image">
-                        <img width="660" height="330" :src="zajezd.image_path + '/kokorinsky_dul.jpg'" alt="Fotografie rezortu">
+                        <img width="660" height="330" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[0]; ?>" alt="Fotografie rezortu">
                     </div>
                     <div class="gallery-thumb gallery-thumb-one">
-                        <img width="220" height="110" :src="zajezd.image_path + '//kokorin.jpg'" alt="Fotografie rezortu">
+                        <img width="220" height="110" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[1]; ?>" alt="Fotografie rezortu">
                     </div>
                     <div class="gallery-thumb gallery-thumb-two">
-                        <img width="220" height="110" :src="zajezd.image_path + '/trasa_po_zelene.jpg'" alt="Fotografie rezortu">
+                        <img width="220" height="110" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[2]; ?>" alt="Fotografie rezortu">
                     </div>
                     <div class="gallery-thumb gallery-thumb-three">
-                        <img width="440" height="220" :src="zajezd.image_path + '/kokorinsky_domek.jpg'" alt="Fotografie rezortu">
+                        <img width="440" height="220" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[3]; ?>" alt="Fotografie rezortu">
                     </div>
                 </div>    
 
@@ -46,7 +81,7 @@
                     <span x-text="zajezd.psc"></span>
                 </p>
             </div>
-        </main> 
+         </main>
      </div>
 
     <?php include __DIR__.'/../components/footer.inc.php'; ?>

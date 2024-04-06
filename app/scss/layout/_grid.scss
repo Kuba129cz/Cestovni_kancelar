@@ -1,8 +1,8 @@
  @media screen and (min-width: 40em) {	
  	.container {
  		@include container;
- 		grid-template-columns: minmax(200px, 20%) 1fr;
- 		column-gap: 1.5em; //mezera mezi bunkami
+ 		//grid-template-columns: minmax(200px, 20%) 1fr;
+ 		//column-gap: 1.5em; //mezera mezi bunkami
  	}
  }
 
@@ -10,17 +10,19 @@
   	.container {
   		@include container;
   		grid-template-columns: minmax(85px, 20%) 1fr;
-  		column-gap: 0.5em; //mezera mezi bunkami
+  		//column-gap: 0.5em; //mezera mezi bunkami
   	}
   }
 
  .container-wholeScreen{
  	//kdybysme responsivne nemenily 2 sloupce tak bych dal jako class="container tour"
  	@include container;
- 	grid-template-areas: "main";
- 	max-width: 96rem;/*960px*/
+ 	//grid-template-areas: "main";
+ 	//max-width: 96rem;/*960px*/
+	 max-width: 1100px;
  	align-content: center;
 	//height: 100vh;
+	//box-sizing: border-box;
  }
 
 .gallery {
@@ -44,7 +46,7 @@
 		display: grid;
 		max-width: 1100px;
 	  grid-template:
-		"main thumb1 thumb2"
+		"main thumb1 thumb2" 110px
 		"main thumb3 thumb3" / 3fr 1fr 1fr;
 	}
   }
@@ -66,7 +68,7 @@
   }
   img {
 	max-width: 100%;
-	height: auto;
-	display: block;
+	//height: auto;
+	//display: block;
   }
 
