@@ -16,16 +16,16 @@
                 
                 <div class="gallery">
                     <div class="gallery-main-image">
-                        <img width="660" height="330" :src="zajezd.image_path + '//kokorinsky_dul.jpg'" alt="Fotografie rezortu" class="img-tour">
+                        <img width="660" height="330" :src="zajezd.image_path + '/kokorinsky_dul.jpg'" alt="Fotografie rezortu">
                     </div>
                     <div class="gallery-thumb gallery-thumb-one">
-                        <img width="440" height="220" :src="zajezd.image_path + '/kokorinsky_domek.jpg'" alt="Fotografie rezortu" class="img-tour" >
+                        <img width="220" height="110" :src="zajezd.image_path + '//kokorin.jpg'" alt="Fotografie rezortu">
                     </div>
                     <div class="gallery-thumb gallery-thumb-two">
-                        <img width="220" height="110" :src="zajezd.image_path + '/kokorin.jpg'" alt="Fotografie rezortu" class="img-tour">
+                        <img width="220" height="110" :src="zajezd.image_path + '/trasa_po_zelene.jpg'" alt="Fotografie rezortu">
                     </div>
                     <div class="gallery-thumb gallery-thumb-three">
-                        <img width="220" height="110" :src="zajezd.image_path + '/trasa_po_zelene.jpg'" alt="Fotografie rezortu" class="img-tour">
+                        <img width="440" height="220" :src="zajezd.image_path + '/kokorinsky_domek.jpg'" alt="Fotografie rezortu">
                     </div>
                 </div>    
 
