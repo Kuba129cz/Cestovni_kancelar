@@ -29,6 +29,9 @@
                         this.zajezdy = data;
                         this.filtrLimit.cena_max = data.reduce((max, obj) => Math.max(max, obj.cena_osoba), 0);
                         this.filtrLimit.cena_min = data.reduce((min, obj) => Math.min(min, obj.cena_osoba), Infinity);
+
+                        const active = Object.keys(this.orderAct).filter(key => this.orderAct[key] === true);
+                        orderBy(active[0]);
                     });
             },
             fetchAdrs() {//zavolej API
