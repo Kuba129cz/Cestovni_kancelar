@@ -7,6 +7,7 @@
             filtr,//kopie inputu
             filtrLimit: { cena_min: 0, cena_max: 0, },//limity pro filtr
             sideFiltr: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, fk_strava:'',fk_Adresa:''},//input submit
+            orderdir:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
             fetchZajezdy() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd')
                     .then(Response => Response.json())
@@ -69,10 +70,13 @@
                 this.sideFiltr= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: this.filtrLimit.cena_max, fk_strava:'',fk_Adresa:''};
                 this.fetchZajezdy_filtr(this.filtr);
             },
-            orderBy(atribut,desc){
+            orderBy(atribut){
+                var desc=this.orderdir[atribut]
                 const ordered = sortByAttribute(this.zajezdy, atribut,desc);
                 this.zajezdy=ordered;
                 console.log(`Sorted by ${atribut} (${desc?'desc':'asc'}):`, ordered);
+
+                this.orderdir[atribut]=!this.orderdir[atribut];
             },
             init() {//zavola metody
                 this.filtr=filtr;//z nejakeho duvodu ted apply nezna filtr
