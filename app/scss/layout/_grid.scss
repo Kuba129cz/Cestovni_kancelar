@@ -1,31 +1,32 @@
-// @media screen and (min-width: 40em) {	
-// 	.container {
-// 		@include container;
-// 		grid-template-columns: minmax(200px, 20%) 1fr;
-// 		column-gap: 1.5em; //mezera mezi bunkami
-// 	}
-// }
+ @media screen and (min-width: 40em) {	
+ 	.container {
+ 		@include container;
+ 		grid-template-columns: minmax(200px, 20%) 1fr;
+ 		column-gap: 1.5em; //mezera mezi bunkami
+ 	}
+ }
 
-// @media screen and (max-width: 40em) {	
-// 	.container {
-// 		@include container;
-// 		grid-template-columns: minmax(85px, 20%) 1fr;
-// 		column-gap: 0.5em; //mezera mezi bunkami
-// 	}
-// }
+  @media screen and (max-width: 40em) {	
+  	.container {
+  		@include container;
+  		grid-template-columns: minmax(85px, 20%) 1fr;
+  		column-gap: 0.5em; //mezera mezi bunkami
+  	}
+  }
 
-// .container-wholeScreen{
-// 	//kdybysme responsivne nemenily 2 sloupce tak bych dal jako class="container tour"
-// 	@include container;
-// 	grid-template-areas: "main";
-// 	max-width: 96rem;/*960px*/
-// 	align-content: center;
-// }
+ .container-wholeScreen{
+ 	//kdybysme responsivne nemenily 2 sloupce tak bych dal jako class="container tour"
+ 	@include container;
+ 	grid-template-areas: "main";
+ 	max-width: 96rem;/*960px*/
+ 	align-content: center;
+	//height: 100vh;
+ }
 
-// .gallery {
-// 	display: grid;
-// 	max-width: 1100px;
-//   }
+.gallery {
+	display: grid;
+	max-width: 1100px;
+ }
   
   @media (max-width: 24.9999em) {
 	.gallery {

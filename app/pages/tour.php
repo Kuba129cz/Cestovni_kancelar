@@ -5,13 +5,13 @@
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
-  <!--  <div class="container-wholeScreen"> -->
+    <div class="container-wholeScreen">
     
-       <!-- <main class="col-9"> -->
+        <main class="col-9"> 
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <div class="heading-destination">
                     <h1 class="destinace" x-text="zajezd.stat + ' - ' + zajezd.mesto"></h1>
-                  <!--  <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`">-->
+                    <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`">
                 </div>    
                 
                 <div class="gallery">
@@ -46,8 +46,8 @@
                     <span x-text="zajezd.psc"></span>
                 </p>
             </div>
-        <!-- </main> -->
-    <!-- </div> -->
+        </main> 
+     </div>
 
     <?php include __DIR__.'/../components/footer.inc.php'; ?>
     <?php include __DIR__.'/../includes/parts/scripts.inc.php'; ?>
