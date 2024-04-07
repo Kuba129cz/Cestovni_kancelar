@@ -49,28 +49,35 @@
         }
         ?> 
 
-                <div class="gallery">
-                    <div class="gallery-main-image">
-                        <img width="660" height="330" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[0]; ?>" alt="Fotografie rezortu">
-                    </div>
-                    <div class="gallery-thumb gallery-thumb-one">
-                        <img width="220" height="110" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[1]; ?>" alt="Fotografie rezortu">
-                    </div>
-                    <div class="gallery-thumb gallery-thumb-two">
-                        <img width="220" height="110" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[2]; ?>" alt="Fotografie rezortu">
-                    </div>
-                    <div class="gallery-thumb gallery-thumb-three">
-                        <img width="440" height="220" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[3]; ?>" alt="Fotografie rezortu">
-                    </div>
-                </div>    
+        <div class="gallery">
+            <div class="gallery-main-image">
+                <a href="<?php echo $zajezd[0]["image_path"] . '/' . $images[0]; ?>" data-fancybox="gallery">
+                    <img width="660" height="330" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[0]; ?>" alt="Fotografie rezortu">
+                </a>
+            </div>
+            <div class="gallery-thumb gallery-thumb-one">
+                <a href="<?php echo $zajezd[0]["image_path"] . '/' . $images[1]; ?>" data-fancybox="gallery">
+                    <img width="220" height="110" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[1]; ?>" alt="Fotografie rezortu">
+                </a>
+            </div>
+            <div class="gallery-thumb gallery-thumb-two">
+                <a href="<?php echo $zajezd[0]["image_path"] . '/' . $images[2]; ?>" data-fancybox="gallery">
+                    <img width="220" height="110" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[2]; ?>" alt="Fotografie rezortu">
+                </a>
+            </div>
+            <div class="gallery-thumb gallery-thumb-three">
+                <a href="<?php echo $zajezd[0]["image_path"] . '/' . $images[3]; ?>" data-fancybox="gallery">
+                    <img width="440" height="220" src="<?php echo $zajezd[0]["image_path"] . '/' . $images[3]; ?>" alt="Fotografie rezortu">
+                </a>
+            </div>
+        </div>
 
-                    <div class="destination-info">
-                        <p><b>Termín:</b> <span x-text="zajezd.datum_prijezdu"></span> - <span x-text="zajezd.datum_odjezdu"></span></p>
-                        <p><b>Strava:</b> <span x-text="zajezd.typ_stravy"></span></p>
-                        <p><b>Cena na osobu:</b> <span x-text="zajezd.cena_osoba"></span> Kč</p>
-                        <button class="btn-tour-order">Mám zájem</button>
-
-                </div>
+        <div class="destination-info">
+            <p><b>Termín:</b> <span x-text="zajezd.datum_prijezdu"></span> - <span x-text="zajezd.datum_odjezdu"></span></p>
+            <p><b>Strava:</b> <span x-text="zajezd.typ_stravy"></span></p>
+            <p><b>Cena na osobu:</b> <span x-text="zajezd.cena_osoba"></span> Kč</p>
+            <button class="btn-tour-order">Mám zájem</button>
+        </div>
                 <h2>Popis</h2>
                 <p x-text="zajezd.popis"></p>
                 <h2>Adresa místa</h2>
