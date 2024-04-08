@@ -23,13 +23,13 @@
       grid-template-areas:
       'Head Head From  Order'
       'Price Rating To  Order';
-      grid-gap: 10px;
-      background-color: #2196F3;
+      grid-gap: 0px;
+      background-color: rgb(255, 255, 255);
       padding: 10px;
     }
  
      .grid-container > div {
-     background-color: rgba(255, 255, 255, 0.8);
+     background-color: rgba(252, 249, 249, 0.8);
      text-align: center;
       padding: 20px 0;
        font-size: 30px;
