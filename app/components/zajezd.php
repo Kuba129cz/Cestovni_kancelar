@@ -7,8 +7,7 @@
             <div class="item2"><span x-text="zajezd.mesto"></span>/<span x-text="zajezd.stat"></span></div> <!--Název-->
             <div class="item3">From: <span x-text="zajezd.datum_prijezdu"></span></div>  
             <div class="item4">Order:
-            <a href="/tour">klikni</a>
-            <a x-bind:href="'http://cestovka.test:80/tour?id=1' + zajezd.Id"></a>
+              <a x-bind:href="'/tour?id=' + zajezd.id_zajezd">klikni</a>
             </div>
             <div class="item5">To: <span x-text="zajezd.datum_odjezdu"></span></div>
             <div class="item6">Rating: </div>
