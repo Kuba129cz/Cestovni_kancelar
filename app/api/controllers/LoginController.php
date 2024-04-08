@@ -28,7 +28,7 @@ class LoginController
             //if(password_verify($pass,$user["password"]))
             if($pass==$user["password"])
             {
-                return['success'=>true, 'username'=>$user['username']];
+                return['success'=>true, 'username'=>$user['nick']];
             }
             return['success'=>false,'message'=>'blbe heslo'];
          }

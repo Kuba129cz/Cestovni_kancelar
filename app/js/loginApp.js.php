@@ -12,7 +12,7 @@
                     .then(Response => Response.json())
                     .then(data => {
                         if(data.success){alert("ok");}
-                        if(data.success){alert("fuck off");}
+                        else{alert("fuck off");}
                     })
                     .catch(error=>alert(error.message));
             },
