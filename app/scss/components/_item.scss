@@ -28,9 +28,10 @@
 }
 
 .item4 {
-  grid-area: Order;
+  grid-area: Or;
   align-items: center;
   display: flex;
+  justify-content: center;
 }
 
 .item5 {
@@ -45,15 +46,21 @@
 
 .grid-container {
   display: grid;
-  grid-template-areas:
-    'Head Head From Order'
-    'Price Rating To Order';
+  grid-template:
+    'Head Head From Or'
+    'Price Rating To Or'/
+		1fr 1fr 1.5fr 1fr;
   grid-gap: 0px;
   background-color: rgb(255, 255, 255);
   padding: 10px;
+  border-style: ridge;
+  border-width: 5px;
+margin-bottom: 15px;
+		
 }
 
 .grid-container>div {
+  
   background-color: rgba(252, 249, 249, 0.8);
   text-align: center;
   padding: 20px 0;
