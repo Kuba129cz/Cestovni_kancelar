@@ -12,3 +12,26 @@
     align-items: center;
   }
   
+    .item1 { grid-area: Price; align-items: center;}
+    .item2 { grid-area: Head; align-items: center;}
+    .item3 { grid-area: From; align-items: center;}
+    .item4 { grid-area: Order; align-items: center; }
+    .item5 { grid-area: To; align-items: center;}
+    .item6 { grid-area: Rating; align-items: center; }
+    .grid-container {
+     display: grid;
+      grid-template-areas:
+      'Head Head From  Order'
+      'Price Rating To  Order';
+      grid-gap: 10px;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+ 
+     .grid-container > div {
+     background-color: rgba(255, 255, 255, 0.8);
+     text-align: center;
+      padding: 20px 0;
+       font-size: 30px;
+       }
+ 
