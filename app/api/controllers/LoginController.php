@@ -14,7 +14,7 @@ class LoginController
 
     public function login($nick,$pass)
     {
-       $SQL="select * from User JOIN WHERE nick = :nick";
+       $SQL="select * from User WHERE nick = :nick";
        if($stmt=$this->conn->prepare($SQL))
        {
          $stmt->bindParam(":nick",$nick);

@@ -4,7 +4,7 @@
             username:'',
             password:'',
             login(){
-                fetch("/app/api/endpoints/login", {
+                fetch("/app/api/endpoints/login/", {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
 						body: JSON.stringify({username:this.username,password:this.password})
