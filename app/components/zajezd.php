@@ -7,7 +7,8 @@
             <div class="item2"><span x-text="zajezd.mesto"></span>/<span x-text="zajezd.stat"></span></div> <!--Název-->
             <div class="item3">From: <span x-text="zajezd.datum_prijezdu"></span></div>  
             <div class="item4">Order:
-              <a x-bind:href="'/tour?id=' + zajezd.id_zajezd">klikni</a>
+            <button type="button"> <a x-bind:href="'/tour?id=' + zajezd.id_zajezd">klikni</a></button>
+
             </div>
             <div class="item5">To: <span x-text="zajezd.datum_odjezdu"></span></div>
             <div class="item6">Rating: </div>

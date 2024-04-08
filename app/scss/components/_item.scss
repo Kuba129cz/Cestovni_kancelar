@@ -21,8 +21,8 @@
     .grid-container {
      display: grid;
       grid-template-areas:
-      'Head Head From  Order'
-      'Price Rating To  Order';
+      'Head Head From Order'
+      'Price Rating To Order';
       grid-gap: 0px;
       background-color: rgb(255, 255, 255);
       padding: 10px;
@@ -32,6 +32,7 @@
      background-color: rgba(252, 249, 249, 0.8);
      text-align: center;
       padding: 20px 0;
-       font-size: 30px;
+       font-size: 20px;
+       font-family: "Calibry";
        }
  
