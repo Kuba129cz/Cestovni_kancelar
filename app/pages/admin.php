@@ -11,17 +11,17 @@
         <main class="col-9">
             <div class="row">
               <div x-data="adminApp()">
-              <templat x-if="items.lenght>0">
-              <template x-for="items in item" :key="item.id">
+              <template x-if="items.length>0">
+              <template x-for="item in items" :key="item.id">
                 <div>
                   <span x-text="item.id"></span>
-                  <span x-text="time_stamp"></span>
-                  <span x-text="description"></span>
-                  <span x-text="destination_id"></span>
-                  <span x-text="author_id"></span>
+                  <span x-text="item.time_stamp"></span>
+                  <span x-text="item.description"></span>
+                  <span x-text="item.destination_id"></span>
+                  <span x-text="item.author_id"></span>
                 </template>
               </template>
-              <templat x-if="items.lenght==0"><div>null</div></template>
+              <template x-if="items.length===0"><div>null</div></template>
               </div>
             </div>
         </main>
