@@ -2,6 +2,27 @@
 $title = "tour";
 include __DIR__ . '/../includes/parts/head.inc.php';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
+
+require 'app/api/controllers/AdresaController.php';
+$controller = new AdresaController();
+$zajezd = $controller->getAdresaZajezdByID($id); // You missed closing the parenthesis here
+$adresar = $zajezd[0]["image_path"];
+$soubory_jpg = array();
+if (is_dir($adresar) && is_readable($adresar)) {
+    if ($handle = opendir($adresar)) {
+        while (false !== ($file = readdir($handle))) {
+            if (is_file($adresar . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) == 'jpg') {
+                $soubory_jpg[] = $file;
+            }
+        }
+        closedir($handle);
+    }
+}
+
+$images = array();
+foreach ($soubory_jpg as $jpg) {
+    $images[] = $jpg;
+}
 ?>
 <body x-data="{ open: false }">
     <?php include __DIR__ . '/../components/header.inc.php'; ?>
@@ -13,32 +34,7 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
                 <div class="heading-destination">
                     <h1 class="destinace" x-text="zajezd.stat + ' - ' + zajezd.mesto"></h1>
                     <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`"></div>
-                </div>
-
-                <?php
-                require 'app/api/controllers/AdresaController.php';
-                $controller = new AdresaController();
-                $zajezd = $controller->getAdresaZajezdByID($id);
-
-                $adresar = $zajezd[0]["image_path"];
-                $soubory_jpg = array();
-
-                if (is_dir($adresar) && is_readable($adresar)) {
-                    if ($handle = opendir($adresar)) {
-                        while (false !== ($file = readdir($handle))) {
-                            if (is_file($adresar . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) == 'jpg') {
-                                $soubory_jpg[] = $file;
-                            }
-                        }
-                        closedir($handle);
-                    }
-                }
-
-                $images = array();
-                foreach ($soubory_jpg as $jpg) {
-                    $images[] = $jpg;
-                }
-                ?>
+                </div>                
 
                 <div class="gallery">
                     <div class="gallery-main-image">

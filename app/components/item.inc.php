@@ -4,6 +4,6 @@
         <p class="text-muted">jeho popis</p>
     </div> 
     <div>             
-        <a href="index.html">stránka programu</a>
+        <a href="app\pages\tour.php?id=2">stránka programu</a>
     </div>
 </div>
