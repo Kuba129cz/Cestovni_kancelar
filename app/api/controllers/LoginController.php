@@ -39,5 +39,29 @@ class LoginController
         }
         return ['success' => false];
     }
+
+    public function registerUser($nick,$pass) 
+    {
+        //ToDo telefon + mail
+        if (empty($nick) || empty($pass))
+        {return false;}
+
+        $query = "INSERT INTO User (nick, password) 
+        VALUES (:nick, :pass)";
+        $stmt = $this->conn->prepare($query);
+
+        // sanitize
+        $nick=htmlspecialchars(strip_tags($nick));
+        $pass==htmlspecialchars(strip_tags($pass));
+        $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+
+        $stmt->bindParam(":nick", $nick);
+        $stmt->bindParam(":pass", $hashedPassword);
+
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
 }
 ?>
