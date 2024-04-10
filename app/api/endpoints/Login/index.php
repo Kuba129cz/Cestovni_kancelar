@@ -17,23 +17,22 @@ if($method=='POST')
     $nick=$data['username']??'';
     $pass=$data['password']??'';
 
-    $result=$controller->login($nick,$pass);
+    $loginResult=$controller->loginUser($nick,$pass);
 
-    if($result['success'])
-    {
-        session_start();
-        $_SESSION['username']=$result['username'];
-        echo json_encode($result);
+    if ($loginResult['success']) {
+        session_start(); // 1st session_start() call
+        $_SESSION['username'] = $loginResult['username'];
+        echo json_encode(['success' => true, 'message' => 'Login successful']);
     }
     else
     {
-        http_response_code(401); //unauthorized
-        echo json_encode($result);
+        http_response_code(401); // Unauthorized
+        echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
     }
 }
 else {
-    http_response_code(405); // Method not allowed
-    echo json_encode(['message' => 'Method not allowed.']);
+    http_response_code(405); // Method Not Allowed
+    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
 }
 
 ?>
