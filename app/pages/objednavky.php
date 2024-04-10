@@ -1,5 +1,6 @@
 <?php
     $title="objednavky";
+    include __DIR__.'/../includes/parts/mustLog.inc.php';
     include __DIR__.'/../includes/parts/head.inc.php';
 ?>
     <body x-data="{ open: false }">
