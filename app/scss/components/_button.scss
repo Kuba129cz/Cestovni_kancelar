@@ -19,6 +19,13 @@
 		background-color: $color-primary;
 		padding: 0.5rem 0.5rem;
 	}
+	&:hover{ //xham skopiroval jsem hover muze se klidne dal upravovat
+		// background-color: #FF5733; /* Změna barvy pozadí */
+		 transition: background-color 0.3s ease; /* Přechod pro plynulou změnu barvy pozadí */
+		 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Přidání stínu */
+		 transform: scale(1.1); /* Zvětšení tlačítka */
+		 cursor: pointer;
+	   }
 }
 
 
