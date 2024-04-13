@@ -2,6 +2,41 @@
 $title = "tour";
 include __DIR__ . '/../includes/parts/head.inc.php';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
+
+require 'app/api/controllers/AdresaController.php';
+$controller = new AdresaController();
+$zajezd = $controller->getAdresaZajezdByID($id);
+
+$adresar = $zajezd[0]["image_path"];
+$soubory_jpg = array();
+
+if (is_dir($adresar) && is_readable($adresar)) {
+    if ($handle = opendir($adresar)) {
+        while (false !== ($file = readdir($handle))) {
+            if (is_file($adresar . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) == 'jpg') {
+                $soubory_jpg[] = $file;
+            }
+        }
+        closedir($handle);
+    }
+}
+
+$images = array();
+foreach ($soubory_jpg as $jpg) {
+    $images[] = $jpg;
+}
+$stat = $zajezd[0]["stat"];
+$mesto = $zajezd[0]["mesto"];
+$ulice = $zajezd[0]["ulice"];
+$psc = $zajezd[0]["psc"];
+$popis = $zajezd[0]["popis"];
+$datum_prijezdu = $zajezd[0]["datum_prijezdu"];
+$datum_odjezdu = $zajezd[0]["datum_odjezdu"];
+$typ_stravy = $zajezd[0]["typ_stravy"];
+$cena_osoba = $zajezd[0]["cena_osoba"];
+
+// var_dump($zajezd); pro ladeni
+
 ?>
 <body x-data="{ open: false }">
     <?php include __DIR__ . '/../components/header.inc.php'; ?>
@@ -11,45 +46,9 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
         <main class="col-9">
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <div class="heading-destination">
-                    <h1 class="destinace" x-text="zajezd.stat + ' - ' + zajezd.mesto"></h1>
-                    <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`"></div>
+                <h1 class="destinace"><?php echo $stat . ' - ' . $mesto; ?></h1>
+                <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`"></div>
                 </div>
-
-                <?php
-                require 'app/api/controllers/AdresaController.php';
-                $controller = new AdresaController();
-                $zajezd = $controller->getAdresaZajezdByID($id);
-
-                $adresar = $zajezd[0]["image_path"];
-                $soubory_jpg = array();
-
-                if (is_dir($adresar) && is_readable($adresar)) {
-                    if ($handle = opendir($adresar)) {
-                        while (false !== ($file = readdir($handle))) {
-                            if (is_file($adresar . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) == 'jpg') {
-                                $soubory_jpg[] = $file;
-                            }
-                        }
-                        closedir($handle);
-                    }
-                }
-
-                $images = array();
-                foreach ($soubory_jpg as $jpg) {
-                    $images[] = $jpg;
-                }
-                $stat = $zajezd[0]["stat"];
-                $mesto = $zajezd[0]["mesto"];
-                $ulice = $zajezd[0]["ulice"];
-                $psc = $zajezd[0]["psc"];
-                $popis = $zajezd[0]["popis"];
-                $datum_prijezdu = $zajezd[0]["datum_prijezdu"];
-                $datum_odjezdu = $zajezd[0]["datum_odjezdu"];
-                $typ_stravy = $zajezd[0]["typ_stravy"];
-                $cena_osoba = $zajezd[0]["cena_osoba"];
-
-                // var_dump($zajezd); pro ladeni
-                ?>
 
                 <div class="gallery">
                     <div class="gallery-main-image">
