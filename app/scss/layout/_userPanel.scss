@@ -3,7 +3,12 @@
     flex-direction: row;
     justify-content: end;
     gap: 0.5em;
-    margin-right: 1em;
+    padding-right: 1.5em;
+
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    z-index: 2;
 }
 
 .user-btn{

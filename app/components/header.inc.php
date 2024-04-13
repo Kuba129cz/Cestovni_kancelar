@@ -9,8 +9,6 @@ if($is_loged)
 {
     $username=$_SESSION['username'];
     $rights=$_SESSION['rights'];
-
-    echo "${username} - ${rights}";
 }
 ?>
 
