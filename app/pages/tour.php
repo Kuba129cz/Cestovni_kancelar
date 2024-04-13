@@ -34,6 +34,7 @@ $datum_prijezdu = $zajezd[0]["datum_prijezdu"];
 $datum_odjezdu = $zajezd[0]["datum_odjezdu"];
 $typ_stravy = $zajezd[0]["typ_stravy"];
 $cena_osoba = $zajezd[0]["cena_osoba"];
+$hodnoceni = $zajezd[0]["hodnoceni"];
 
 // var_dump($zajezd); pro ladeni
 
@@ -47,7 +48,7 @@ $cena_osoba = $zajezd[0]["cena_osoba"];
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <div class="heading-destination">
                 <h1 class="destinace"><?php echo $stat . ' - ' . $mesto; ?></h1>
-                <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`"></div>
+                <div class="progress-bar" style="--rating: <?php echo"$hodnoceni"?>"></div>
                 </div>
 
                 <div class="gallery">
