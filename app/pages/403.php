@@ -1,4 +1,1 @@
-<?php
-    echo "nemáš práva";
-    
-?>
+<img src="/app/resources/images/error/trooper403.png" alt="403" style="width: 100vw;"/>
