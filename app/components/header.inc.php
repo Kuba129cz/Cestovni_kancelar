@@ -16,8 +16,12 @@ if($is_loged)
 
 <header>
     <div>
-        <a href="/admin"> administrace</a>
-        <a href="/objednavky"> objednávky</a>
+        <?php if($rights>=2){echo"<a href='/admin'> administrace</a>";}?>
+        <?php if($rights>=0){echo"<a href='/objednavky'> objednávky</a>";}?>
+
+        <?php if(!$is_loged){echo"<a href='/login'> login</a>";}
+                        else{echo"<a href='/login'> login</a>";}
+        ?>
     </div>
     <div class="obr-bg">
         <a class="no-decor" href="/">
