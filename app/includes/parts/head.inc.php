@@ -3,12 +3,27 @@
 
   $username='';
   $rights=-1;
-  
+
   $is_loged=isset($_SESSION['username']);
   if($is_loged)
   {
       $username=$_SESSION['username'];
       $rights=$_SESSION['rights'];
+  }
+
+  $pozadovana_prava=isset($pozadovana_prava)?$pozadovana_prava:-1;
+  if($rights<$pozadovana_prava)
+  {
+    if(!$is_loged)
+    {
+      header('Location: /login');
+      exit();
+    }
+    else
+    {
+      header('Location: /403');
+      exit();
+    }
   }
 ?>
 
