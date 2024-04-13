@@ -1,13 +1,27 @@
+<?php
+	session_start();
+
+  $username='';
+  $rights=-1;
+  
+  $is_loged=isset($_SESSION['username']);
+  if($is_loged)
+  {
+      $username=$_SESSION['username'];
+      $rights=$_SESSION['rights'];
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
-      <?php
+    <?php
       echo $title
     ?>
-    </title>
+  </title>
 
 	<link rel="stylesheet" href="dist/style.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
