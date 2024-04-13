@@ -1,0 +1,16 @@
+.userPanel{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 0.5em;
+    margin-right: 1em;
+}
+
+.user-btn{
+    display: inline-block;
+	padding: 0.5rem 0.5rem;
+	background-color: #a7a7a7;
+	color: #fff;
+	text-decoration: none;
+	border-radius: $border-radius;
+}

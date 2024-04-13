@@ -15,12 +15,12 @@ if($is_loged)
 ?>
 
 <header>
-    <div>
-        <?php if($rights>=2){echo"<a href='/admin'> administrace</a>";}?>
-        <?php if($rights>=0){echo"<a href='/objednavky'> objednávky</a>";}?>
+    <div class="userPanel">
+        <?php if($rights>=2){echo"<a href='/admin' class='user-btn'> administrace</a>";}?>
+        <?php if($rights>=0){echo"<a href='/objednavky' class='user-btn'> objednávky</a>";}?>
 
-        <?php if(!$is_loged){echo"<a href='/login'> login</a>";}
-                        else{echo"<a href='/login'> login</a>";}
+        <?php if(!$is_loged){echo"<a href='/login' class='user-btn'> login</a>";}
+                        else{echo"<a href='/login' class='user-btn'> login</a>";}
         ?>
     </div>
     <div class="obr-bg">
