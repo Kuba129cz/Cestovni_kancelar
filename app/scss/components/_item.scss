@@ -12,34 +12,34 @@
   align-items: center;
 }
 
-.item1 {
+.cena {
   grid-area: Price;
   align-items: center;
 }
 
-.item2 {
+.nazev {
   grid-area: Head;
   align-items: center;
 }
 
-.item3 {
+.prijezd {
   grid-area: From;
   align-items: center;
 }
 
-.item4 {
+.objednat {
   grid-area: Or;
   align-items: center;
   display: flex;
   justify-content: center;
 }
 
-.item5 {
+.odjezd {
   grid-area: To;
   align-items: center;
 }
 
-.item6 {
+.hodnoceni {
   grid-area: Rating;
   align-items: center;
 }

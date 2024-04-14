@@ -5,11 +5,16 @@
 
         <main class="col-9">
             <form @submit.prevent="login">
-                nick<input type="text" x-model="username"/><br>
-                pass<input type="password" x-model="password"/><br>
-                <button type="submit">login</button>
-            </form>     
-        </main>    
+               <div class="flex-container">
+                <div>Nick:</div>
+                <div><input type="text" x-model="username"/><br></div>
+                <div>Password:</div>
+                <div><input type="password" x-model="password"/><br></div>
+               <button type="login">login</button>
+                 </div>
+              
+               </form>     
+          </main>    
       </div>
 
       <?php include __DIR__.'/../components/footer.inc.php'; ?>
