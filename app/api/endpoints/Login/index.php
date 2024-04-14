@@ -22,6 +22,7 @@ if($method=='POST')
     if ($loginResult['success']) {
         session_start(); // 1st session_start() call
         $_SESSION['username'] = $loginResult['username'];
+        $_SESSION['rights'] = $loginResult['rights'];
         echo json_encode(['success' => true, 'message' => 'Login successful']);
     }
     else
