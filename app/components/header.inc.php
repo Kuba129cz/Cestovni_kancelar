@@ -1,17 +1,3 @@
-<?php
-	session_start();
-
-$username='';
-$rights=-1;
-
-$is_loged=isset($_SESSION['username']);
-if($is_loged)
-{
-    $username=$_SESSION['username'];
-    $rights=$_SESSION['rights'];
-}
-?>
-
 <header>
     <div class="userPanel">
         <?php if($rights>=2){echo"<a href='/admin' class='user-btn'> administrace</a>";}?>
