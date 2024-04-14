@@ -17,17 +17,17 @@
 
     <textarea x-model="newItem.popis" placeholder="Popis"></textarea>
 
-    <label for="dateFrom">od</label>
-    <input type="date" id="dateFrom" x-model="newItem.datum_odjezdu"/>
-    <label for="dateTo">do</label>
-    <input type="date" id="dateTo" x-model="newItem.datum_prijezdu"/>
+    <label for="zajezd_dateFrom">od</label>
+    <input type="date" id="zajezd_dateFrom" x-model="newItem.datum_odjezdu"/>
+    <label for="zajezd_dateTo">do</label>
+    <input type="date" id="zajezd_dateTo" x-model="newItem.datum_prijezdu"/>
     <script>
-        document.getElementById('dateFrom').valueAsDate = new Date();
-        document.getElementById('dateTo').valueAsDate = new Date();
+        document.getElementById('zajezd_dateFrom').valueAsDate = new Date();
+        document.getElementById('zajezd_dateTo').valueAsDate = new Date();
     </script>
 
-    <label for="cena_numer">cena na osobu</label>
-    <input type="number" id="cena_numer" x-model="newItem.cena_osoba" min="1">
+    <label for="zajezd_cena">cena na osobu</label>
+    <input type="number" id="zajezd_cena" x-model="newItem.cena_osoba" min="1">
 
     <button type="submit" class="btn btn--primary">Vložit</button>
 </form>
