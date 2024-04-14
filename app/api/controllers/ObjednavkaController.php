@@ -30,5 +30,31 @@ class ObjednavkaController
        $stmt->execute();
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function create($id_objednavka,$pocet_osob,$fk_zajezd,$fk_zakaznik) 
+    {
+        if (empty($id_objednavka) || empty($pocet_osob) || empty($fk_zajezd) || empty($fk_zakaznik))
+        {return false;}
+
+        $query = "INSERT INTO Objednavka (id_objednavka,pocet_osob,fk_zajezd,fk_zakaznik) 
+        VALUES (:id_objednavka,:pocet_osob,:fk_zajezd,:fk_zakaznik)";
+        $stmt = $this->conn->prepare($query);
+
+        // sanitize
+        $id_objednavka=htmlspecialchars(strip_tags($id_objednavka));
+        $pocet_osob==htmlspecialchars(strip_tags($pocet_osob));
+        //$datum_vytvoren=htmlspecialchars(strip_tags($datum_vytvoren));
+        $fk_zajezd=htmlspecialchars(strip_tags($fk_zajezd));
+        $fk_zakaznik=htmlspecialchars(strip_tags($fk_zakaznik));
+
+        $stmt->bindParam(":id_objednavka", $id_objednavka);
+        $stmt->bindParam(":pocet_osob", $pocet_osob);
+        $stmt->bindParam(":fk_zajezd", $fk_zajezd);
+        $stmt->bindParam(":fk_zakaznik", $fk_zakaznik);
+
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
 }
 ?>
