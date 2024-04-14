@@ -1,14 +1,69 @@
-.item{
-    padding: 15px;
-    margin-bottom: 15px;
-  
+.item {
+  padding: 15px;
+  margin-bottom: 15px;
+
   width: 100%;
+
+  border-radius: 4px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cena {
+  grid-area: Price;
+  align-items: center;
+}
+
+.nazev {
+  grid-area: Head;
+  align-items: center;
+}
+
+.prijezd {
+  grid-area: From;
+  align-items: center;
+}
+
+.objednat {
+  grid-area: Or;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.odjezd {
+  grid-area: To;
+  align-items: center;
+}
+
+.hodnoceni {
+  grid-area: Rating;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template:
+    'Head Head From Or'
+    'Price Rating To Or'/
+		1fr 1fr 1.5fr 1fr;
+  grid-gap: 0px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-style: ridge;
+  border-width: 5px;
+margin-bottom: 15px;
+		
+}
+
+.grid-container>div {
   
-    border-radius: 4px;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
-    border: 1px solid #f0f0f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  background-color: rgba(252, 249, 249, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  font-family: "Calibry";
+}
