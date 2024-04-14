@@ -25,6 +25,9 @@
         case '/objednavky' :
             require __DIR__ . '/app/pages/objednavky.php';
             break;
+        case '/403' :
+            require __DIR__ . '/app/pages/403.php';
+            break;
         default:
             http_response_code(404);//aby mě vyhledávače neindexovali neexistujici
             require __DIR__ . '/app/pages/404.php';

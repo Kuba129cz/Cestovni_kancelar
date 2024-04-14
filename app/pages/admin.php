@@ -1,6 +1,7 @@
 <?php
     $title="admin";
-    include __DIR__.'/../includes/parts/mustLog.inc.php';
+    //include __DIR__.'/../includes/parts/mustLog.inc.php';
+    $pozadovana_prava=2;
     include __DIR__.'/../includes/parts/head.inc.php';
 ?>
 

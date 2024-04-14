@@ -27,7 +27,7 @@ class LoginController
                 $user = $result[0];
                 if (password_verify($pass, $user['password']))// password_verify checks if the plain text password 'admin' matches the hash stored in $hashed_password 
                 { 
-                    return ['success' => true, 'username' => $user['nick']];
+                    return ['success' => true, 'username' => $user['nick'],'rights' => $user['role']];
                 }
             }
             $stmt->closeCursor();

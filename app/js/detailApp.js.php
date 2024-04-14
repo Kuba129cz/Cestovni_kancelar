@@ -45,7 +45,7 @@
                 }
                 else
                 {
-                    this.fetchZajezdy();
+                    //this.fetchZajezdy();
                 }
             }
         };
