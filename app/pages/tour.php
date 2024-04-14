@@ -2,6 +2,42 @@
 $title = "tour";
 include __DIR__ . '/../includes/parts/head.inc.php';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
+
+require 'app/api/controllers/AdresaController.php';
+$controller = new AdresaController();
+$zajezd = $controller->getAdresaZajezdByID($id);
+
+$adresar = $zajezd[0]["image_path"];
+$soubory_jpg = array();
+
+if (is_dir($adresar) && is_readable($adresar)) {
+    if ($handle = opendir($adresar)) {
+        while (false !== ($file = readdir($handle))) {
+            if (is_file($adresar . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) == 'jpg') {
+                $soubory_jpg[] = $file;
+            }
+        }
+        closedir($handle);
+    }
+}
+
+$images = array();
+foreach ($soubory_jpg as $jpg) {
+    $images[] = $jpg;
+}
+$stat = $zajezd[0]["stat"];
+$mesto = $zajezd[0]["mesto"];
+$ulice = $zajezd[0]["ulice"];
+$psc = $zajezd[0]["psc"];
+$popis = $zajezd[0]["popis"];
+$datum_prijezdu = $zajezd[0]["datum_prijezdu"];
+$datum_odjezdu = $zajezd[0]["datum_odjezdu"];
+$typ_stravy = $zajezd[0]["typ_stravy"];
+$cena_osoba = $zajezd[0]["cena_osoba"];
+$hodnoceni = $zajezd[0]["hodnoceni"];
+
+// var_dump($zajezd); pro ladeni
+
 ?>
 <body x-data="{ open: false }">
     <?php include __DIR__ . '/../components/header.inc.php'; ?>
@@ -11,34 +47,9 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
         <main class="col-9">
             <div x-data="detailApp('id_zajezd=<?php echo"$id"?>')">
                 <div class="heading-destination">
-                    <h1 class="destinace" x-text="zajezd.stat + ' - ' + zajezd.mesto"></h1>
-                    <div class="progress-bar" x-bind:style="`--rating: ${zajezd.hodnoceni}`"></div>
+                <h1 class="destinace"><?php echo $stat . ' - ' . $mesto; ?></h1>
+                <div class="progress-bar" style="--rating: <?php echo"$hodnoceni"?>"></div>
                 </div>
-
-                <?php
-                require 'app/api/controllers/AdresaController.php';
-                $controller = new AdresaController();
-                $zajezd = $controller->getAdresaZajezdByID($id);
-
-                $adresar = $zajezd[0]["image_path"];
-                $soubory_jpg = array();
-
-                if (is_dir($adresar) && is_readable($adresar)) {
-                    if ($handle = opendir($adresar)) {
-                        while (false !== ($file = readdir($handle))) {
-                            if (is_file($adresar . '/' . $file) && strtolower(pathinfo($file, PATHINFO_EXTENSION)) == 'jpg') {
-                                $soubory_jpg[] = $file;
-                            }
-                        }
-                        closedir($handle);
-                    }
-                }
-
-                $images = array();
-                foreach ($soubory_jpg as $jpg) {
-                    $images[] = $jpg;
-                }
-                ?>
 
                 <div class="gallery">
                     <div class="gallery-main-image">
@@ -64,19 +75,19 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
                 </div>
 
                 <div class="destination-info">
-                    <p><b>Termín:</b> <span x-text="zajezd.datum_prijezdu"></span> - <span x-text="zajezd.datum_odjezdu"></span></p>
-                    <p><b>Strava:</b> <span x-text="zajezd.typ_stravy"></span></p>
-                    <p><b>Cena na osobu:</b> <span x-text="zajezd.cena_osoba"></span> Kč</p>
-                    <button class="btn-tour-order">Mám zájem</button>
+                    <p><b>Termín:</b> <?php echo $datum_prijezdu ?>, - <?php echo $datum_odjezdu ?></p>
+                    <p><b>Strava:</b> <?php echo $typ_stravy ?></p>
+                    <p><b>Cena na osobu:</b> <?php echo $cena_osoba ?> Kč</p>
+                    <button class="btn">Mám zájem</button>
                 </div>
                 <h2>Popis</h2>
-                <p x-text="zajezd.popis"></p>
+                <p><?php echo $popis ?></p>
                 <h2>Adresa místa</h2>
                 <p>
-                    <span x-text="zajezd.stat"></span>,<br>
-                    <span x-text="zajezd.mesto"></span>,<br>
-                    <span x-text="zajezd.ulice"></span>,<br>
-                    <span x-text="zajezd.psc"></span>
+                    <?php echo $stat ?>,<br>
+                    <?php echo $mesto ?>,<br>
+                    <?php echo $ulice ?>,<br>
+                    <?php echo $psc?>
                 </p>
             </div>
         </main>

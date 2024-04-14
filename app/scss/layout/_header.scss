@@ -2,6 +2,7 @@ header {
     color: $headerText;
     padding: 0px 0px 10px 0px;
     text-align: left;
+    position: relative;
 }
 
 .no-decor{
@@ -9,10 +10,11 @@ header {
 }
 
 .obr-bg {
-    background-image: url("https://picsum.photos/1920/600");
+    //background-image: url("https://picsum.photos/1920/600");
+    background-image: url("/app/resources/images/baner/baner1.png");
     background-size: cover;
-    background-position: 50%;
-    height: 200px;
+    background-position: 25%;
+    height: 300px;
     margin: 0px;
     text-align: center;
 }

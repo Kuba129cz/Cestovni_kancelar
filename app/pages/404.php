@@ -1,4 +1,1 @@
-<?php
-    echo "toto neni stranka co hledate";
-    
-?>
+<img src="/app/resources/images/error/trooper404.png" alt="404" style="width: 100vw;"/>
