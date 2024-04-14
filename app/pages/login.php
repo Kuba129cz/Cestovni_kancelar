@@ -10,7 +10,7 @@
                 <div><input type="text" x-model="username"/><br></div>
                 <div>Password:</div>
                 <div><input type="password" x-model="password"/><br></div>
-               <button type="submit">login</button>
+                 <div> <button type="submit">login</button><div>
                  </div>
               
                </form>     
