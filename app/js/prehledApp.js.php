@@ -9,6 +9,7 @@
             sideFiltr: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, fk_strava:'',fk_Adresa:''},//input submit
             orderdir:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
             orderAct:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
+            orderLock:false,//brani zacykleni watchera
             fetchZajezdy_filtr() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd/filter.php', {
 						method: 'POST',
@@ -20,9 +21,6 @@
                         this.zajezdy = data;
                         this.filtrLimit.cena_max = data.reduce((max, obj) => Math.max(max, obj.cena_osoba), 0);
                         this.filtrLimit.cena_min = data.reduce((min, obj) => Math.min(min, obj.cena_osoba), Infinity);
-                       
-                        const active = Object.keys(this.orderAct).filter(key => this.orderAct[key] === true);
-                        this.orderBy(active[0]);
                     });
             },
             fetchAdrs() {//zavolej API
@@ -80,6 +78,19 @@
                 this.fetchZajezdy_filtr();
                 this.fetchAdrs();
                 this.fetchStrava();
+
+                this.$watch('zajezdy', value => {
+                    console.log('Array changed: ');
+                    if(!this.orderLock)
+                    {
+                        const active = Object.keys(this.orderAct).filter(key => this.orderAct[key] === true);
+                        this.orderBy(active[0]);
+                        this.orderLock=true;
+                    }
+                    else{
+                        this.orderLock=!this.orderLock
+                    }                   
+                });
             }
         };
     }
