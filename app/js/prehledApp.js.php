@@ -9,26 +9,20 @@
             sideFiltr: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, fk_strava:'',fk_Adresa:''},//input submit
             orderdir:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
             orderAct:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
-            fetchZajezdy() {//zavolej API
-                fetch('/app/api/endpoints/Zajezd')
-                    .then(Response => Response.json())
-                    .then(data => {
-                        this.zajezdy = data;
-                        this.filtrLimit.cena_max = data.reduce((max, obj) => Math.max(max, obj.cena_osoba), 0);
-                        this.filtrLimit.cena_min = data.reduce((min, obj) => Math.min(min, obj.cena_osoba), Infinity);
-                    });
-            },
             fetchZajezdy_filtr() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd/filter.php', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({where:filtr})
+						body: JSON.stringify({where:this.filtr})
 					})
                     .then(Response => Response.json())
                     .then(data => {
                         this.zajezdy = data;
                         this.filtrLimit.cena_max = data.reduce((max, obj) => Math.max(max, obj.cena_osoba), 0);
                         this.filtrLimit.cena_min = data.reduce((min, obj) => Math.min(min, obj.cena_osoba), Infinity);
+                       
+                        const active = Object.keys(this.orderAct).filter(key => this.orderAct[key] === true);
+                        this.orderBy(active[0]);
                     });
             },
             fetchAdrs() {//zavolej API
@@ -69,7 +63,7 @@
             },
             resetFiltr() {
                 this.sideFiltr= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: this.filtrLimit.cena_max, fk_strava:'',fk_Adresa:''};
-                this.fetchZajezdy_filtr(this.filtr);
+                this.fetchZajezdy_filtr();
             },
             orderBy(atribut){
                 var desc=this.orderdir[atribut]
@@ -82,16 +76,8 @@
                 this.orderAct[atribut]=true;
             },
             init() {//zavola metody
-                this.filtr=filtr;//z nejakeho duvodu ted apply nezna filtr
-                if(!filtr)
-                {
-                    console.log("nefiltrovano");
-                    this.fetchZajezdy();
-                }
-                else
-                {
-                    this.fetchZajezdy_filtr(filtr);
-                }
+                this.filtr=filtr?filtr:"id_zajezd>0";//tautologie aby se to nesesypalo kvůli AND
+                this.fetchZajezdy_filtr();
                 this.fetchAdrs();
                 this.fetchStrava();
             }
