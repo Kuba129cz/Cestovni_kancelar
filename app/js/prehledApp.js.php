@@ -7,7 +7,7 @@
             filtr,//kopie inputu
             filtrLimit: { cena_min: 0, cena_max: 0, },//limity pro filtr
             sideFiltr: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, fk_strava:'',fk_Adresa:''},//input submit
-            orderdir:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
+            orderdir:{hodnoceni:false,cena_osoba:false,datum_odjezdu:false},
             orderAct:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
             orderLock:false,//brani zacykleni watchera
             fetchZajezdy_filtr() {//zavolej API
@@ -80,11 +80,12 @@
                 this.fetchStrava();
 
                 this.$watch('zajezdy', value => {
-                    console.log('Array changed: ');
                     if(!this.orderLock)
                     {
                         const active = Object.keys(this.orderAct).filter(key => this.orderAct[key] === true);
-                        this.orderBy(active[0]);
+                        const atribut=active[0];
+                        this.orderdir[atribut]=!this.orderdir[atribut];//aby byl stejný jako je ted (negace negace po skončení)
+                        this.orderBy(atribut);
                         this.orderLock=true;
                     }
                     else{
