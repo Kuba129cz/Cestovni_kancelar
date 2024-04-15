@@ -27,7 +27,7 @@ class UserController
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    private function createUser($nick, $password, $telefon, $email)
+    public function createUser($nick, $password, $telefon, $email)
     {
         $query = "INSERT INTO User (nick, password, telefon, email) 
         VALUES (:nick, :password, :telefon, :email)";

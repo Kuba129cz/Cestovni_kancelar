@@ -55,18 +55,19 @@ class LoginController
         if(empty($fk_Adresa)){return ['success' => false, 'message' => 'prázdná adresa'];}
 
         $user_ctrl=new UserController();
+        $zakaznik_ctrl=new ZakaznikController();
 
         $fk_user=$user_ctrl->getData_where("nick='$nick'");
         if(!empty($fk_user)){return ['success' => false, 'message' => 'tento uživatel již existuje'];}
 
-        /*$user_ok=createUser($nick, $password, $telefon, $email);
-        if(!$user_ok){return false;}
-*/
+        $user_ok=$user_ctrl->createUser($nick, $password, $telefon, $email);
+        if(!$user_ok){return ['success' => false, 'message' => 'nepovedlo se vytvořit uživatele'];}
+        
         $fk_user=$user_ctrl->getData_where("nick='$nick'");
         if(!empty($fk_user)){return ['success' => false, 'message' => 'nečekaná chyba'];}
 
-        /*$zakaznik_ok=createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa, $fk_user);
-        if(!$zakaznik_ok){return false;}*/
+        $zakaznik_ok=$zakaznik_ctrl->createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa, $fk_user);
+        if(!$zakaznik_ok){return ['success' => false, 'message' => 'nepovedlo se vytvořit zákazníka'];}
 
         return ['success' => true, 'message' => 'registrace úspěšná'];
     }
