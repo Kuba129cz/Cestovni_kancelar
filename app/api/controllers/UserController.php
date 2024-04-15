@@ -39,8 +39,10 @@ class UserController
         $telefon=htmlspecialchars(strip_tags($telefon));
         $email=htmlspecialchars(strip_tags($email));
 
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
         $stmt->bindParam(":nick", $nick);
-        $stmt->bindParam(":password", $password);
+        $stmt->bindParam(":password", $hashedPassword);
         $stmt->bindParam(":telefon", $telefon);
         $stmt->bindParam(":email", $email);
 
