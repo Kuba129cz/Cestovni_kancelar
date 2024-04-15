@@ -71,19 +71,21 @@ class ZakaznikController
     {
         if (empty($nick) || empty($password) || empty($telefon) || empty($email))
         {return false;}
-        if(empty($fk_Adresa))
+        if(empty($jmeno) || empty($prijmeni)|| empty($datum_narozeni)|| empty($fk_Adresa))
         {return false;}
-        /*if(empty($jmeno) || empty($prijmeni)|| empty($datum_narozeni)|| empty($fk_Adresa))
-        {return false;}*/
-
         $user_ctrl=new UserController();
 
+        $fk_user=$user_ctrl->getData_where("nick='$nick'");
+        if(!empty($fk_user))
+        {return false;}
         /*$user_ok=createUser($nick, $password, $telefon, $email);
         if(!$user_ok){return false;}
+*/
+        $fk_user=$user_ctrl->getData_where("nick='$nick'");
+        if(!empty($fk_user))
+        {return false;}
 
-        $fk_user=$user_ctrl->getData();
-
-        $zakaznik_ok=createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa, $fk_user);
+        /*$zakaznik_ok=createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa, $fk_user);
         if(!$zakaznik_ok){return false;}*/
 
         return true;

@@ -18,5 +18,13 @@ class UserController
        $stmt->execute();
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getData_where($where)
+    {
+       $SQL="SELECT * FROM User where $where";
+       $stmt=$this->conn->prepare($SQL);
+       $stmt->execute();
+       return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
