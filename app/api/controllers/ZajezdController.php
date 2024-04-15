@@ -36,7 +36,14 @@ class ZajezdController
         $SQL=$SQL." WHERE ".$where;
         $stmt=$this->conn->prepare($SQL);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $data= $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($data as &$record) {
+            $record['cena_osoba'] =(float)$record['cena_osoba'];
+            $record['datum_odjezdu'] = date('d.m.Y', strtotime($record['datum_odjezdu']));
+            $record['datum_prijezdu'] = date('d.m.Y', strtotime($record['datum_prijezdu']));
+        }
+        return $data;
     }
 
 
