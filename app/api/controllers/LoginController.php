@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__.'/../config/database.php';
+require_once __DIR__.'/UserController.php';
+require_once __DIR__.'/ZakaznikController.php';
 
 class LoginController
 {
@@ -40,28 +42,33 @@ class LoginController
         return ['success' => false];
     }
 
-    public function registerUser($nick,$pass) 
+    public function registerUser($nick, $password, $telefon, $email,$jmeno, $prijmeni,$datum_narozeni, $fk_Adresa) 
     {
-        //ToDo telefon + mail
-        if (empty($nick) || empty($pass))
-        {return false;}
+        if(empty($nick)){return ['success' => false, 'message' => 'prázdný nick'];}
+        if(empty($password)){return ['success' => false, 'message' => 'prázdné heslo'];}
+        if(empty($telefon)){return ['success' => false, 'message' => 'prázdný telefon'];}
+        if(empty($email)){return ['success' => false, 'message' => 'prázdný email'];}
 
-        $query = "INSERT INTO User (nick, password) 
-        VALUES (:nick, :pass)";
-        $stmt = $this->conn->prepare($query);
+        if(empty($jmeno)){return ['success' => false, 'message' => 'prázdné jméno'];}
+        if(empty($prijmeni)){return ['success' => false, 'message' => 'prázdné přijmení'];}
+        if(empty($datum_narozeni)){return ['success' => false, 'message' => 'prázdné datum narození'];}
+        if(empty($fk_Adresa)){return ['success' => false, 'message' => 'prázdná adresa'];}
 
-        // sanitize
-        $nick=htmlspecialchars(strip_tags($nick));
-        $pass==htmlspecialchars(strip_tags($pass));
-        $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+        $user_ctrl=new UserController();
 
-        $stmt->bindParam(":nick", $nick);
-        $stmt->bindParam(":pass", $hashedPassword);
+        $fk_user=$user_ctrl->getData_where("nick='$nick'");
+        if(!empty($fk_user)){return ['success' => false, 'message' => 'tento uživatel již existuje'];}
 
-        if($stmt->execute()) {
-            return true;
-        }
-        return false;
+        /*$user_ok=createUser($nick, $password, $telefon, $email);
+        if(!$user_ok){return false;}
+*/
+        $fk_user=$user_ctrl->getData_where("nick='$nick'");
+        if(!empty($fk_user)){return ['success' => false, 'message' => 'nečekaná chyba'];}
+
+        /*$zakaznik_ok=createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa, $fk_user);
+        if(!$zakaznik_ok){return false;}*/
+
+        return ['success' => true, 'message' => 'registrace úspěšná'];
     }
 }
 ?>
