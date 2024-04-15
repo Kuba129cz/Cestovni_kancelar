@@ -2,7 +2,8 @@
     function detailApp(filtr) {
         return {
             zajezd:'',
-            newItem: { fk_zajezd: '', fk_zakaznik: '',pocet_osob: 0},//input submit
+            newItem: { fk_zajezd: '', fk_zakaznik: '',pocet_osob: 0},//input submit,
+            showForm: false,
             fetchZajezdy() {//zavolej API
                 fetch('/app/api/endpoints/zajezd/filter.php', {
 						method: 'POST',

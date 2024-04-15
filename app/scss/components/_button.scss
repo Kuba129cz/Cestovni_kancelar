@@ -1,7 +1,7 @@
 .btn {
 	display: inline-block;
 	padding: 1.2rem 2.6rem;
-	background-color: #a7a7a7;
+	background-color: #b81c1c;
 	color: #fff;
 	text-decoration: none;
 	border-radius: $border-radius;
@@ -28,10 +28,12 @@
 	   }
 }
 .btn-order{
+	display: block;
 	background-color: #b81c1c;
 	padding: 20px;
 	height: 120;
-	width: 500;
+	width:$ButtonWidth;
+	max-width: $ButtonMaxWidth;
 	border-style: solid;
 	text-decoration: none;
 	border-radius: 24px;
@@ -43,11 +45,8 @@
 	 // background-color: #FF5733; /* Změna barvy pozadí */
 	  transition: background-color 0.3s medium; /* Přechod pro plynulou změnu barvy pozadí */
 	  box-shadow: 0px 8px 16px rgba(14, 0, 0, 0.1); /* Přidání stínu */
-	  transform: scale(1.5); /* Zvětšení tlačítka */
+	  transform: scale(1.2); /* Zvětšení tlačítka */
 	  cursor: pointer;
-
-
-
 	}
 }
 .btn-submit{
@@ -68,9 +67,6 @@
 	  box-shadow: 0px 8px 16px rgba(14, 0, 0, 0.1); /* Přidání stínu */
 	  transform: scale(1.5); /* Zvětšení tlačítka */
 	  cursor: pointer;
-
-
-
 	}
 }
 

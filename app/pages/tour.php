@@ -78,8 +78,20 @@ $hodnoceni = $zajezd[0]["hodnoceni"];
                     <p><b>Termín:</b> <?php echo $datum_prijezdu ?>, - <?php echo $datum_odjezdu ?></p>
                     <p><b>Strava:</b> <?php echo $typ_stravy ?></p>
                     <p><b>Cena na osobu:</b> <?php echo $cena_osoba ?> Kč</p>
-                    <button class="btn">Mám zájem</button>
+                    <button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>
+
+                        <div id="formContainer" x-show="showForm">
+                        <form>
+                            <fieldset>
+                                <legend>Objednávka:</legend>
+                                <label for="fpersons">Zadejte počet osob</label>
+                                <input type="number" name="fpersons"><br><br>
+                                <input class="btn"type="submit" value="Závazně objednat">
+                            </fieldset>
+                        </form>
+                        </div>
                 </div>
+
                 <h2>Popis</h2>
                 <p><?php echo $popis ?></p>
                 <h2>Adresa místa</h2>
