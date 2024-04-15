@@ -20,22 +20,15 @@
                     });
             },
             submitItem() {
-                console.log("neimplementováno");
-				/*	
-                fetch('/app/api/endpoints/objednavky/', {
+                fetch('/app/api/endpoints/objednavka/', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
 						body: JSON.stringify(this.newItem)
 					}).then(() => {
-						this.newItem.datum_prijezdu = '';
-                        this.newItem.datum_odjezdu = '';
-                        this.newItem.cena_osoba = '';
-                        this.newItem.popis = '';
-						this.newItem.fk_strava = '';
-						this.newItem.fk_Adresa = '';
-						this.fetchZajezdy();
+						this.newItem.fk_zajezd = '';
+                        this.newItem.fk_zakaznik = '';
+                        this.newItem.pocet_osob = 0;
 					});
-                    */
 				},
             init() {//zavola metody
                 if(filtr.charAt(filtr.length - 1)=='=')               
