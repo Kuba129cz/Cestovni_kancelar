@@ -64,9 +64,9 @@ class LoginController
         if(!$user_ok){return ['success' => false, 'message' => 'nepovedlo se vytvořit uživatele'];}
         
         $fk_user=$user_ctrl->getData_where("nick='$nick'");
-        if(!empty($fk_user)){return ['success' => false, 'message' => 'nečekaná chyba'];}
+        if(count($fk_user) == 0){return ['success' => false, 'message' => 'nečekaná chyba'];}
 
-        $zakaznik_ok=$zakaznik_ctrl->createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa, $fk_user);
+        $zakaznik_ok=$zakaznik_ctrl->createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa, $fk_user[0]['id_user']);
         if(!$zakaznik_ok){return ['success' => false, 'message' => 'nepovedlo se vytvořit zákazníka'];}
 
         return ['success' => true, 'message' => 'registrace úspěšná'];
