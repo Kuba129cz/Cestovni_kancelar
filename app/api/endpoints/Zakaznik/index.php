@@ -16,6 +16,12 @@ if($method=='GET')
     $items=$controller->getData();
     echo json_encode($items);
 }
+if ($method == 'POST') 
+{
+    $data = json_decode(file_get_contents("php://input"), true);
+    $ret=$controller->getZakaznikByNick($data['nick']);
+    echo json_encode($ret);
+}
 else {
     http_response_code(405); // Method not allowed
     echo json_encode(['message' => 'Method not allowed.']);

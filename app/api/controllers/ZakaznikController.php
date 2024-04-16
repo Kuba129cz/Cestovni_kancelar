@@ -19,6 +19,17 @@ class ZakaznikController
        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
    
+    public function getZakaznikByNick($nick)
+    {
+        $SQL="SELECT Zakaznik.*,User.* FROM Zakaznik
+        INNER JOIN User ON Zakaznik.fk_user=User.id_User 
+        WHERE User.nick='$nick'";
+        $stmt=$this->conn->prepare($SQL);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
     public function createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa,$fk_user)
     {
         $query = "INSERT INTO Zakaznik (jmeno, prijmeni, datum_narozeni, fk_Adresa, fk_user) 
