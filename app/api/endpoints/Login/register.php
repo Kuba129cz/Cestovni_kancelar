@@ -14,12 +14,14 @@ $controller=new LoginController();
 if($method=='POST')
 {
     $data = json_decode(file_get_contents("php://input"), true);
-    if ($controller->registerUser($data['username'], $data['password'])) {
-        http_response_code(201); // Created
-        echo json_encode(['message' => 'user created successfully.']);
-    } else {
-        http_response_code(503); // Service unavailable
-        echo json_encode(['message' => 'Unable to create ticket.']);
+    $res=$controller->registerUser($data['nick'], $data['password'], $data['telefon'],$data['email'], $data['jmeno'], $data['prijmeni'], $data['datum_narozeni'],$data['fk_Adresa']);
+
+    if ($res['success']) {
+        echo json_encode($res);
+    }
+    else{
+        http_response_code(400); // Bad request
+        echo json_encode($res);
     }
 }
 else {
