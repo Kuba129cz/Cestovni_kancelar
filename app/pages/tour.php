@@ -2,10 +2,20 @@
 $title = "tour";
 include __DIR__ . '/../includes/parts/head.inc.php';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
+if(empty($id))
+{
+    header('Location: /404');
+    exit();
+}
 
 require 'app/api/controllers/AdresaController.php';
 $controller = new AdresaController();
 $zajezd = $controller->getAdresaZajezdByID($id);
+if(count($zajezd)==0)
+{
+    header('Location: /404');
+    exit();
+}
 
 $adresar = $zajezd[0]["image_path"];
 $soubory_jpg = array();
