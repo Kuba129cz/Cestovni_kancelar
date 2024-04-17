@@ -45,6 +45,7 @@ else if ($method == 'DELETE')
     session_start();
     unset($_SESSION['username']);
     unset($_SESSION['rights']);
+    unset($_SESSION['zakaznik']);
 }
 else {
     http_response_code(405); // Method Not Allowed

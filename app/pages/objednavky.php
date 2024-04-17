@@ -3,6 +3,8 @@
     //include __DIR__.'/../includes/parts/mustLog.inc.php';
     $pozadovana_prava=0;
     include __DIR__.'/../includes/parts/head.inc.php';
+
+    $id=isset($_SESSION['zakaznik'])?$_SESSION['zakaznik']['id_zakaznik']:0;
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
@@ -10,7 +12,7 @@
       <?php include __DIR__.'/../components/aside.inc.php'; ?>
   
       <main class="col-9">
-          <div x-data="objednavkaApp('fk_zakaznik>0')">
+          <div x-data="objednavkaApp('fk_zakaznik=<?php echo $id?>')">
           <?php include __DIR__.'/../components/objednavka.php'; ?>
           </div>
       </main>
