@@ -4,8 +4,19 @@
         <?php if($rights>=0){echo"<a href='/objednavky' class='user-btn'> objednávky</a>";}?>
 
         <?php if(!$is_loged){echo"<a href='/login' class='user-btn'> login</a>";}
-                        else{echo"<a href='/login' class='user-btn'> login</a>";}
+                        else{echo"<button @click='logout()' class='user-btn'> logout</button>";}
         ?>
+
+        <script>
+            function logout() {
+            	fetch('/app/api/endpoints/login/',{
+					method: 'DELETE'
+					})
+            	    .then(data => {
+						window.location.href = '/login';//instant refresh
+					});
+            }
+        </script>
     </div>
     <div class="obr-bg">
         <a class="no-decor" href="/">

@@ -36,8 +36,7 @@
 							alert(data.message);
 						}
 					});
-					console.log(this.newZakaznik);
-				},
+			},
             init() {//zavola metody
 
             }
