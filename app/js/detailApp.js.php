@@ -20,7 +20,11 @@
                         this.zajezd = data[0];                       
                     });
             },
-            submitItem() {
+            submitItem(tour_id,zakaznik_id) {
+                this.newItem["fk_zakaznik"]=zakaznik_id;
+                this.newItem["fk_zajezd"]=tour_id;
+                //u clienta se blbe zjistuje tak to vyplnuje server
+
                 fetch('/app/api/endpoints/objednavka/', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
