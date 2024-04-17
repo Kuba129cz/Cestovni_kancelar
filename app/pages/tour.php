@@ -7,6 +7,7 @@ if(empty($id))
     header('Location: /404');
     exit();
 }
+$zakaznik_id=isset($_SESSION['zakaznik'])?$_SESSION['zakaznik']['id_zakaznik']:0;
 
 require 'app/api/controllers/AdresaController.php';
 $controller = new AdresaController();
@@ -91,7 +92,7 @@ $hodnoceni = $zajezd[0]["hodnoceni"];
                     <button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>
 
                         <div id="formContainer" x-show="showForm">
-                        <form @submit.prevent="submitItem">
+                        <form @submit.prevent="submitItem(<?php echo $id?>,<?php echo $zakaznik_id ?>)">
                             <fieldset>
                                 <legend>Objednávka:</legend>
                                 <label for="persons">Zadejte počet osob</label>
