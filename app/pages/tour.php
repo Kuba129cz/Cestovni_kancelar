@@ -81,11 +81,11 @@ $hodnoceni = $zajezd[0]["hodnoceni"];
                     <button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>
 
                         <div id="formContainer" x-show="showForm">
-                        <form>
+                        <form @submit.prevent="submitItem">
                             <fieldset>
                                 <legend>Objednávka:</legend>
-                                <label for="fpersons">Zadejte počet osob</label>
-                                <input type="number" name="fpersons"><br><br>
+                                <label for="persons">Zadejte počet osob</label>
+                                <input type="number" name="persons" x-model="newItem.pocet_osob" min="1"><br><br>
                                 <input class="btn"type="submit" value="Závazně objednat">
                             </fieldset>
                         </form>
