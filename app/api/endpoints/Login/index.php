@@ -39,6 +39,12 @@ if($method=='POST')
         http_response_code(401); // Unauthorized
         echo json_encode(['success' => false, 'message' => 'Invalid username or password']);
     }
+} 
+else if ($method == 'DELETE') 
+{
+    session_start();
+    unset($_SESSION['username']);
+    unset($_SESSION['rights']);
 }
 else {
     http_response_code(405); // Method Not Allowed
