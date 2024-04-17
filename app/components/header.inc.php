@@ -10,10 +10,10 @@
         <script>
             function logout() {
             	fetch('/app/api/endpoints/login/',{
-					method: 'DELETE'
+					    method: 'DELETE'
 					})
             	    .then(data => {
-						window.location.href = '/login';//instant refresh
+						window.location.href = '/login';
 					});
             }
         </script>
