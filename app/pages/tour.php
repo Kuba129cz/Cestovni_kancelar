@@ -49,6 +49,32 @@ $hodnoceni = $zajezd[0]["hodnoceni"];
 
 // var_dump($zajezd); pro ladeni
 
+function canOrder($zajezd, $zakaznik_id) {
+    // Kontrola existence proměnných
+    if (!isset($zajezd[0]["datum_prijezdu"]) || !isset($zakaznik_id)) {
+        return "Nepodařilo se získat potřebné informace pro ověření objednání.";
+    }
+
+    // Vytvoření objektu DateTime z data příjezdu
+    $dateObject = DateTime::createFromFormat('Y-m-d', $zajezd[0]["datum_prijezdu"]);
+    if ($dateObject === false) {
+        return "Nepodařilo se vytvořit objekt DateTime z řetězce.";
+    }
+
+    // Získání aktuálního data
+    $currentDate = new DateTime();
+
+    // Porovnání datumů a další podmínky
+    if ($dateObject > $currentDate && $zakaznik_id > 0) {
+        return '<button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>';
+    } elseif ($dateObject <= $currentDate) {
+        return "<h3 style=\"color: orangered;\">Tento zájezd již proběhl. Prosím vyberte jiný.</h3>";
+    } else {
+        return "<h3 style=\"color: orangered;\">Na zájezd se již nelze přihlašovat. Prosím vyberte jiný.</h3>";
+    }
+}
+
+
 ?>
 <body x-data="{ open: false }">
     <?php include __DIR__ . '/../components/header.inc.php'; ?>
@@ -89,7 +115,8 @@ $hodnoceni = $zajezd[0]["hodnoceni"];
                     <p><b>Termín:</b> <?php echo $datum_prijezdu ?>, - <?php echo $datum_odjezdu ?></p>
                     <p><b>Strava:</b> <?php echo $typ_stravy ?></p>
                     <p><b>Cena na osobu:</b> <?php echo $cena_osoba ?> Kč</p>
-                    <button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>
+                    
+                    <?php echo(canOrder($zajezd, $zakaznik_id));?>
 
                         <div id="formContainer" x-show="showForm">
                         <form @submit.prevent="submitItem(<?php echo $id?>,<?php echo $zakaznik_id ?>)">
