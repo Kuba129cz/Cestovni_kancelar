@@ -32,6 +32,8 @@ class ZakaznikController
 
     public function createZakaznik($jmeno, $prijmeni,$datum_narozeni, $fk_Adresa,$fk_user)
     {
+        //check v login.registerUser()
+
         $query = "INSERT INTO Zakaznik (jmeno, prijmeni, datum_narozeni, fk_Adresa, fk_user) 
         VALUES (:jmeno, :prijmeni, :datum_narozeni, :fk_Adresa, :fk_user)";
         $stmt = $this->conn->prepare($query);

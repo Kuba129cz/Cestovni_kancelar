@@ -19,8 +19,12 @@ if($method=='GET')
 else if ($method == 'POST') 
 {
     $data = json_decode(file_get_contents("php://input"), true);
-    //newItem: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, popis: '',fk_strava:'',fk_Adresa:''}
-    if ($controller->create($data['pocet_osob'], $data['fk_zajezd'], $data['fk_zakaznik'])) {
+    if(empty($data['pocet_osob']))
+    {
+        http_response_code(400); // Bad Request
+        echo json_encode(['message' => 'empty pocet_osob']);
+    }
+    else if ($controller->create($data['pocet_osob'], $data['fk_zajezd'], $data['fk_zakaznik'])) {
         http_response_code(201); // Created
         echo json_encode(['message' => 'Ticket created successfully.']);
     } else {
