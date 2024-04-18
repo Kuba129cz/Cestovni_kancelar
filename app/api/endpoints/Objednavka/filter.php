@@ -15,8 +15,16 @@ $controller=new ObjednavkaController();
 if ($method == 'POST') 
 {
     $data = json_decode(file_get_contents("php://input"), true);
-    $ret=$controller->getData_where($data['where']);
-    echo json_encode($ret);
+    if(empty($data['where']))
+    {
+        http_response_code(400); // Bad Request
+        echo json_encode(['message' => 'empty where']);
+    }
+    else
+    {
+        $ret=$controller->getData_where($data['where']);
+        echo json_encode($ret);
+    }
 }
 else 
 {

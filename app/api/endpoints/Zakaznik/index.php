@@ -19,8 +19,17 @@ if($method=='GET')
 if ($method == 'POST') 
 {
     $data = json_decode(file_get_contents("php://input"), true);
-    $ret=$controller->getZakaznikByNick($data['nick']);
-    echo json_encode($ret);
+
+    if(empty($data['nick']))
+    {
+        http_response_code(400); // Bad Request
+        echo json_encode(['message' => 'empty nick']);
+    }
+    else
+    {
+        $ret=$controller->getZakaznikByNick($data['nick']);
+        echo json_encode($ret);
+    }
 }
 else {
     http_response_code(405); // Method not allowed

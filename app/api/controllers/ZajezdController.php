@@ -49,8 +49,12 @@ class ZajezdController
 
     public function create($datum_prijezdu, $datum_odjezdu, $cena_osoba, $popis, $fk_strava, $fk_Adresa) 
     {
-        if (empty($datum_prijezdu) || empty($datum_odjezdu) || empty($cena_osoba) || empty($popis) || empty($fk_strava) || empty($fk_Adresa))
-        {return false;}
+        if(empty($datum_prijezdu)){return ['success' => false, 'message' => 'prázdný datum_prijezdu'];}
+        if(empty($datum_odjezdu)){return ['success' => false, 'message' => 'prázdný datum_odjezdu'];}
+        if(empty($cena_osoba)){return ['success' => false, 'message' => 'prázdný cena_osoba'];}
+        if(empty($popis)){return ['success' => false, 'message' => 'prázdný popis'];}
+        if(empty($fk_strava)){return ['success' => false, 'message' => 'prázdný fk_strava'];}
+        if(empty($fk_Adresa)){return ['success' => false, 'message' => 'prázdný fk_Adresa'];}
 
         $query = "INSERT INTO Zajezd (datum_prijezdu, datum_odjezdu, cena_osoba, popis, fk_strava, fk_Adresa) 
         VALUES (:datum_prijezdu, :datum_odjezdu, :cena_osoba, :popis, :fk_strava, :fk_Adresa)";
@@ -72,9 +76,9 @@ class ZajezdController
         $stmt->bindParam(":fk_Adresa", $fk_Adresa);
 
         if($stmt->execute()) {
-            return true;
+            return ['success' => true, 'message' => 'úspěšně vytvořen zájezd'];
         }
-        return false;
+        return ['success' => false, 'message' => 'nepovedlo se vytvořit zájezd'];
     }
 }
 ?>

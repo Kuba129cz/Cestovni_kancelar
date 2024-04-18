@@ -29,6 +29,8 @@ class UserController
 
     public function createUser($nick, $password, $telefon, $email)
     {
+        //check v login.registerUser()
+
         $query = "INSERT INTO User (nick, password, telefon, email) 
         VALUES (:nick, :password, :telefon, :email)";
         $stmt = $this->conn->prepare($query);
