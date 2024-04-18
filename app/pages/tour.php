@@ -68,9 +68,9 @@ function canOrder($zajezd, $zakaznik_id) {
     if ($dateObject > $currentDate && $zakaznik_id > 0) {
         return '<button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>';
     } elseif ($dateObject <= $currentDate) {
-        return "<h3 style=\"color: orangered;\">Tento zájezd již proběhl. Prosím vyberte jiný.</h3>";
+        return "<h3>Tento zájezd již proběhl. Prosím vyberte jiný.</h3>";
     } else {
-        return "<h3 style=\"color: orangered;\">Na zájezd se již nelze přihlašovat. Prosím vyberte jiný.</h3>";
+        return "<h3>Na zájezd se již nelze přihlašovat. Prosím vyberte jiný.</h3>";
     }
 }
 
