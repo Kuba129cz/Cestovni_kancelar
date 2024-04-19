@@ -8,7 +8,6 @@ if(empty($id))
     exit();
 }
 $zakaznik_id=isset($_SESSION['zakaznik'])?$_SESSION['zakaznik']['id_zakaznik']:0;
-
 require 'app/api/controllers/AdresaController.php';
 $controller = new AdresaController();
 $zajezd = $controller->getAdresaZajezdByID($id);
@@ -63,18 +62,26 @@ function canOrder($zajezd, $zakaznik_id) {
 
     // Získání aktuálního data
     $currentDate = new DateTime();
+    $is_loged=isset($_SESSION['username'])? true : false;
 
-    // Porovnání datumů a další podmínky
-    if ($dateObject > $currentDate && $zakaznik_id > 0) {
-        return '<button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>';
-    } elseif ($dateObject <= $currentDate) {
-        return "<h3>Tento zájezd již proběhl. Prosím vyberte jiný.</h3>";
-    } else {
-        return "<h3>Na zájezd se již nelze přihlašovat. Prosím vyberte jiný.</h3>";
+    if ($is_loged) {
+        if ($dateObject > $currentDate) {
+            if ($is_loged) {
+                if ($zakaznik_id) {
+                    return '<button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>';       
+                } else {
+                    return 'Administrátor se nemůže touto cestou přihlašovat na zájezd.';          
+                }
+            } else {
+                return "<h3>Prosím pro přihlášení na zájezd se nejprve <a href='login.php'>přihlaste</a>.</h3>";
+            }
+        } elseif ($dateObject < $currentDate) {
+            return "<h3>Tento zájezd již proběhl. Prosím vyberte jiný.</h3>";
+        } else {
+            return "<h3>Na zájezd se již nelze přihlašovat. Prosím vyberte jiný.</h3>";
+        }
     }
 }
-
-
 ?>
 <body x-data="{ open: false }">
     <?php include __DIR__ . '/../components/header.inc.php'; ?>
