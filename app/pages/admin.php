@@ -7,11 +7,10 @@
 
 <body x-data="{ open: false }">
   <?php include __DIR__.'/../components/header.inc.php'; ?>
-  <div class="container">
+  <div class="container" x-data="adminApp_new()">
 
     <?php include __DIR__.'/../components/aside.inc.php'; ?>
     <main class="col-9">
-      <div x-data="adminApp_new()">
         <div class="row">
           <?php include __DIR__.'/../components/adminForm.inc.php'; ?>
         </div>
@@ -20,7 +19,6 @@
             <?php include __DIR__.'/../components/zajezd.php'; ?>
           </div>
         </div>
-      </div>
     </main>
 
   </div>

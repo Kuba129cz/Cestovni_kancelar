@@ -4,12 +4,14 @@
             zajezdy:[], // output
             adresy: [], // output
             stravy: [], // output
+
             filtr,//kopie inputu
             filtrLimit: { cena_min: 0, cena_max: 0, },//limity pro filtr
             sideFiltr: { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 0, fk_strava:'',fk_Adresa:''},//input submit
             orderdir:{hodnoceni:false,cena_osoba:false,datum_odjezdu:false},
             orderAct:{hodnoceni:true,cena_osoba:false,datum_odjezdu:false},
             orderLock:false,//brani zacykleni watchera
+            
             fetchZajezdy_filtr() {//zavolej API
                 fetch('/app/api/endpoints/Zajezd/filter.php', {
 						method: 'POST',
