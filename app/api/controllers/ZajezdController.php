@@ -40,6 +40,7 @@ class ZajezdController
 
         foreach ($data as &$record) {
             $record['cena_osoba'] =(float)$record['cena_osoba'];
+            $record['datum_prijezdu_raw'] = $record['datum_prijezdu'];//kvuli razeni (je to string)
             $record['datum_odjezdu'] = date('d.m.Y', strtotime($record['datum_odjezdu']));
             $record['datum_prijezdu'] = date('d.m.Y', strtotime($record['datum_prijezdu']));
         }
