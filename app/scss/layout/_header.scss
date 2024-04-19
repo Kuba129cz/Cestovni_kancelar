@@ -35,6 +35,18 @@ h1 {
         @include header-menuButton;
         flex: none;
     }
+    
+    .dropdown {
+        @include dropdown;
+        }
+        
+    .dropdown-content {
+        @include dropdown-content;
+        }
+        
+    .dropdown:hover .dropdown-content {
+        display: block;
+        }
 } 
 
 @media screen and (min-width: 40em) {   //pro pc
@@ -47,4 +59,16 @@ h1 {
         @include header-menuButton;
          flex: auto;
      }
+
+.dropdown {
+    @include dropdown;
+    }
+    
+.dropdown-content {
+    @include dropdown-content;
+    }
+    
+.dropdown:hover .dropdown-content {
+    display: block;
+    }
 }    
