@@ -1,12 +1,15 @@
 <header>
     <div class="userPanel">
-        <?php if($rights>=2){echo"<a href='/admin' class='user-btn'> administrace</a>";}?>
-        <?php if($rights>=0){echo"<a href='/objednavky' class='user-btn'> objednávky</a>";}?>
-
-        <?php if(!$is_loged){echo"<a href='/login' class='user-btn'> login</a>";}
-                        else{echo"<button @click='logout()' class='user-btn'> logout</button>";}
+        <div class="dropdown">
+            <img class="img-icon" src="app\resources\images\icons\user.png" alt="User Icon">
+            <div class="dropdown-content">
+            <?php if($rights>=2){echo"<a href='/admin' class='user-btn'> administrace</a>";}?>
+            <?php if($rights>=0){echo"<a href='/objednavky' class='user-btn'> objednávky</a>";}?>
+            <?php if(!$is_loged){echo"<a href='/login' class='user-btn'> login</a>";}
+                    else{echo"<button @click='logout()' class='user-btn'> logout</button>";}
         ?>
-
+            </div>
+        </div>
         <script>
             function logout() {
             	fetch('/app/api/endpoints/login/',{
