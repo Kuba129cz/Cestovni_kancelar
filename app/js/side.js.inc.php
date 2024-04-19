@@ -1,16 +1,16 @@
 <script>
 
-function buildWhere(sideFiltr, pageFiltr) 
-{
-    let where = pageFiltr ? pageFiltr : "id_zajezd>0"; //tautologie aby se to nesesypalo kvůli AND
-    if(sideFiltr.datum_prijezdu) { where += " AND datum_prijezdu='" + sideFiltr.datum_prijezdu + "'"; }
-    if(sideFiltr.datum_odjezdu) { where += " AND datum_odjezdu='" + sideFiltr.datum_odjezdu + "'"; }
-    if(sideFiltr.cena_osoba) { where += " AND cena_osoba<=" + sideFiltr.cena_osoba; }
-    if(sideFiltr.fk_strava) { where += " AND fk_strava=" + sideFiltr.fk_strava; }
-    if(sideFiltr.fk_Adresa) { where += " AND fk_Adresa=" + sideFiltr.fk_Adresa; }
-
-    return where;
-}
+    function buildWhere(sideFiltr, pageFiltr) 
+    {
+        let where = pageFiltr ? pageFiltr : "id_zajezd>0"; //tautologie aby se to nesesypalo kvůli AND
+        if(sideFiltr.datum_prijezdu) { where += " AND datum_prijezdu='" + sideFiltr.datum_prijezdu + "'"; }
+        if(sideFiltr.datum_odjezdu) { where += " AND datum_odjezdu='" + sideFiltr.datum_odjezdu + "'"; }
+        if(sideFiltr.cena_osoba) { where += " AND cena_osoba<=" + sideFiltr.cena_osoba; }
+        if(sideFiltr.fk_strava) { where += " AND fk_strava=" + sideFiltr.fk_strava; }
+        if(sideFiltr.fk_Adresa) { where += " AND fk_Adresa=" + sideFiltr.fk_Adresa; }
+    
+        return where;
+    }
 
     function shared_orderBy(attribute, orderdir, zajezdy, orderAct) 
     {

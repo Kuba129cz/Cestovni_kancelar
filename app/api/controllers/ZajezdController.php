@@ -25,7 +25,15 @@ class ZajezdController
          INNER JOIN Strava ON Zajezd.fk_Strava=Strava.id_Strava ORDER BY datum_prijezdu DESC";
         $stmt=$this->conn->prepare($SQL);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $data= $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($data as &$record) {
+            $record['cena_osoba'] =(float)$record['cena_osoba'];
+            $record['datum_prijezdu_raw'] = $record['datum_prijezdu'];//kvuli razeni (je to string)
+            $record['datum_odjezdu'] = date('d.m.Y', strtotime($record['datum_odjezdu']));
+            $record['datum_prijezdu'] = date('d.m.Y', strtotime($record['datum_prijezdu']));
+        }
+        return $data;
     }
 
     public function getData_where($where)

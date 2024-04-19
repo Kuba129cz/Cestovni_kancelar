@@ -8,13 +8,9 @@
 ?>
     <body x-data="{ open: false }">
     <?php include __DIR__.'/../components/header.inc.php'; ?>
-    <div class="container">
-      <?php include __DIR__.'/../components/aside.inc.php'; ?>
-  
+    <div class="container" x-data="objednavkaApp('fk_zakaznik=<?php echo $id?>')">  
       <main class="col-9">
-          <div x-data="objednavkaApp('fk_zakaznik=<?php echo $id?>')">
-          <?php include __DIR__.'/../components/objednavka.php'; ?>
-          </div>
+        <?php include __DIR__.'/../components/objednavka.php'; ?>
       </main>
     </div>
 
