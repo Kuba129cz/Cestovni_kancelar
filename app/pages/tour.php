@@ -69,7 +69,7 @@ function canOrder($zajezd, $zakaznik_id) {
                 if ($zakaznik_id) {
                     return '<button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>';       
                 } else {
-                    return 'Administrátor se nemůže touto cestou přihlašovat na zájezd.';          
+                    return '<h3>Administrátor se nemůže touto cestou přihlašovat na zájezd.</h3>';          
                 }
             } else {
                 return "<h3>Prosím pro přihlášení na zájezd se nejprve <a href='/login'>přihlaste</a>.</h3>";
