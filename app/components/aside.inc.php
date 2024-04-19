@@ -77,8 +77,8 @@
             x-text="orderdir.cena_osoba == false ? '⮟' : '⮝'"
             x-bind:class="orderAct.cena_osoba == true ? 'btn--filtr-active' : 'btn--filtr'"></button>
 
-            <button type="button" class="btn DX-calend" @click="orderBy('datum_odjezdu')" 
-            x-text="orderdir.datum_odjezdu == false ? '⮟' : '⮝'"
-            x-bind:class="orderAct.datum_odjezdu == true ? 'btn--filtr-active' : 'btn--filtr'"></button>
+            <button type="button" class="btn DX-calend" @click="orderBy('datum_prijezdu_raw')" 
+            x-text="orderdir.datum_prijezdu_raw == false ? '⮟' : '⮝'"
+            x-bind:class="orderAct.datum_prijezdu_raw == true ? 'btn--filtr-active' : 'btn--filtr'"></button>
         </div>   
 </aside>
