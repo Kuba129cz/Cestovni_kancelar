@@ -20,7 +20,7 @@ class ObjednavkaController
     }
     public function getData_where($where)
     {
-       $SQL="SELECT * FROM Objednavka
+       $SQL="SELECT * ,(cena_osoba*pocet_osob)as cena_celkem FROM Objednavka
        INNER JOIN Zajezd ON Objednavka.fk_Zajezd=Zajezd.id_Zajezd
        INNER JOIN Adresa ON Zajezd.fk_Adresa=Adresa.id_Adresa 
        INNER JOIN Strava ON Zajezd.fk_Strava=Strava.id_Strava
