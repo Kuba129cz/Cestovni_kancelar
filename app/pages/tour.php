@@ -64,7 +64,6 @@ function canOrder($zajezd, $zakaznik_id) {
     $currentDate = new DateTime();
     $is_loged=isset($_SESSION['username'])? true : false;
 
-    if ($is_loged) {
         if ($dateObject > $currentDate) {
             if ($is_loged) {
                 if ($zakaznik_id) {
@@ -80,7 +79,6 @@ function canOrder($zajezd, $zakaznik_id) {
         } else {
             return "<h3>Na zájezd se již nelze přihlašovat. Prosím vyberte jiný.</h3>";
         }
-    }
 }
 ?>
 <body x-data="{ open: false }">
