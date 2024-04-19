@@ -11,11 +11,12 @@
                   <div><input type="text" x-model="username"/><br></div>
                   <div>Password:</div>
                   <div><input type="password" x-model="password"/><br></div>
-                  <div> <button type="submit">login</button><div>
+                  <div> <button type="submit">login</button></div>
                  </div>
+                 <div><p class="registration"> Nemáte ještě účet? <a href='/registrace'>Registujte se</a>. <p><div>
               </div>
-            </form>     
-          </main>    
+            </form>   
+          </main>     
       </div>
 
       <?php include __DIR__.'/../components/footer.inc.php'; ?>
