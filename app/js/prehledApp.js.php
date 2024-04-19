@@ -97,7 +97,7 @@
     }
 
     //zkopirovano z copilota
-    function sortByAttribute(arr, attribute, descending = false) 
+    /*function sortByAttribute(arr, attribute, descending = false) 
     {
         const sortOrder = descending ? -1 : 1;
 
@@ -112,5 +112,6 @@
         };
 
         return arr.slice().sort(compareFunction);
-    }
+    }*/
 </script>
+<?php include __DIR__.'/side.js.inc.php'; ?>
