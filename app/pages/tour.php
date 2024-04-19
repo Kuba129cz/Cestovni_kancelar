@@ -72,7 +72,7 @@ function canOrder($zajezd, $zakaznik_id) {
                     return 'Administrátor se nemůže touto cestou přihlašovat na zájezd.';          
                 }
             } else {
-                return "<h3>Prosím pro přihlášení na zájezd se nejprve <a href='login.php'>přihlaste</a>.</h3>";
+                return "<h3>Prosím pro přihlášení na zájezd se nejprve <a href='/app/pages/login.php'>přihlaste</a>.</h3>";
             }
         } elseif ($dateObject < $currentDate) {
             return "<h3>Tento zájezd již proběhl. Prosím vyberte jiný.</h3>";
