@@ -7,7 +7,6 @@
          <option x-bind:value="adresa.id_Adresa" x-text="adresa.stat + ' - ' + adresa.mesto+ ', ' + adresa.ulice"></option>
         </template>
         </select>
-
         <div> <label for="zajezd_strava">strava</label></div>
         <select id="zajezd_strava" x-model="newItem.fk_strava">
         <div><option>Vybrat</option></div>
@@ -15,12 +14,9 @@
         <div><option x-bind:value="strava.id_strava" x-text="strava.typ_stravy"></option>
         </template>
         </select>
-    
-
-
         <div><label for="zajezd_cena">cena na osobu</label></div>
         <div><input type="number" id="zajezd_cena" x-model="newItem.cena_osoba" min="1"></div>
-        </div>
+    </div>
 
         <div clas="flex-date">
             <div><label for="zajezd_dateFrom">od</label></div>
