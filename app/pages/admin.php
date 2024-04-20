@@ -16,7 +16,7 @@
         </div>
         <div class="row">
           <div style="width: 100%;"><!--wayaround nez nekdo fixne styly-->
-            <?php include __DIR__.'/../components/zajezd.php'; ?>
+            <?php include __DIR__.'/../components/zajezd.admin.php'; ?>
           </div>
         </div>
     </main>
