@@ -58,6 +58,24 @@
 	  cursor: pointer;
 	}
 }
+.btn-tour-order{
+	background-color: $btn-backround;
+	max-width: $ButtonMaxWidth; //bylo by fajn aby sirka byla stejna jako u .btn-order
+    width: $ButtonWidth;
+	border-radius: 0.625em;
+	height: 3.5em;
+	color: $btn-color;
+	margin-left: 1em;
+	font-weight: bolder;
+	border-style: none;
+	&:hover{
+	 // background-color: #FF5733; /* Změna barvy pozadí */
+	  transition: background-color 0.3s ease; /* Přechod pro plynulou změnu barvy pozadí */
+	  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Přidání stínu */
+	  transform: scale(1.1); /* Zvětšení tlačítka */
+	  cursor: pointer;
+	}
+  }
 .btn-submit{
 	background-color:$btn-submit-backround;
 	padding: 20px;
