@@ -12,8 +12,9 @@
                   <div>Password:</div>
                   <div><input type="password" x-model="password"/><br></div>
                   <div> <button type="submit">login</button></div>
+                  <div><p class="registration"> Nemáte ještě účet? <a href='/registrace'>Registujte se</a>. <p><div>
                  </div>
-                 <div><p class="registration"> Nemáte ještě účet? <a href='/registrace'>Registujte se</a>. <p><div>
+                 
               </div>
             </form>   
           </main>     

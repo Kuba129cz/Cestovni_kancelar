@@ -9,15 +9,17 @@
   
   .flex-container > div {
     
-    width: 10px;
-    margin: 1px;
+    width: fit-content;
     border: 3px black;
     text-align: center;
     line-height: 25px;
-    font-size: 30px;
+    font-size: 20px;
     padding-bottom: 0.5rem;
+    text-align: left;
+ 
   }
 .zarovnani{
+  
 align-self: center;
 
 }
