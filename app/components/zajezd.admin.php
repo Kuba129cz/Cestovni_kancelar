@@ -6,7 +6,8 @@
       <div class="prijezd">From: <span x-text="zajezd.datum_prijezdu"></span></div>
       <div class="objednat col">
         <a class="btn btn--small DX-find" x-bind:href="'/tour?id=' + zajezd.id_zajezd"></a>
-        <button class="btn btn--small DX-bin" ></button>
+        <a class="btn btn--small DX-bin" @click="alert('click')" ></a>
+        <!--<a class="btn btn--small DX-edit" @click="alert('click')" ></a>-->
       </div>
       <div class="odjezd">To: <span x-text="zajezd.datum_odjezdu"></span></div>
       <div class="hodnoceni">Rating:<span x-text="zajezd.hodnoceni"></span> </div>
