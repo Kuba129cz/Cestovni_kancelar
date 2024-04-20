@@ -6,6 +6,11 @@
 	margin-right: -1.5rem;
 }
 
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
 /*pro vsechny class obsahujici col-*/
 [class*="col-"] {
 	padding-right: 1.5rem;
