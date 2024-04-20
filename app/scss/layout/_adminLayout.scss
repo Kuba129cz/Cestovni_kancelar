@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+    background-color: $btn-color;
+    flex-wrap: wrap;
+  }
+  
+  .flex > div {
+    height: fit-content;
+    background-color: $btn-color;
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    width: 100px;
+  }
