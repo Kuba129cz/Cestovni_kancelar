@@ -67,7 +67,7 @@ function canOrder($zajezd, $zakaznik_id) {
         if ($dateObject > $currentDate) {
             if ($is_loged) {
                 if ($zakaznik_id) {
-                    return '<button id="showForm" @click="showForm=true" class="btn-order" type="button">Mám zájem</button>';       
+                    return '<button id="showForm" @click="showForm=true" class="btn-tour-order" type="button">Mám zájem</button>';       
                 } else {
                     return '<h3>Administrátor se nemůže touto cestou přihlašovat na zájezd.</h3>';          
                 }
