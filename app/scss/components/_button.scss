@@ -5,6 +5,7 @@
 	color: $btn-color;
 	text-decoration: none;
 	border-radius: $border-radius;
+	border-style: none;
 
 	&--primary {
 		background-color: $color-primary;
@@ -22,6 +23,7 @@
 
 	&--small {
 		padding: 0.25rem 0.25rem;
+		font-size: 15px;
 	}
 
 	&:hover{ //xham skopiroval jsem hover muze se klidne dal upravovat
