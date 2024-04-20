@@ -23,11 +23,11 @@ img {
     display: inline-block;
 }
 .btn-tour-order{
-  background-color: #FA1212;
+  background-color: $btn-backround;
   height: 67;
   width: 200;
   border-radius: 12px;
-  color: white;
+  color: $btn-color;
   font-weight: bolder;
   &:hover{
    // background-color: #FF5733; /* Změna barvy pozadí */

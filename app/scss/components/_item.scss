@@ -6,8 +6,8 @@
 
   border-radius: 4px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid #f0f0f0;
-  display: flex;
+  border: 1px solid $btn-color;
+    display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -51,7 +51,7 @@
     'Price Rating To Or'/
 		1fr 1fr 1.5fr 1fr;
   grid-gap: 0px;
-  background-color: rgb(255, 255, 255);
+  background-color: $btn-color;
   padding: 10px;
   border-style: ridge;
   border-width: 5px;
@@ -61,7 +61,7 @@ margin-bottom: 15px;
 
 .grid-container>div {
   
-  background-color: rgba(252, 249, 249, 0.8);
+  background-color: $btn-color;
   text-align: center;
   padding: 20px 0;
   font-size: 20px;
