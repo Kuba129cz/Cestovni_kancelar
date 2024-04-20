@@ -67,6 +67,7 @@
 	color: $btn-color;
 	margin-left: 1em;
 	font-weight: bolder;
+	border-style: none;
 	&:hover{
 	 // background-color: #FF5733; /* Změna barvy pozadí */
 	  transition: background-color 0.3s ease; /* Přechod pro plynulou změnu barvy pozadí */
