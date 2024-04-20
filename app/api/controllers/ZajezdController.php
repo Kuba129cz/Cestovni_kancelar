@@ -89,5 +89,23 @@ class ZajezdController
         }
         return ['success' => false, 'message' => 'nepovedlo se vytvořit zájezd'];
     }
+
+    public function delete($id_Zajezd) {
+        $SQL = "DELETE FROM Zajezd WHERE id_Zajezd = $id_Zajezd";
+        $stmt = $this->conn->prepare($SQL);
+        //$stmt->bindParam(":id_Zajezd", $id_Zajezd);
+        if($stmt->execute()) {
+            $numRows = $stmt->rowCount();
+
+            if ($numRows > 0) {
+                return ['success' => true, 'http'=>200, 'message' => 'smazáno '.$numRows.' záznamů'];
+            } else {
+                return ['success' => false, 'http'=>404, 'message' => 'záznam nenalezen'];
+            }
+            
+        }
+        return ['success' => false, 'http'=>500, 'message' => 'nastala chyba'];
+    }
+
 }
 ?>

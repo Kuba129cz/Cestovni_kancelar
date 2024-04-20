@@ -31,6 +31,20 @@ else if ($method == 'POST')
         echo json_encode($res);
     }
 }
+else if ($method == 'DELETE') {
+    $data = json_decode(file_get_contents("php://input"), true);
+    $res=$controller->delete($data['id_Zajezd']);
+
+    http_response_code($res['http']); // OK
+    echo json_encode($res);
+    /*if ($res['success']) {
+        http_response_code(200); // OK
+        echo json_encode($res);
+    } else {
+        http_response_code(404); // Not found
+        echo json_encode($res);
+    }*/
+}
 else {
     http_response_code(405); // Method not allowed
     echo json_encode(['message' => 'Method not allowed.']);
