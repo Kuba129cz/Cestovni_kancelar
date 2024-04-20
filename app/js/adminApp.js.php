@@ -46,13 +46,7 @@
                     .then(Response => Response.json())
 					.then(data => {
 						if (data.success) {
-                            this.newItem.datum_prijezdu = '';
-                            this.newItem.datum_odjezdu = '';
-                            this.newItem.cena_osoba = '';
-                            this.newItem.popis = '';
-						    this.newItem.fk_strava = '';
-						    this.newItem.fk_Adresa = '';
-                            //this.newItem= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 1, popis = '',fk_strava:'',fk_Adresa:''};
+                            this.newItem= { datum_prijezdu: '', datum_odjezdu: '',cena_osoba: 1, popis: '',fk_strava:'',fk_Adresa:''};
 						    this.fetchZajezdy();
 						} else {
 							alert(data.message);
@@ -60,7 +54,7 @@
 					});
 			},
             deleteItem(id) {
-					// console.log(this.newTicket);
+					console.log(id);
 					fetch('/app/api/endpoints/zajezd/', {
 						method: 'DELETE',
 						headers: { 'Content-Type': 'application/json' },

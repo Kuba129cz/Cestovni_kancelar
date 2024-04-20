@@ -33,7 +33,7 @@ else if ($method == 'POST')
 }
 else if ($method == 'DELETE') {
     $data = json_decode(file_get_contents("php://input"), true);
-    $res=$controller->delete($data['id_Zajezd']);
+    $res=$controller->delete($data['id_zajezd']);
 
     http_response_code($res['http']); // OK
     echo json_encode($res);
