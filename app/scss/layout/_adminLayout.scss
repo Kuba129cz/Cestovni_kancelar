@@ -7,9 +7,42 @@
   .flex > div {
     height: fit-content;
     background-color: $btn-color;
-    margin: 10px;
-    padding: 20px;
+    margin: 1px;
+    padding: 2px;
     font-size: 20px;
     text-align: center;
-    width: 100px;
+    width: fit-content;
   }
+  .Flex-date {
+    display: flex;
+    background-color: $btn-color;
+    flex-wrap: wrap;
+  }
+  
+  .flex-date > div {
+    height: fit-content;
+    background-color: $btn-color;
+    margin: 1px;
+    padding: 2px;
+    font-size: 20px;
+    text-align: center;
+    width: fit-content;
+  }
+  
+  .Flex-btn {
+    display: flex;
+    background-color: $btn-color;
+    flex-wrap: wrap;
+  }
+  
+  .flex-btn > div {
+    height: fit-content;
+    background-color: $btn-color;
+    margin: 1px;
+    padding: 2px;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    width: fit-content;
+  }
+  

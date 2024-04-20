@@ -29,7 +29,7 @@
 
         <div><label for="zajezd_cena">cena na osobu</label></div>
         <div><input type="number" id="zajezd_cena" x-model="newItem.cena_osoba" min="1"></div>
-
-        <div><button type="submit" class="btn btn--primary">Vložit</button></div>
-    </div>
+        </div>
+        <div clas="flex-btn"><button type="submit" class="btn btn--primary">Vložit</button></div>
+    
 </form>
