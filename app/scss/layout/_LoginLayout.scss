@@ -1,0 +1,25 @@
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color:$btn-color ;
+    justify-content: center;
+  }
+  
+  .flex-container > div {
+  
+    width: fit-content;
+    text-align: center;
+    line-height: 25px;
+    font-size: 18px;
+    padding: 0.8rem;
+    text-align: left;
+    margin: 3%;
+ 
+  }
+.zarovnani{
+  
+align-self: center;
+
+}
