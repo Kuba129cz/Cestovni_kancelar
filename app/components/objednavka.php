@@ -5,11 +5,13 @@
         <span>ID: </span>
         <span x-text="objednavka.id_objednavka"></span>
       </div>
-      <div class="sidePair">
+      <div class="sidePair long-pair">
         <!--<span>destinace</span>-->
         <span x-text="objednavka.stat + ' - ' + objednavka.mesto"></span>
+        <!--<span x-text="objednavka.stat"></span>
+        <span x-text="objednavka.mesto"></span>-->
       </div>
-      <div class="sidePair">
+      <div class="sidePair long-pair">
         <span>termín: </span>
         <span x-text="objednavka.datum_prijezdu + ' - ' + objednavka.datum_odjezdu"></span>
       </div>
