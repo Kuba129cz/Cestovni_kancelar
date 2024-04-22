@@ -1,0 +1,40 @@
+.contact-layout{
+    display: flex;
+}
+
+.contact-layout__col {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.contact-layout__row--address {
+    display: flex;
+
+    p {
+        margin: 0;
+    }
+}
+
+.contact-layout__label {
+    display: inline-block;
+    min-width: 100px;
+}
+
+.contact-bold{
+    font-weight: bold;  
+    color: $contact-text; /* Modrá barva */
+}
+
+.contact-map{
+    max-width: 600px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+@media (min-width: 43.75em) {
+.contact-map{
+        width: 600px;
+        height: 450px;
+        margin: 0 auto;
+    }
+  }

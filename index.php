@@ -28,6 +28,9 @@
         case '/registrace' :
             require __DIR__ . '/app/pages/registrace.php';
             break;
+        case '/contact' :
+            require __DIR__ . '/app/pages/contact.php';
+            break;
         case '/403' :
             require __DIR__ . '/app/pages/403.php';
             break;
