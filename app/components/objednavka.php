@@ -1,7 +1,7 @@
 <template x-if="objednavky.length>0">
   <template x-for="objednavka in objednavky" :key="objednavka.id_objednavka">
     <div class="item"><!--alpine je virtual tak musim pouzit realni DOM-->
-      <div class="sidePair">
+      <div class="sidePair short-pair">
         <span>ID: </span>
         <span x-text="objednavka.id_objednavka"></span>
       </div>
