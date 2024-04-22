@@ -1,5 +1,5 @@
 .flex {
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
     background-color: $btn-color;
     flex-wrap: wrap;
@@ -8,14 +8,13 @@
   .flex > div {
     height: fit-content;
     background-color: $btn-color;
-    margin: 1px;
     padding: 5px;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
     width: fit-content;
   }
 
-  .Flex-btn {
+  .flex-btn {
     flex-direction: column;
     display: flex;
     background-color: $btn-color;
@@ -26,27 +25,21 @@
   .flex-btn > div {
     height: fit-content;
     background-color: $btn-color;
-    margin: 1px;
+    margin: 5px;
     padding: 2px;
     align-items: center;
     font-size: 20px;
     text-align: center;
     width: fit-content;
   }
-  
-  .Flex-date {
-    display: flex;
-    background-color: $btn-color;
-  }
 
-  .flex-date > div {
-    height: fit-content;
-    background-color: $btn-color;
-    margin: 1px;
-    padding: 2px;
-    align-items: center;
-    font-size: 20px;
-    text-align: center;
-    width: 100px;
+
+  .area {
+    width: 99.5%; 
+    height: 90px;
   }
+  .zarovnat{
   
+    align-self: center;
+    
+    }
