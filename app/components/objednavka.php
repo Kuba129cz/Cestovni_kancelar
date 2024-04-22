@@ -7,9 +7,9 @@
       </div>
       <div class="sidePair long-pair">
         <!--<span>destinace</span>-->
-        <span x-text="objednavka.stat + ' - ' + objednavka.mesto"></span>
-        <!--<span x-text="objednavka.stat"></span>
-        <span x-text="objednavka.mesto"></span>-->
+        <!--<span x-text="objednavka.stat + ' - ' + objednavka.mesto"></span>-->
+        <span x-text="objednavka.stat + ' - '"></span>
+        <span x-text="objednavka.mesto"></span>
       </div>
       <div class="sidePair long-pair">
         <span>termín: </span>
