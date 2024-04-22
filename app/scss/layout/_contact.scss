@@ -20,33 +20,21 @@
     min-width: 100px;
 }
 
-.contact-email{
-   
-}
-
-.contact-email-value{
-   
-}
-//.contact-value{
-//    grid-template-areas: "two five";
-//}
-
-.contact-phone{
-    //display: grid;
-    //grid-template-areas: "four";
-}
-
-.contact-phone-value{
-    //display: grid;
-    //grid-template-areas: "five";
-}
-
-/*
-.contact-adress{
-    grid-template-areas: "cell12";
-}
-*/
 .contact-bold{
     font-weight: bold;  
     color: #026de0; /* Modrá barva */
 }
+
+.contact-map{
+    max-width: 600px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+@media (min-width: 43.75em) {
+.contact-map{
+        width: 600px;
+        height: 450px;
+        margin: 0 auto;
+    }
+  }
