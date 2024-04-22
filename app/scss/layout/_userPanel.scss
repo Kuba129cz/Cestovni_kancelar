@@ -1,13 +1,14 @@
 .userPanel{
-    display: flex;
+    /*display: flex;
     flex-direction: row;
     justify-content: end;
     gap: 0.5em;
-    padding-right: 1.5em;
+    padding-right: 1.5em;*/
 
     position: absolute;
-    width: 100vw;
+    //width: 100vw;
     top: 0;
+    right: 0px;
     z-index: 2;
 }
 
