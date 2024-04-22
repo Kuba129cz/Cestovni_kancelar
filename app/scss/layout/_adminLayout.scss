@@ -1,4 +1,5 @@
 .flex {
+    flex-direction: column;
     display: flex;
     background-color: $btn-color;
     flex-wrap: wrap;
@@ -15,6 +16,7 @@
   }
 
   .Flex-btn {
+    flex-direction: column;
     display: flex;
     background-color: $btn-color;
   }
