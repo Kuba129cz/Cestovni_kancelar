@@ -55,15 +55,39 @@
   padding: 10px;
   border-style: ridge;
   border-width: 5px;
-margin-bottom: 15px;
-		
+  margin-bottom: 15px;		
 }
 
 .grid-container>div {
-  
   background-color: $btn-color;
   text-align: center;
   padding: 20px 0;
   font-size: 20px;
   font-family: "Calibry";
+}
+
+.long-pair{
+  width: max-content;
+  //grid-template-columns: auto max-content;
+}
+.short-pair{
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 40em) {	
+	.long-pair {
+		grid-template-columns: auto max-content;
+	}	
+  .short-pair {
+		grid-template-columns: auto min-content;
+	}	
+}
+
+@media screen and (max-width: 40em) {	
+	.long-pair>span {
+		justify-self: center;
+	}
+  .short-pair>span {
+		justify-self: center;
+	}
 }
