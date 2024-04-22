@@ -14,7 +14,9 @@
 					.then(data => {
 						if (data.success) {
 							//alert(data.message);
-							window.location.href = '/'; // Redirect to the dashboard
+							//window.location.href = '/'; // Redirect to the dashboard
+							window.history.back();
+
 						} else {
 							alert(data.message);
 						}
