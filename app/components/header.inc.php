@@ -1,7 +1,10 @@
 <header>
     <div class="userPanel">
         <div class="dropdown">
-            <img class="img-icon" src="app\resources\images\icons\user.png" alt="User Icon">
+            <?php if(!$is_loged){echo"<a href='/login' class='user-btn'> login</a>";}
+                    else{echo"<span class='user-name'>$username</span>";}
+            ?>
+            <img class="img-icon" src="app\resources\images\icons\user.png" alt="User Icon">           
             <div class="dropdown-content">
             <?php if($rights>=2){echo"<a href='/admin' class='user-btn'> administrace</a>";}?>
             <?php if($rights>=0){echo"<a href='/objednavky' class='user-btn'> objednávky</a>";}?>
