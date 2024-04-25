@@ -20,7 +20,7 @@ header {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 4em;
     color: $logoColor;
     margin: 0px;
 }
@@ -67,4 +67,9 @@ h1 {
         @include header-menuButton;
          flex: auto;
      }
+     .h1 {
+        font-size: 100px;
+        color: $logoColor;
+        margin: 0px;
+    }
 }    

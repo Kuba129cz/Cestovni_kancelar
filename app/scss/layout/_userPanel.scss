@@ -1,14 +1,7 @@
 .userPanel{
-    /*display: flex;
-    flex-direction: row;
-    justify-content: end;
-    gap: 0.5em;
-    padding-right: 1.5em;*/
-
     position: absolute;
-    //width: 100vw;
-    top: 0;
-    right: 0px;
+    top: 4em;
+    right: 5em;
     z-index: 2;
 }
 
@@ -23,3 +16,12 @@
     margin-bottom: 0.3em;
     cursor: pointer;
 }
+
+@media (min-width: 43.75em) {
+    .userPanel{
+        position: absolute;
+        top: 0;
+        right: 5em;
+        z-index: 2;
+    }
+  }
