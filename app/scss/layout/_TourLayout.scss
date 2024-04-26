@@ -28,3 +28,51 @@ h1.destinace {
     max-width: $ButtonMaxWidth; //bylo by fajn aby sirka byla stejna jako u .btn-order
     width: $ButtonWidth;
 }
+
+.popup {
+    width: 25em;
+    background: hsla(192, 89%, 57%, 1);
+    border-radius: 0.375em; 
+    position: fixed; 
+    top: 5vh;
+    left: 50%; 
+    transform: translateX(-50%) scale(0.1); 
+    text-align: center;
+    padding: 0 1.875em 1.875em; 
+    color: $popup-color-text;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img{
+    width: 6.25em; 
+    margin-top: -3.125em; 
+    border-radius: 50%;
+    box-shadow: 0 0.125em 0.313em rgba(0, 0, 0, 0.2); 
+}
+
+.popup h2{
+    font-size: 2.375em; 
+    font-weight: 500;
+    margin: 1.875em 0 0.625em; 
+}
+
+.popup button{
+    width: 100%;
+    margin-top: 3.125em;
+    padding: 0.625em 0; 
+    background: $popup-button;
+    color: $buttonText;
+    border: 0;
+    outline: none;
+    font-size: 1.125em; 
+    border-radius: 0.25em; 
+    cursor: pointer;
+    box-shadow: 0 0.125em 0.313em rgba(0, 0, 0, 0.2); 
+}

@@ -129,9 +129,15 @@ function canOrder($zajezd, $zakaznik_id) {
                                 <legend>Objednávka:</legend>
                                 <label for="persons">Zadejte počet osob</label>
                                 <input type="number" name="persons" x-model="newItem.pocet_osob" min="1"><br><br>
-                                <input class="btn"type="submit" value="Závazně objednat">
+                                <button type="submit" class="btn" onclick="openPopup()">Závazně objednat</button>
                             </fieldset>
                         </form>
+                        </div>
+                        <div class="popup" id="popup">
+                            <img src="../app/resources/images/icons/tick.png">
+                            <h2>Děkujeme Vám za objednání zájezdu </h2>
+                            <p>Objednávka pro Váš zájezd proběhla úspěšně.</p>
+                            <button type="button" onclick="closePopup()">OK</button>
                         </div>
                 </div>
 
@@ -152,4 +158,17 @@ function canOrder($zajezd, $zakaznik_id) {
     <?php include __DIR__ . '/../includes/parts/scripts.inc.php'; ?>
     <?php include __DIR__ . '/../js/detailApp.js.php'; ?>
 </body>
+
+<script>
+   let popup = document.getElementById("popup");
+   
+   function openPopup(){
+    popup.classList.add("open-popup");
+   }
+
+   function closePopup(){
+    popup.classList.remove("open-popup");
+   }
+</script>
+
 </html>
