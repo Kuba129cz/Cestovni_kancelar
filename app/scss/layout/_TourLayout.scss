@@ -29,9 +29,20 @@ h1.destinace {
     width: $ButtonWidth;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 16, 16, .55);
+    z-index: 999; /* Přesně nad všemi ostatními elementy */
+}
+
 .popup {
     width: 25em;
-    background: hsla(192, 89%, 57%, 1);
+   // background: hsla(192, 89%, 57%, 1);
+    background: #fff;
     border-radius: 0.375em; 
     position: fixed; 
     top: 5vh;

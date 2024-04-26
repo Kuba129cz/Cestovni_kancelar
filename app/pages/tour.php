@@ -81,7 +81,7 @@ function canOrder($zajezd, $zakaznik_id) {
         }
 }
 ?>
-<body x-data="{ open: false }">
+<body x-data="{ open: false }" id="container_body">
     <?php include __DIR__ . '/../components/header.inc.php'; ?>
 
     <div class="container-wholeScreen">
@@ -161,12 +161,14 @@ function canOrder($zajezd, $zakaznik_id) {
 
 <script>
    let popup = document.getElementById("popup");
-   
+   var element = document.getElementById("container_body");
    function openPopup(){
+    element.classList.add("overlay");
     popup.classList.add("open-popup");
    }
 
    function closePopup(){
+    element.classList.remove("overlay");
     popup.classList.remove("open-popup");
    }
 </script>
