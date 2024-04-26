@@ -21,8 +21,8 @@
             </p>
 
             <p>
-                Sunshine je k dispozici ve více jazycích a nabízí více než 25 zájezdů do 7 zemí. Zákaznický servis je vám navíc k 
-                dispozici 24 hodin denně 7 dní v týdnu bez ohledu na to, kam pojedete a jaké jsou vaše plány
+                Sunshine je k dispozici ve více jazycích a nabízí zájezdy do více než 25 destinací v 7 zemích. 
+                Zákaznický servis je vám navíc k dispozici 24 hodin denně 7 dní v týdnu bez ohledu na to, kam pojedete a jaké jsou vaše plány.
             </p>
       </main>
     </div>
