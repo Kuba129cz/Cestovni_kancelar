@@ -31,6 +31,9 @@
         case '/contact' :
             require __DIR__ . '/app/pages/contact.php';
             break;
+        case '/about' :
+            require __DIR__ . '/app/pages/about.php';
+            break;
         case '/403' :
             require __DIR__ . '/app/pages/403.php';
             break;
