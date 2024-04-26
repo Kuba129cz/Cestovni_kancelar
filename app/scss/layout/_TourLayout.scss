@@ -36,7 +36,7 @@ h1.destinace {
     width: 100%;
     height: 100%;
     background-color: rgba(16, 16, 16, .55);
-    z-index: 999; /* Přesně nad všemi ostatními elementy */
+    z-index: 99; /* Přesně nad všemi ostatními elementy */
 }
 
 .popup {
@@ -53,6 +53,7 @@ h1.destinace {
     color: $popup-color-text;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+    z-index: 100; //nad overlay
 }
 
 .open-popup{

@@ -154,6 +154,9 @@ function canOrder($zajezd, $zakaznik_id) {
         </main>
     </div>
 
+    <!--nesmí být parent jinak budou prvky na něm místo pod-->
+    <div id="cover"></div>
+
     <?php include __DIR__ . '/../components/footer.inc.php'; ?>
     <?php include __DIR__ . '/../includes/parts/scripts.inc.php'; ?>
     <?php include __DIR__ . '/../js/detailApp.js.php'; ?>
@@ -161,7 +164,8 @@ function canOrder($zajezd, $zakaznik_id) {
 
 <script>
    let popup = document.getElementById("popup");
-   var element = document.getElementById("container_body");
+   //var element = document.getElementById("container_body");
+   var element = document.getElementById("cover");
    function openPopup(){
     element.classList.add("overlay");
     popup.classList.add("open-popup");
