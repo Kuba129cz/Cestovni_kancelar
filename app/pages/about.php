@@ -7,23 +7,25 @@
     <div class="container" x-data="prehledApp(<?php echo"$filtr"?>)">
   
       <main class="col-9">
-        <h3>O nás</h3>
-            <p>
-                Společnost Sunshine byla založena 14.02.2024 a z malého start-upu se stala respektovanou cestovní společností. 
-                Sunshine je součástí dynamického cestovního průmyslu a jejím cílem je usnadňovat všem poznávat svět.
-            </p>
+        <div class="about">
+          <h3>O nás</h3>
+              <p>
+                  Společnost Sunshine byla založena 14.02.2024 a z malého start-upu se stala respektovanou cestovní společností. 
+                  Sunshine je součástí dynamického cestovního průmyslu a jejím cílem je usnadňovat všem poznávat svět.
+              </p>
 
-            <p>
-                Společnost Sunshine investuje do technologií, které usnadňují cestování, a díky tomu přináší hostům 
-                nezapomenutelné zážitky, možnosti dopravy a výběr hotelů, ubytování v soukromí a dalších fantastických ubytování. 
-                Sunshine jako jedna z největších cestovních platforem umožňuje ubytováním z celého světa oslovit globální publikum 
-                a rozvíjet jejich podnikání, ať už se jedná o již známé společnosti, nebo soukromá ubytování různých velikostí.
-            </p>
+              <p >
+                  Společnost Sunshine investuje do technologií, které usnadňují cestování, a díky tomu přináší hostům 
+                  nezapomenutelné zážitky, možnosti dopravy a výběr hotelů, ubytování v soukromí a dalších fantastických ubytování. 
+                  Sunshine jako jedna z největších cestovních platforem umožňuje ubytováním z celého světa oslovit globální publikum 
+                  a rozvíjet jejich podnikání, ať už se jedná o již známé společnosti, nebo soukromá ubytování různých velikostí.
+              </p>
 
-            <p>
-                Sunshine je k dispozici ve více jazycích a nabízí zájezdy do více než 25 destinací v 7 zemích. 
-                Zákaznický servis je vám navíc k dispozici 24 hodin denně 7 dní v týdnu bez ohledu na to, kam pojedete a jaké jsou vaše plány.
-            </p>
+              <p>
+                  Sunshine je k dispozici ve více jazycích a nabízí zájezdy do více než 25 destinací v 7 zemích. 
+                  Zákaznický servis je vám navíc k dispozici 24 hodin denně 7 dní v týdnu bez ohledu na to, kam pojedete a jaké jsou vaše plány.
+              </p>
+            </div>
       </main>
     </div>
   
