@@ -1,0 +1,17 @@
+.about {
+    height: 100vh;
+}
+
+.about h3 {
+    font-size: 24px; /* Velikost nadpisu */
+    margin-bottom: 20px; /* Odstup od následujícího odstavce */
+    color: $contact-text;
+}
+
+.about p {
+    font-size: 16px; /* Velikost textu */
+    text-align: justify; /* Zarovnání textu */
+    line-height: 1.5em; 
+    margin-bottom: 20px; /* Odstup mezi odstavci */
+    margin-right: 35%;
+}
