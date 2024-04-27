@@ -12,6 +12,18 @@
  	}
  }
 
+ @media screen and (max-width: 40em) {	
+	.container {
+		/*
+		@include container;
+		grid-template-columns: minmax(85px, 20%) 1fr;
+		column-gap: 0.5em; //mezera mezi bunkami
+		*/
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
  .container-wholeScreen{
  	//kdybysme responsivne nemenily 2 sloupce tak bych dal jako class="container tour"
  	@include container;
