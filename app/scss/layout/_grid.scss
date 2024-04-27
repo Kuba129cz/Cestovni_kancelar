@@ -1,3 +1,9 @@
+// .filtr_zajezdu{
+// 	background-color: fff;
+// 	z-index: 1;
+// 	position: sticky;
+// }
+ 
  @media screen and (min-width: 40em) {	
  	.container {
  		@include container;
@@ -6,13 +12,17 @@
  	}
  }
 
-  @media screen and (max-width: 40em) {	
-  	.container {
-  		@include container;
-  		grid-template-columns: minmax(85px, 20%) 1fr;
-  		column-gap: 0.5em; //mezera mezi bunkami
-  	}
-  }
+ @media screen and (max-width: 40em) {	
+	.container {
+		/*
+		@include container;
+		grid-template-columns: minmax(85px, 20%) 1fr;
+		column-gap: 0.5em; //mezera mezi bunkami
+		*/
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 
  .container-wholeScreen{
  	//kdybysme responsivne nemenily 2 sloupce tak bych dal jako class="container tour"
