@@ -85,14 +85,15 @@
 
 @media screen and (max-width: 40em) {	
 	.sidePair {
-		grid-template-columns: auto ;
-		grid-template-rows: auto auto;
+		grid-template-columns: auto 80%;
+		//grid-template-rows: auto auto;
 		padding-left: 0.2em;
-		padding-right: 0.2em;
+		padding-right: 2em;
 	}
 	.aside{
 		padding-left: 1rem;
 		padding-right: 1rem;
+		padding-bottom: 0.5rem;
 	}
 	.numeric{
 		margin-right: 0em;
