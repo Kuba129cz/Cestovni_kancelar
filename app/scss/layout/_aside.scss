@@ -1,8 +1,9 @@
 .aside {
 	grid-area: side;
 	//border-right: 1px solid $color-light;
-	background-color: $sideMenuBack;
-
+	//background-color: $sideMenuBack;
+	background-color: rgb(178, 223, 255);
+	
 	height: fit-content;
 	padding-top: 0.5rem;
 	padding-bottom: 2rem;
