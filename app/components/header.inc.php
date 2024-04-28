@@ -35,7 +35,7 @@
     </div>
     <div class="obr-bg">
         <a class="no-decor" href="/">
-            <h1>cestovka</h1>
+            <h1>Sunshine</h1>
         </a>
     </div>
     <div class="header-menu">
